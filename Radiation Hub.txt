@@ -72,7 +72,7 @@ game.Players:Chat(msg)
 end
 
 local function onPlayerAdded(player)
-      chat("h \n\n\n\n\n\n " .. player.Name .. " \n\n\n\n\n\n " .. player.AccountAge .. " \n\n\n has joined the game.\n\n\n☢️Radiation Hub☢️")
+      chat("h \n " .. player.Name .. " \n " .. player.AccountAge .. " \n has joined the game.\n☢️Radiation Hub☢️")
 end
 
 local function onPlayerLeaving(player)

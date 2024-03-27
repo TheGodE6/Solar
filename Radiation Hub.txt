@@ -83,7 +83,10 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 -----COMMANDS-----
-
+if cmd == prefix .. "crash" then
+     chat("")
+  end
+end)
 -----CREDITS------
 print("dawninja21 - OWNER")
 print("GOJO simplekah v2 he taught me very well and i wouldnt know how to make it without him")

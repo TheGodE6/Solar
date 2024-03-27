@@ -20,7 +20,7 @@ local devs = {"dawninja21",Di33le2",dawninja21alt",ScriptingProgrammer"}
 -----Music-------
 local musiclist = {
 ["1"] = { id = "6937042327" },
-["2"] = { id = "15689455422" }
+["2"] = { id = "15689455422" },
 [“3”] = {id = “6681840651”}
 }
 

@@ -99,6 +99,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                chat("gear me 94794847")
                chat ("size me 0.3")
                chat ("size me 0.3")
+               chat ("size me 0.3")
+               chat ("unsize me")
                chat ("blind all")
                chat ("h \n\n\nServer is now closed by Radiation Hub.\n\n\n")
         end

@@ -74,15 +74,16 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 --- Commands ---
-game.Players.LocalPlayer.chatted:Connect(function(msg)
-        local msgsplit = msg:split(" ")
-        local cmd = msgsplit[1]
-        local cmd2 = msgsplit[2]
+local music = { -- repeat the table in "id", format THE , IS VERY VERY IMPORTANT
+["9043887091"],
+["6937042327"],
+["15689455422"],
+["6681840651"]
+}
 
-        if cmd == prefix .. "music" then
-                local song = musiclist[cmd2]
-                chat("music " .. song.Id)
-        end
+if string.sub(msg, 1, #prefix + 5)  == prefix..'music' then
+game.Players:Chat("music "..music[math.random(1, #music)])
+end
 
         if cmd == prefix .. "crash" then
               chat("h \n\n\n Server Closed By ~Exile Admin Script~.\n\n\n")

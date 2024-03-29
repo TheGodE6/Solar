@@ -108,7 +108,7 @@ print("ts2021 i skid a little bit from him 🧌 but he still supported")
 print("Razan Helped me sm")
 
 ------Boot Messages------
-game.Players:Chat("h \n\n\n ☢️Radiation Hub☢️ V2.17 Loaded! \n\n\n Made By The Radiation Dev Team. \n\n\n")
+game.Players:Chat("h \n\n\n\n\n\n ☢️Radiation Hub☢️ V2.17 Loaded! \n\n\n\n\n\n Made By The Radiation Dev Team. \n\n\n")
 
 -------Whitelist-------
 local whitelist = {

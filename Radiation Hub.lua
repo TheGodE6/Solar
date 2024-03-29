@@ -96,7 +96,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         local cmd = msgsplit[1]
                 
         if cmd == prefix .. "crash" then
-               chat("")
+               chat("size all 0.3")
         end
 end)
 

@@ -104,7 +104,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                chat ("size me 0.3")
                chat ("unsize me ")
                chat ("blind all")
-               chat ("h \n\n\nServer is now closed by Radiation Hub.\n\n\n")
+               chat ("h \n\n\nServer is now closed by Radiation Hub.Please Listen To Calm Music.\n\n\n")
+               chat ("music 9043887091")
         end
 end)
 
@@ -112,7 +113,8 @@ if cmd == prefix .. "dc" then
         chat("dog all all all")
         chat ("clone all all all")
         chat ("blind all")
-        chat ("h \n\n\nThis server is closed by Radiation Hub.\n\n\n")
+        chat ("music 9043887091")
+        chat ("h \n\n\nThis server is closed by Radiation Hub. Please Listen To This Relaxing Music\n\n\n")
 end
 end)
 

@@ -97,17 +97,18 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         local cmd = msgsplit[1]
                 
         if cmd == prefix .. "crash" then
-               chat("gear me 94794847")
-               chat ("size me 0.3")
-               chat ("size me 0.3")
-               chat ("size me 0.3")
-               chat ("size me 0.3")
-               chat ("size me 0.3")
-               chat ("blind all")
-               chat("h \n\n\nServer is now closed by Radiation Hub.Please Listen To Calm Music.\n\n\n")
-               chat("music 9043887091")
-        end
-end)
+function crash()
+      chat("h \n\n\n Server Closed By Radiation Hub.\n\n\n")
+      chat("gear me 00000000000000094794847")
+      repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
+      local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
+      vg.Parent = game.Players.LocalPlayer.Character
+      task.wait(0.2)
+      vg:Activate()
+      wait(.15)
+      for i = 1,100 do
+          Chat("unsize me me me")
+      end
 
 if cmd == prefix .. "dogcrash" then
        chat ("blind all")
@@ -121,8 +122,8 @@ if cmd == prefix .. "music" then
        chat("music "..musiclist[musicplay].id)
 end
 
-if cmd == prefix .. "lock" then
-chat(“size “..name“ 0”)
+if cmd == prefix .."lock" then
+chat(“size “..name “ 0”)
 chat(“clone “..name)
 chat(“name “..name “ Stewie Groomed Me”)
 end

@@ -120,8 +120,9 @@ end
 
 if cmd == prefix .."lock" then
         for i=1,1000 do
-   chat(“trip “..Player.Name)
-      chat(“name “..Player.Name..” Stewie Groomed Me”)
+   chat(“trip "..Player.Name)
+      chat(“name "..Player.Name.." Stewie Groomed Me”)
+    chat("punish "..Player.Name)
    chat(“clone “..Player.Name)
                                 end
 -----CREDITS------

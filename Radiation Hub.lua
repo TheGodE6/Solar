@@ -73,7 +73,7 @@ local function onPlayerAdded(player)
 end
 
 local function onPlayerLeaving(player)
-        chat("h \n\n\n " .. player.Name .. " \n\n\n has left the game. \n\n\n ☢️Radiation Hub☢️")
+        chat("h \n\n\n " .. player.Name .. " \n has left the game. \n ☢Radiation Hub☢️")
 end
 
 game.Players.PlayerAdded:Connect(onPlayerAdded)

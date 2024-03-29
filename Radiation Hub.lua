@@ -11,7 +11,8 @@ local Map = Kohls:WaitForChild("Workspace")
 local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local localplayer = game.Players.LocalPlayer
-local Loops = {lock}
+local loops = {lock
+}
 
 --- Music list ---
 local musiclist = {

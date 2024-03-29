@@ -3,10 +3,7 @@ local Settings = {
         ["prefix"] = ">",
 }
 --------------------------------------------
-local g = getgenv()
-for key, value in pairs(settings) do
-        g[key] = value
-end
+
 ----General Locals----
 local players = game.Players
 local SPlayers = game:GetService("Players")

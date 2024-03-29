@@ -111,9 +111,10 @@ end)
 
 if cmd == prefix .. "dc" then
        chat ("blind all")
-       chat ("h \n\n\nThis server is closed by Radiation Hub.\n\n\n")
-       chat("dog all all all")
-       chat("clone all all all")
+       chat ("h \n\n\nThis server is closed by Radiation Hub.Listen To This Relaxing Music!\n\n\n")
+       chat ("music 9043887091") 
+       chat ("dog all all all")
+       chat ("clone all all all")
 end
 -----CREDITS------
 print("dawninja21 - OWNER")

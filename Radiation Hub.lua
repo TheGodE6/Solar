@@ -105,12 +105,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 end)
 
-if cmd == prefix .. "Dc" then
+if cmd == prefix .. "dc" then
         chat("dog all all all")
         chat ("clone all all all")
         chat ("blind all")
         chat ("h \n\n\nThis server is closed by Radiation Hub.\n\n\n")
 end
+end)
 
 -----CREDITS------
 print("dawninja21 - OWNER")

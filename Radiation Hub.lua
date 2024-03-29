@@ -121,8 +121,11 @@ if cmd == prefix .. "music" then
        chat("music "..musiclist[musicplay].id)
 end
 
-if cmd == prefix .."lock" then
-        
+if cmd == prefix .. "lock" then
+chat(“size “ ..name “ 0”)
+chat(“clone “..name)
+chat(“name “ ..name “ Stewie Groomed Me”)
+end
 -----CREDITS------
 print("dawninja21 - OWNER")
 print("GOJO simplekah v2 he taught me very well and i wouldnt know how to make it without him")

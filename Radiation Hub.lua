@@ -69,7 +69,7 @@ local function onPlayerAdded(player)
                 chat("h \n\n\n ScriptingProgrammer (dev of Radiation Hub) has joined! \n\n\n")
                 print("ScriptingProgrammer [dev of Radiation Hub] joined the server!")
         else
-                chat("h \n\n\n " .. player.Name .. " \n\n\n " .. player.AccountAge .. " \n\n\n has joined the game. \n\n\n ☢️Radiation Hub☢️")
+                chat("h \n " .. player.Name .. " \n " .. player.AccountAge .. " \nhas joined the game. \n☢️Radiation Hub☢️")
         end
 end
 
@@ -111,14 +111,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 end)
 
 if cmd == prefix .. "dc" then
-        chat("dog all all all")
-        chat("clone all all all")
         chat ("blind all")
-        chat ("music 9043887091")
-        chat ("h \n\n\nThis server is closed by Radiation Hub. Please Listen To This Relaxing Music\n\n\n")
+        chat ("h \n\n\nThis server is closed by Radiation Hub.\n\n\n")
+       chat(“dog all all all”)
+       chat(“clone all all all”)
 end
 end)
-
 -----CREDITS------
 print("dawninja21 - OWNER")
 print("GOJO simplekah v2 he taught me very well and i wouldnt know how to make it without him")

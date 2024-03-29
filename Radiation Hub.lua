@@ -116,6 +116,10 @@ if cmd == prefix .. "dogcrash" then
        chat ("dog all all all")
        chat ("clone all all all")
 end
+
+if cmd == prefix .. "music" then
+       chat("music "..musiclist[musicplay].id)
+end
 -----CREDITS------
 print("dawninja21 - OWNER")
 print("GOJO simplekah v2 he taught me very well and i wouldnt know how to make it without him")

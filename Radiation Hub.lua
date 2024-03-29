@@ -69,7 +69,7 @@ local function onPlayerAdded(player)
                 chat("h \n\n\n ScriptingProgrammer (dev of Radiation Hub) has joined! \n\n\n")
                 print("ScriptingProgrammer [dev of Radiation Hub] joined the server!")
         else
-                chat("h \n " .. player.Name .. " \n " .. player.AccountAge .. " \nhas joined the game. \n☢️Radiation Hub☢️")
+                chat("h \n " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n☢️Radiation Hub☢️")
         end
 end
 

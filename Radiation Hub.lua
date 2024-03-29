@@ -111,6 +111,7 @@ if cmd == prefix .. "Dc" then
         chat ("clone all all all")
         chat ("blind all")
         chat ("h \n\n\nThis server is closed by Radiation Hub.\n\n\n")
+end
 
 -----CREDITS------
 print("dawninja21 - OWNER")

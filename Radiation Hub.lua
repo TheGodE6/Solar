@@ -126,7 +126,7 @@ print("TS2021 - I skidded a little bit from him 🧌 but he still supported.")
 print("Razan for helped me so much.")
 
 --- Boot Messages ---
-chat("h \n\n\n\n\n\n ☢️Radiation Hub☢️ V2.17 Loaded! \n\n\n\n\n\n Made By The Radiation Dev Team.")
+chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The Radiation Dev Team.")
 chat("h \n\n\n From now on, this server will be protected thanks to "..game.Players.LocalPlayer.Name..". \n\n\n")
 
 --- Module autos ---

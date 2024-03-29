@@ -106,7 +106,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 end)
 
-if cmd == prefix.. "Dc" then
+if cmd == prefix .. "Dc" then
         chat("dog all all all")
         chat ("clone all all all")
         chat ("blind all")

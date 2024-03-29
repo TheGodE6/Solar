@@ -96,9 +96,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         local cmd = msgsplit[1]
                 
         if cmd == prefix .. "crash" then
-               chat("size me 0.3")
-               chat ("size me 0.3")
                chat("gear me 94794847")
+               chat ("size me 0.3")
+               chat ("size me 0.3")
+               chat ("blind all")
+               chat ("h \n\n\nServer is now closed by Radiation Hub.\n\n\n")
         end
 end)
 

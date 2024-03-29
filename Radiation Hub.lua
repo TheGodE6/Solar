@@ -1,6 +1,6 @@
 ---------SETTINGS-------------
-local settings = {
-prefix = ">"
+local Settings = {
+        ["prefix"] = ">",
 }
 --------------------------------------------
 local g = getgenv()
@@ -15,8 +15,8 @@ local Map = Kohls:WaitForChild("Workspace")
 local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local localplayer = game.Players.LocalPlayer
-local devs = {"dawninja21","Di33le2","dawninja21alt","ScriptingProgrammer"}
-local name = Player.Name
+local devs = {"dawninja21","Di33le2","dawninja21alt","ScriptingProgrammer","Exfamous_X"}
+
 
 -----Music-------
 local musiclist = {
@@ -111,11 +111,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
       end
 
 if cmd == prefix .. "dogcrash" then
-       chat ("blind all")
-       chat ("h \n\n\nThis server is closed by Radiation Hub.Listen To This Relaxing Music!\n\n\n")
-       chat ("music 9043887091") 
-       chat ("dog all all all")
-       chat ("clone all all all")
+        
 end
 
 if cmd == prefix .. "music" then
@@ -123,10 +119,10 @@ if cmd == prefix .. "music" then
 end
 
 if cmd == prefix .."lock" then
-chat(“size “..name“ 0”)
-chat(“clone “..name)
-chat(“name “..name “ Stewie Groomed Me”)
-end
+        for i=1,1000 do
+   chat(“trip “..Player.Name)
+      chat(“name “..Player.Name..” Stewie Groomed Me”)
+   chat(“clone “..Player.Name..”)
 -----CREDITS------
 print("dawninja21 - OWNER")
 print("GOJO simplekah v2 he taught me very well and i wouldnt know how to make it without him")
@@ -141,7 +137,7 @@ game.Players:Chat("h \n\n\n\n\n\n ☢️Radiation Hub☢️ V2.17 Loaded! \n\n\n
 local whitelist = {
         "dawninja21",
         "Di33le2",
-        "ScriptingProgrammer"
+        "ScriptingProgrammer",
 }
 
 local function checkwhitelist()
@@ -156,5 +152,7 @@ local function checkwhitelist()
                 localplayer:Kick("You are not whitelisted.")
         end
 end
+end
+end)
 
 checkwhitelist()

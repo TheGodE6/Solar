@@ -46,28 +46,28 @@ end
 
 local function onPlayerAdded(player)
         if player.Name == "dawninja21" or player.Name == "dawninja21alt" then
-                chat("h \n\n\n dawninja21 (owner of Radiation Hub) has joined! \n\n\n")
+                chat("h \n\n\n dawninja21 (owner of Exile Admin) has joined! \n\n\n")
                 print("dawninja21 [owner of Radiation Hub] joined the server!")
 
         elseif player.Name == "Di33le2" then
-                chat("h \n\n\n Di33le2 (dev of Radiation Hub) has joined! \n\n\n")
+                chat("h \n\n\n Di33le2 (dev of Exile Admin) has joined! \n\n\n")
                 print("Di33le2 [dev of Radiation Hub] joined the server!")
 
         elseif player.Name == "ScriptingProgrammer" then 
-                chat("h \n\n\n ScriptingProgrammer (dev of Radiation Hub) has joined! \n\n\n")
+                chat("h \n\n\n ScriptingProgrammer (dev of Exile Admin) has joined! \n\n\n")
                 print("ScriptingProgrammer [dev of Radiation Hub] joined the server!")
 
         elseif player.Name == "Exfamous_X" then 
-                chat("h \n\n\n Exfamous_X (dev of Radiation Hub) has joined! \n\n\n")
+                chat("h \n\n\n Exfamous_X (dev of Exile Admin) has joined! \n\n\n")
                 print("Exfamous_X [dev of Radiation Hub] joined the server!")
 
         else
-                chat("h \n " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n☢️Radiation Hub☢️")
+                chat("h \n " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n~Exile Admin~")
         end
 end
 
 local function onPlayerLeaving(player)
-        chat("h \n\n\n " .. player.Name .. " \n has left the game. \n ☢Radiation Hub☢️")
+        chat("h \n\n\n " .. player.Name .. " \n has left the game. \n~Exile Admin~")
 end
 
 game.Players.PlayerAdded:Connect(onPlayerAdded)
@@ -84,8 +84,8 @@ game.Players.LocalPlayer.chatted:Connect(function(msg)
                 chat("music " .. song.Id)
         end
 
-        if cmd == prefix .. "vgcrash" then
-              chat("h \n\n\n Server Closed By Radiation Hub.\n\n\n")
+        if cmd == prefix .. "crash" then
+              chat("h \n\n\n Server Closed By ~Exile Admin Script~.\n\n\n")
               chat("gear me 00000000000000094794847")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
               local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")

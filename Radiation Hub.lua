@@ -1,6 +1,6 @@
 --- Settings ---
 local Settings = {
-        ["prefix"] = ">",
+prefix = ">",
 }
 
 --- General Locals ---

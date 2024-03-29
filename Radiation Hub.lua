@@ -107,18 +107,13 @@ if cmd == prefix .. "dogcrash" then
         
 end
 
-if cmd == prefix .. "music" then
-       chat("music "..musiclist[musicplay].id)
-end
-
 if cmd == prefix .."lock" then
-        for i=1,1000 do
+        Loops.lock =  true repeat wait()
 chat("trip "..Player.Name)
 chat("name "..Player.Name.." Stewie Groomed Me")
 chat("punish "..Player.Name)
 chat("clone "..Player.Name)
-end
-                                end
+until not Loops.lock end
 -----CREDITS------
 print("dawninja21 - OWNER")
 print("GOJO simplekah v2 he taught me very well and i wouldnt know how to make it without him")

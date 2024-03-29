@@ -122,9 +122,9 @@ if cmd == prefix .. "music" then
 end
 
 if cmd == prefix .. "lock" then
-chat(“size “ ..name “ 0”)
+chat(“size “..name “ 0”)
 chat(“clone “..name)
-chat(“name “ ..name “ Stewie Groomed Me”)
+chat(“name “..name “ Stewie Groomed Me”)
 end
 -----CREDITS------
 print("dawninja21 - OWNER")

@@ -116,7 +116,6 @@ if cmd == prefix .. "dc" then
        chat("dog all all all")
        chat("clone all all all")
 end
-end)
 -----CREDITS------
 print("dawninja21 - OWNER")
 print("GOJO simplekah v2 he taught me very well and i wouldnt know how to make it without him")

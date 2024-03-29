@@ -152,7 +152,5 @@ local function checkwhitelist()
                 localplayer:Kick("You are not whitelisted.")
         end
 end
-end
-end)
 
 checkwhitelist()

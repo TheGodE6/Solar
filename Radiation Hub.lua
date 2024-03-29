@@ -89,11 +89,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 chat("music " .. song.Id)
         end
 end)
-
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
-        local msgsplit = msg:split(" ")
-        local cmd = msgsplit[1]
-                
+     
         if cmd == prefix .. "crash" then
       chat("h \n\n\n Server Closed By Radiation Hub.\n\n\n")
       chat("gear me 00000000000000094794847")
@@ -155,4 +151,4 @@ end
 
 checkwhitelist()
                 end
-        end
+        end)

@@ -106,6 +106,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 end)
 
+if cmd == prefix.. "Dc" then
+        chat("dog all all all")
+        chat ("clone all all all")
+        chat ("blind all")
+        chat ("h \n\n\nThis server is closed by Radiation Hub.\n\n\n
+
 -----CREDITS------
 print("dawninja21 - OWNER")
 print("GOJO simplekah v2 he taught me very well and i wouldnt know how to make it without him")

@@ -13,8 +13,7 @@ local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local localplayer = game.Players.LocalPlayer
 local devs = {"dawninja21","Di33le2","dawninja21alt","ScriptingProgrammer","Exfamous_X"}
-local loops = {lock
-}
+local Loops = {lock}
 
 -----Music-------
 local musiclist = {

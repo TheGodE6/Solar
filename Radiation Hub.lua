@@ -109,7 +109,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 end)
 
-if cmd == prefix .. "dc" then
+if cmd == prefix .. "dogcrash" then
        chat ("blind all")
        chat ("h \n\n\nThis server is closed by Radiation Hub.Listen To This Relaxing Music!\n\n\n")
        chat ("music 9043887091") 

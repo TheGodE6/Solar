@@ -72,7 +72,7 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 --- Commands ---
-        if string.sub(msg(), 1, #prefix + 5) == prefix .. "crash" then
+        if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
               chat("h \n\n\n Server closed by ~Exile Admin~.\n\n\n")
               chat("gear me 00000000000000094794847")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
@@ -86,7 +86,7 @@ game.Players.PlayerRemoving:Connect(onPlayerLeaving)
               end
         end
                 
-        if string.sub(msg(), 1, #prefix + 8) == prefix .. "dogcrash" then
+        if string.sub(msg:lower(), 1, #prefix + 8) == prefix ..'dogcrash'then
 	        chat("h \n\n\n Server closed by ~Exile Admin~.\n\n\n")
                 for i = 1,100 do
                           chat("clone all all all")

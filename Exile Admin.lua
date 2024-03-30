@@ -178,7 +178,7 @@ print("TS2021 - I skidded a little bit from him 🧌 but he still supported.")
 print("Razan for helped me so much.")
 
 --- Boot Messages ---
-chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The ~Exile Admin Dev Team.")
+chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The ~Exile Admin~ Dev Team.")
 
 --- Module autos ---
 local objs = game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()

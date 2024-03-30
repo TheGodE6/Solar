@@ -105,11 +105,8 @@ end
                         chat("name "..Player.Name.." Stewie Groomed Me")
                         chat("punish "..Player.Name)
                         chat("clone "..Player.Name)
-                 until not Loops.lock 
-        end
+                 until not Loops.lock
 end
-
-
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

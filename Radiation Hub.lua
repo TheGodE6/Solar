@@ -107,8 +107,7 @@ end
                         chat("clone "..Player.Name)
                  until not Loops.lock 
         end
-
-end)
+end
 
 
 --- Credits ---

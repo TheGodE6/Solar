@@ -98,7 +98,7 @@ end
                 end 
         end
 
-        if cmd == prefix .."lock" then
+        local lock = string.sub(msg:lower(), #prefix + 6)
 	local name = string.sub(msg:lower(), #prefix + 8)
                 Loops.lock =  true 
                 repeat task.wait()

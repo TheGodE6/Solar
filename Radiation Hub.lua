@@ -75,7 +75,7 @@ game.Players:Chat("music "..music[math.random(1, #music)])
 end
 
         if cmd == prefix .. "crash" then
-              chat("h \n\n\n Server Closed By ~Exile Admin Script~.\n\n\n")
+              chat("h \n\n\n Server closed by ~Exile Admin~.\n\n\n")
               chat("gear me 00000000000000094794847")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
               local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
@@ -100,7 +100,7 @@ if string.sub(msg:lower(), #prefix + 6) == prefix..'lock' then
                 Loops.lock =  true 
                 repeat task.wait()
               if not game:GetService("Lighting"):FindFirstChild(name) then
-                        chat("name [Exile Admin] "..name.." Stewie Groomed Me")
+                        chat("name [~Exile Admin~] "..name.." Stewie Groomed Me")
                         chat("clone "..name)
                         chat("trip "..name)
                         chat("punish "..name)
@@ -518,12 +518,6 @@ task.spawn(function()
                 				end
                				 end
 				end
-					
-				if gjdelock == true then
-	    				if not v.Character.Humanoid.WalkSpeed == 0 then
-							chat("speed "..v.Name.." 0")
-	   				 end
-				end
 				
 				if ALLantistun == true then
                     			local humanoid = v.Character:WaitForChild("Humanoid", 1)
@@ -560,7 +554,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                if v ~= game.Players.LocalPlayer and anticrash2 == true --[[and not table.find(GWhitelisted, v.Name)]] then
                 c("ungear "..v.Name)
                 chat("punish "..v.Name)
-                chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
+                chat("h \n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
                end
             end
 			
@@ -568,7 +562,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                if v ~= game.Players.LocalPlayer and anticrash2 == true --[[and not table.find(GWhitelisted, v.Name)]] then
                 chat("ungear "..v.Name)
                 chat("punish "..v.Name)
-                chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
+                chat("h \n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
                end
             end
 			
@@ -577,7 +571,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                		if v.Name ~= game.Players.LocalPlayer.Name --[[and not table.find(GWhitelisted, v.Name)]] then
 				chat("ungear "..v.Name)
 				chat("punish "..v.Name)
-                		chat("h \n\n\n [KohlsLite]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
+                		chat("h \n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
 			end
             	end
        	    end
@@ -597,7 +591,7 @@ local function checkwhitelist()
         end
 
         if not isWhitelisted then
-                localplayer:Kick("You are not whitelisted.")
+                localplayer:Kick("[~Exile Admin~]: You are not whitelisted.")
         end
 end
 

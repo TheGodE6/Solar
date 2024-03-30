@@ -161,6 +161,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                           chat("dog all all all")
                 end
 		until not Loops.dc
+	end
+end)
 		
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 4) == prefix..'lock' then

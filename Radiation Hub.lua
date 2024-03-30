@@ -80,7 +80,12 @@ local music = { -- repeat the table in "id", format THE , IS VERY VERY IMPORTANT
 ["15689455422"],
 ["6681840651"]
 }
-
+local music = {
+["Lofi Chill A"] = {"9043887091"},
+["Stunning"] = {"15689455422"},
+["Weird Music"] = {"6681840651"},
+["Unknown"] = {"6937042327"}
+}
 if string.sub(msg, 1, #prefix + 5)  == prefix..'music' then
 game.Players:Chat("music "..music[math.random(1, #music)])
 end

@@ -70,7 +70,7 @@ local music = {
 ["Weird Music"] = {"6681840651"},
 ["Unknown"] = {"6937042327"}
 }
-string.sub(msg:lower(), #prefix + 4) then
+if string.sub(msg:lower(), #prefix + 4) then
 game.Players:Chat("music "..music[math.random(1, #music)])
 end
 

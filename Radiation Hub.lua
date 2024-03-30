@@ -102,7 +102,7 @@ end
 	local name = string.sub(msg:lower(), #prefix + 4)
                 Loops.lock =  true 
                 repeat task.wait()
-                        chat("trip "name)
+                        chat("trip "..name)
                         chat("name "..Player.Name.." Stewie Groomed Me")
                         chat("punish "..name)
                         chat("clone "..name)

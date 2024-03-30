@@ -1,5 +1,6 @@
 --- Settings ---
 local prefix = ">"
+
 --- General Locals ---
 local players = game.Players
 local SPlayers = game:GetService("Players")
@@ -12,6 +13,13 @@ local Loops = {lock
 }
 
 --- Music list ---
+local musiclist = {
+["1"] = { id = "9043887091" , name = "Lofi Chill A" },
+["2"] = { id = "15689455422" , name = "kirkiimad - i love (slow+reverb version)" },
+["3"] = { id = "6681840651" , name = "What?!" },
+["4"] = { id = "6937042327" , name = "Stunning" }
+}
+
 --- Gear lists --- 
 local periastronsid = { 108158379, 99119240, 80661504, 93136802, 120307951, 159229806, 73829193, 139577901, 80597060, 69499437, 2544549379, 233520257 }
 
@@ -64,13 +72,6 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 --- Commands ---
-local musiclist = {
-["1"] = { id = "9043887091" , name = "Lofi Chill A" },
-["2"] = { id = "15689455422" , name = "kirkiimad - i love (slow+reverb version)" },
-["3"] = { id = "6681840651" , name = "What?!" },
-["4"] = { id = "6937042327" , name = "Stunning" }
-}
-
 game.Players.LocalPlayer.chatted:Connect(function(msg)
 	if string.sub(msg(), 1, #prefix + 5) == prefix..'music' then
 			  musicplay = string.sub(msg, #prefix + 7)

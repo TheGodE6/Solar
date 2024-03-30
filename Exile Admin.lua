@@ -153,15 +153,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-        if string.sub(msg:lower(), 1, #prefix + 8) == prefix ..'dogcrash'then
-	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~. \n\n\n\n\n\n")
-                for i = 1,100 do
+        if string.sub(msg:lower(), 1, #prefix + 2) == prefix ..'dc'then
+            chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
+                Loops.dc
+            repeat task.wait()
                           chat("clone all all all")
                           chat("dog all all all")
-                end 
-        end
-end)
-
+                end
+		until not Loops.dc
+		
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 4) == prefix..'lock' then
     		local blacklistables = string.sub(msg:lower(), #prefix + 6)

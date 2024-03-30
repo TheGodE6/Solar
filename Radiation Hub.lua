@@ -73,7 +73,7 @@ local music = {
 ["Weird Music"] = {"6681840651"},
 ["Unknown"] = {"6937042327"}
 }
-if string.sub(msg, 1, #prefix + 5)  == prefix .."music" then
+if cmd == prefix .."music" then
 game.Players:Chat("music "..music[math.random(1, #music)])
 end
 
@@ -99,7 +99,7 @@ end
         end
 
         if cmd == prefix .."lock" then
-	local name = string.sub(msg:lower(), #prefix + 4)
+	local name = string.sub(msg:lower(), #prefix + 8)
                 Loops.lock =  true 
                 repeat task.wait()
                         chat("trip "..name)

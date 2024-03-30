@@ -1,7 +1,6 @@
---- Settings ---
-local prefix = ">"
 
 --- General Locals ---
+local prefix = ">"
 local players = game.Players
 local SPlayers = game:GetService("Players")
 local Kohls = workspace.Terrain:WaitForChild("_Game")

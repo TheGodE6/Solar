@@ -155,7 +155,7 @@ end)
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 2) == prefix ..'dc'then
             chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
-                Loops.dc
+                Loops.dc = true
             repeat task.wait()
                           chat("clone all all all")
                           chat("dog all all all")

@@ -99,12 +99,13 @@ end
         end
 
         if cmd == prefix .."lock" then
+	local name = string.sub(msg:lower(), #prefix + 4)
                 Loops.lock =  true 
                 repeat task.wait()
-                        chat("trip "..Player.Name)
+                        chat("trip "name)
                         chat("name "..Player.Name.." Stewie Groomed Me")
-                        chat("punish "..Player.Name)
-                        chat("clone "..Player.Name)
+                        chat("punish "..name)
+                        chat("clone "..name)
                  until not Loops.lock
 end
 --- Credits ---

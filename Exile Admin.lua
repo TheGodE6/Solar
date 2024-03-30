@@ -2,14 +2,12 @@
 local prefix = ">"
 local players = game.Players
 local SPlayers = game:GetService("Players")
-local Kohls = workspace.Terrain:WaitForChild("_Game")
-local Map = Kohls:WaitForChild("Workspace")
-local Admin = Kohls:WaitForChild("Admin")
-local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local localplayer = game.Players.LocalPlayer
 local Loops = {} -- idk why the fuck u have lock labeled in here have your loops empty 
 
--- Anti settings [you] --
+-- you settings --
+
+--[[
 local YOUantiblind = true
 local YOUantichar = true
 local YOUanticlone = true
@@ -39,12 +37,9 @@ local YOUantispeed = true
 local YOUantispin = true
 local YOUantistun = true
 local YOUantiswag = true
-
--- Other settings [you] --
-local autoff = true
 local autogod = true
 
--- Anti settings [all] --
+-- plr settings --
 local ALLantichar = true
 local ALLanticlone = false
 local ALLantidog = true
@@ -71,6 +66,9 @@ local ALLantispeed = false
 local ALLantispin = true
 local ALLantistun = true
 local ALLantiswag = true
+--]]
+
+-- ^ added the defaults (your antis had "if" statements which had no starting point)
 
 --- Music list ---
 local musiclist = {
@@ -82,6 +80,7 @@ local musiclist = {
 
 --- Gear lists --- 
 local periastronsid = {"108158379", "99119240", "80661504", "93136802", "120307951", "159229806", "73829193", "139577901", "80597060", "69499437", "2544549379", "233520257"}
+-- added "" to the ids ^
 
 --- Execution ---
 local function Remind(msg)
@@ -102,7 +101,7 @@ local function chat(msg)
         game.Players:Chat(msg)
 end
 
-local function onPlayerAdded(player)
+game.Players.ChildAdded:Connect(function(player)
         if player.Name == "dawninja21" or player.Name == "dawninja21alt" then
                 chat("h \n\n\n dawninja21 (owner of Exile Admin) has joined! \n\n\n")
                 print("dawninja21 [owner of Radiation Hub] joined the server!")
@@ -122,54 +121,43 @@ local function onPlayerAdded(player)
         else
                 chat("h \n\n\n\n\n\n\n\n " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n~Exile Admin~")
         end
-end
+	end)
 
-local function onPlayerLeaving(player)
+game.Players.ChildRemoved:Connect(function(player)
         chat("h \n\n\n\n\n\n\n\n " .. player.Name .. " \n has left the game. \n~Exile Admin~")
-end
-
-function PLAYERCHECK(plr)
-  for i, v in pairs(game.Players:GetPlayers()) do
-      if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
-          nplr = v.Name
-	  cplr = v
-          Remind("[debug]: Found "..nplr)
-      end
-  end
-end
+end)
 
 --- Commands ---
-localplayer.Chatted:Connect(function(msg)
+	game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
-              chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~. \n\n\n\n\n\n")
+              chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
+			  task.wait(.5)
               chat("gear me 00000000000000094794847")
-              repeat task.wait() until localplayer.Backpack:WaitForChild("VampireVanquisher")
-              local vg = localplayer.Backpack:FindFirstChild("VampireVanquisher")
-              vg.Parent = localplayer.Character
+              repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
+              local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
+              vg.Parent = game.Players.LocalPlayer.Character
               task.wait(0.2)
               vg:Activate()
               task.wait(.15)
               for i = 1,100 do
                 chat("unsize me me me")
-              end
-	end
-end)
+            end
+		end
+        end)
 
-localplayer.Chatted:Connect(function(msg)
+		game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix ..'dogcrash'then
-	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~. \n\n\n\n\n\n")
+	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
                 for i = 1,100 do
                           chat("clone all all all")
                           chat("dog all all all")
                 end 
         end
-end)
+	end)
 
--- unfinish
-localplayer.Chatted:Connect(function(msg)
+	game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 4) == prefix..'lock' then
-    		local blacklistables = string.sub(msg:lower(), #prefix + 6)
-         	PLAYERCHECK(blacklistables)
+    		local name = string.sub(msg:lower(), #prefix + 6)
                 Loops.lock = true 
                 repeat task.wait()
               		if not game:GetService("Lighting"):FindFirstChild(name) then
@@ -181,7 +169,6 @@ localplayer.Chatted:Connect(function(msg)
 		until not Loops.lock
 	end
 end)
-
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")
@@ -190,9 +177,11 @@ print("TS2021 - I skidded a little bit from him 🧌 but he still supported.")
 print("Razan for helped me so much.")
 
 --- Boot Messages ---
-chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The ~Exile Admin~ Dev Team.")
+chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The ~Exile Admin Dev Team.")
 
 --- Module autos ---
+
+--[[
 local objs = game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()
 for i, obj in pairs(objs) do
         coroutine.wrap(function()
@@ -201,18 +190,19 @@ for i, obj in pairs(objs) do
                 end)
         end)()
 end
+--]]
 
 task.spawn(function()
 	while true do
 	task.wait()
 	if YOUantiblind == true then
-	   for i, v in pairs(localplayer.PlayerGui:GetDescendants()) do
+	   for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
                 if v.Name == "EFFECTGUIBLIND" then
                     v:Destroy()
                 end
             end
-	end
-			
+		end
+		
 	if YOUantigs == true then
 		if game.Workspace.CurrentCamera:FindFirstChild("GrayScale") then
 			game.Workspace.CurrentCamera:FindFirstChild("GrayScale"):Destroy()	
@@ -220,13 +210,13 @@ task.spawn(function()
 	end
 			
 	if YOUanticlone == true then
-	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(localplayer.Name) then
+	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(game.Players.LocalPlayer.Name) then
                 chat("unclone me")
             end
 	end
 
 	if YOUantidog == true then
-		for i,v in pairs(localplayer.Character:GetDescendants()) do
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
 			if v:IsA("Seat") then
 				chat("undog me")
 			end
@@ -234,79 +224,79 @@ task.spawn(function()
 	end
 			
 	if YOUantifire == true then
-	    if localplayer.Character:FindFirstChild("Torso") then
-                if localplayer.Character.Torso:FindFirstChild("Fire") then
+	    if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                if game.Players.LocalPlayer.Character.Torso:FindFirstChild("Fire") then
                     chat("unfire me")
                 end
             end
 	end
 			
 	if YOUantifreeze == true then
-	     if localplayer.Character:FindFirstChild("ice") then
+	     if game.Players.LocalPlayer.Character:FindFirstChild("ice") then
                 chat("thaw me")
             end
 	end
 			
 	if YOUantifly == true then
-	    if not localplayer.Character:FindFirstChild("Seizure") and localplayer.Character.Humanoid:GetState().Name == "PlatformStanding" then
+	    if not game.Players.LocalPlayer.Character:FindFirstChild("Seizure") and game.Players.LocalPlayer.Character.Humanoid:GetState().Name == "PlatformStanding" then
                 chat("unfly me")
                 chat("clip me")
             end
 	end
 			
 	if YOUantiff == true then
-	 if localplayer.Character:FindFirstChild("ForceField") then
+	 if game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
                 chat("unff me")
             end
 	end
 
 	if autoff == true then
-	    if not localplayer.Character:FindFirstChild("ForceField") then
+	    if not game.Players.LocalPlayer.Character:FindFirstChild("ForceField") then
 		chat("ff me")
 		task.wait(0.1)
             end
 	end
 
 	if autogod == true then
-	    if tostring(localplayer.Character.Humanoid.MaxHealth) ~= "inf" then
+	    if tostring(game.Players.LocalPlayer.Character.Humanoid.MaxHealth) ~= "inf" then
     		chat("god me")
-                localplayer.Character.Humanoid.MaxHealth = math.huge
-                localplayer.Character.Humanoid.Health = 9e9            
+                game.Players.LocalPlayer.Character.Humanoid.MaxHealth = math.huge
+                game.Players.LocalPlayer.Character.Humanoid.Health = 9e9            
 	    end
 	end
 			
 	if YOUantiglow == true then
-	   if localplayer.Character:FindFirstChild("PointLight") then
+	   if game.Players.LocalPlayer.Character:FindFirstChild("PointLight") then
                   chat("unglow me")
             end
 	end
 			
 	if YOUantihealthc == true then
-	   if not localplayer.Character.Humanoid.Health == 100 then
+	   if not game.Players.LocalPlayer.Character.Humanoid.Health == 100 then
 		chat("health me 100")         
 	   end
         end
             
 	if YOUantijail == true then
-	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(localplayer.Name .. "'s jail") then
+	    if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(game.Players.LocalPlayer.Name .. "'s jail") then
                 chat("unjail me")
             end
         end
 			
 	if YOUantijump == true then
-	    if not localplayer.Character.Humanoid.JumpPower == 50 then
-                localplayer.Character.Humanoid.JumpPower = 50
+	    if not game.Players.LocalPlayer.Character.Humanoid.JumpPower == 50 then
+                game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
             end
 	end
 			
 	if YOUantikill == true then
-	   if localplayer.Character.Humanoid.Health == 0 then
+	   if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
                     chat("reset me")
                 end
 	end
 			
 	if YOUantimsg == true then
-		for i, v in pairs(localplayer.PlayerGui:GetDescendants()) do
+		for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
                 	if v.Name == "MessageGUI" or v.Name == "Message" or v.Name == "HintGUI" or v.Name == "Ice" then
                     		v:Destroy()
                 	end
@@ -319,37 +309,37 @@ task.spawn(function()
 	end
 			
 	if YOUantiname == true then
-	     if localplayer and localplayer.Character:FindFirstChildOfClass("Model") then
+	     if game.Players.LocalPlayer and game.Players.LocalPlayer.Character:FindFirstChildOfClass("Model") then
 		chat("reset me")
 	     end
 	end
 
 	if YOUantiexplode == true then
-	     if localplayer.Character:FindFirstChild("Explosion") then
+	     if game.Players.LocalPlayer.Character:FindFirstChild("Explosion") then
 		chat("reset me")
 	     end
 	end
 
 	if YOUantichar == true then
-	   if localplayer.UserId ~= localplayer.CharacterAppearanceId then
+	   if game.Players.LocalPlayer.UserId ~= game.Players.LocalPlayer.CharacterAppearanceId then
 	      chat("unchar me")
 	   end
 	end
 			
 	if YOUantiparticles == true then
-	   if localplayer.Character:FindFirstChild("ParticleEmitter") then
+	   if game.Players.LocalPlayer.Character:FindFirstChild("ParticleEmitter") then
                   chat("unparticle me")
             end
 	end
 			
 	if YOUantipunish == true then
-	    if game.Lighting:FindFirstChild(localplayer.Name) then
+	    if game.Lighting:FindFirstChild(game.Players.LocalPlayer.Name) then
                 chat("unpunish me")
             end
 	end
 			
 	if YOUantirocket == true then
-		for i,v in pairs(localplayer.Character:GetChildren()) do
+		for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 			if v.Name == "Rocket" then 
 			     v:Destroy()
 			end
@@ -357,7 +347,7 @@ task.spawn(function()
 	end
 			
 	if YOUantisit == true then
-	   local player = localplayer
+	   local player = game.Players.LocalPlayer
             	 if player.Character then
                     local humanoid = player.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.Sit then
@@ -368,43 +358,43 @@ task.spawn(function()
 	end
 			
 	if YOUantiseizure == true then
-	        if localplayer.Character:FindFirstChild("Seizure") then
+	        if game.Players.LocalPlayer.Character:FindFirstChild("Seizure") then
                 chat("unseizure me")
             end
 	end
 			
 	if YOUantismoke == true then
-	     if localplayer.Character:FindFirstChild("Torso") then
-                if localplayer.Character.Torso:FindFirstChild("Smoke") then
+	     if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                if game.Players.LocalPlayer.Character.Torso:FindFirstChild("Smoke") then
                     chat("unsmoke me")
                 end
             end
 	end
 			
 	if YOUantisparkles == true then
-	    if localplayer.Character:FindFirstChild("Torso") then
-                if localplayer.Character.Torso:FindFirstChild("Sparkles") then
+	    if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                if game.Players.LocalPlayer.Character.Torso:FindFirstChild("Sparkles") then
                     chat("unsparkles me")
                 end
             end
 	end
 			
 	if YOUantispeed == true then
-	    if not localplayer.Character.Humanoid.WalkSpeed == 16 then
-                localplayer.Character.Humanoid.WalkSpeed = 16
+	    if not game.Players.LocalPlayer.Character.Humanoid.WalkSpeed == 16 then
+                game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
             end
 	end
 
 	if YOUantispin == true then
-		if localplayer.Character:FindFirstChild("Torso") then
-                	if localplayer.Character.Torso:FindFirstChild("SPINNER") then
+		if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                	if game.Players.LocalPlayer.Character.Torso:FindFirstChild("SPINNER") then
                     		chat("unspin me")
                 	end
                 end
 	end
 			
 	if YOUantistun == true then
-	    local player = localplayer
+	    local player = game.Players.LocalPlayer
              if player.Character then
                     local humanoid = player.Character:WaitForChild("Humanoid", 1)
                     if humanoid and humanoid.PlatformStand then
@@ -415,16 +405,16 @@ task.spawn(function()
 	end
 
 	if YOUantisetgrav == true then
-		if localplayer.Character:FindFirstChild("Torso") then
-                	if localplayer.Character.Torso:FindFirstChildOfClass("BodyForce") then
-					localplayer.Character.Torso:FindFirstChildOfClass("BodyForce"):Destroy()
+		if game.Players.LocalPlayer.Character:FindFirstChild("Torso") then
+                	if game.Players.LocalPlayer.Character.Torso:FindFirstChildOfClass("BodyForce") then
+					game.Players.LocalPlayer.Character.Torso:FindFirstChildOfClass("BodyForce"):Destroy()
 					chat("respawn me")
 			end
                 end
 	end
 			
 	if YOUantiswag == true then
-		if localplayer.Character:FindFirstChild("EpicCape") then
+		if game.Players.LocalPlayer.Character:FindFirstChild("EpicCape") then
                 	chat("normal me")
 		end
 	end
@@ -436,7 +426,7 @@ task.spawn(function()
 	while true do
 		task.wait()
 		for i, v in ipairs(game.Players:GetPlayers()) do
-			if v.Name ~= localplayer.Name then
+			if v.Name ~= game.Players.LocalPlayer.Name then
 				if ALLanticlone == true then
 	    				if game:GetService("Workspace").Terrain["_Game"].Folder:FindFirstChild(v.Name) then
                 				chat("unclone "..v.Name)
@@ -623,13 +613,12 @@ task.spawn(function()
 	end
 end)
 
-
 game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait()
         for i, v in ipairs(game.Players:GetPlayers()) do
 	    if v.Backpack and v.Character then
             if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
-               if v ~= localplayer and anticrash2 == true --[[and not table.find(GWhitelisted, v.Name)]] then
+               if v ~= game.Players.LocalPlayer and anticrash2 == true  then
                 chat("ungear "..v.Name)
                 chat("punish "..v.Name)
                 chat("h \n\n\n\n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n\n\n\n")
@@ -637,7 +626,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
             end
 			
             if v.Backpack:FindFirstChild("OrinthianSwordAndShield") or v.Character:FindFirstChild("OrinthianSwordAndShield") then
-               if v ~= localplayer and anticrash2 == true --[[and not table.find(GWhitelisted, v.Name)]] then
+               if v ~= game.Players.LocalPlayer and anticrash2 == true  then
                 chat("ungear "..v.Name)
                 chat("punish "..v.Name)
                 chat("h \n\n\n\n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n\n\n\n")
@@ -646,7 +635,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 			
 	    for i, gear in pairs(v.Backpack:GetChildren()) do
             	if gear:IsA("Tool") and antigear2 == true then
-               		if v.Name ~= localplayer.Name --[[and not table.find(GWhitelisted, v.Name)]] then
+               		if v.Name ~= game.Players.LocalPlayer.Name  then
 				chat("ungear "..v.Name)
 				chat("punish "..v.Name)
                 		chat("h \n\n\n\n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n\n\n\n")
@@ -657,20 +646,17 @@ game:GetService("RunService").RenderStepped:Connect(function()
      end 
 end)
 
+--[[
 --- Whitelist ---
 local whitelisted = {"dawninja21","Di33le2","dawninja21alt","ScriptingProgrammer","Exfamous_X"}
 
 local function checkwhitelist()
-        for _, whitelistedName in ipairs(whitelist) do
-                if localplayer.Name == whitelistedName then
+                if table.find(whitelisted,game.Players.LocalPlayer) then
                         isWhitelisted = true
-                break
+				else
+					localplayer:Kick("[~Exile Admin~]: You are not whitelisted.")
                 end
         end
 
-        if not isWhitelisted then
-                localplayer:Kick("[~Exile Admin~]: You are not whitelisted.")
-        end
-end
-
 checkwhitelist()
+--]]

@@ -21,7 +21,7 @@ local YOUantihealthc = true
 local YOUantijail = true
 local YOUantijump = false
 local YOUantikill = true
-local YOUantimsg = true -- always
+local YOUantimsg = false -- always
 local YOUantiname = true
 local YOUantiparticles = false
 local YOUantipunish = true
@@ -38,7 +38,7 @@ local YOUantiswag = true
 
 -- Other settings [you] --
 local autogod = true
-local autoff = true
+local autoff = false
 
 -- Anti settings [others] --
 local ALLantichar = true

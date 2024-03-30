@@ -98,6 +98,16 @@ local function chat(msg)
         game.Players:Chat(msg)
 end
 
+function PLAYERCHECK(plr)
+  for i, v in pairs(game.Players:GetPlayers()) do
+      if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
+          nplr = v.Name
+	  cplr = v
+          Remind("[debug]: Found "..nplr)
+      end
+  end
+end
+
 game.Players.ChildAdded:Connect(function(player)
         if player.Name == "dawninja21" or player.Name == "dawninja21alt" then
                 chat("h \n\n\n dawninja21 (owner of Exile Admin) has joined! \n\n\n")
@@ -127,7 +137,7 @@ end)
 --- Commands ---
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
-              chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
+              chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~. \n\n\n\n\n\n")
               task.wait(.5)
               chat("gear me 00000000000000094794847")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
@@ -144,7 +154,7 @@ end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix ..'dogcrash'then
-	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
+	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~. \n\n\n\n\n\n")
                 for i = 1,100 do
                           chat("clone all all all")
                           chat("dog all all all")
@@ -154,16 +164,20 @@ end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 4) == prefix..'lock' then
-    		local name = string.sub(msg:lower(), #prefix + 6)
-                Loops.lock = true 
-                repeat task.wait()
-              		if not game:GetService("Lighting"):FindFirstChild(name) then
-                        	chat("name "..name.." [~Exile Admin~]\nStewie Groomed Me") -- your exile admin part was before name which means it was looking for a player called [~Exile]
-                        	chat("clone "..name)
-                        	chat("trip "..name)
-                        	chat("punish "..name)
+    		local blacklistables = string.sub(msg:lower(), #prefix + 6)
+		PLAYERCHECK(blacklistables)
+         	if nplr ~= nil then
+			blacklistables = nplr
+			Loops.lock = true 
+                	repeat task.wait()
+              			if not game:GetService("Lighting"):FindFirstChild(blacklistables) then
+                        	chat("name "..blacklistables.." [~Exile Admin~]\n I'm locked cuz I'm bad!")
+                        	chat("clone "..blacklistables)
+                        	chat("trip "..blacklistables)
+                        	chat("punish "..blacklistables)
 			end
-		until not Loops.lock
+			until not Loops.lock
+		end
 	end
 end)
 

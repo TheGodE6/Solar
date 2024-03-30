@@ -127,7 +127,7 @@ game.Players.ChildAdded:Connect(function(player)
                 print("Exfamous_X [dev of Radiation Hub] joined the server!")
 
         else
-                chat("h \n\n\n\n\n\n\n\n " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n~Exile Admin~")
+                chat("h \n\n\n\n\n\n\n\n Username: " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n~Exile Admin~")
         end
 end)
 

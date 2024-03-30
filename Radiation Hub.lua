@@ -130,7 +130,8 @@ local function onPlayerLeaving(player)
 end
 
 --- Commands ---
-        if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
+     game.Players.LocalPlayer.Chatted:Connect(function(msg)
+        if string.sub(msg, 1, #prefix + 5) == prefix .. "crash" then
               chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
               chat("gear me 00000000000000094794847")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
@@ -143,6 +144,7 @@ end
                 chat("unsize me me me")
             end
         end
+        end)
                 
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix ..'dogcrash'then
 	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")

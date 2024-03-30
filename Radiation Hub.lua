@@ -15,13 +15,6 @@ local loops = {lock
 }
 
 --- Music list ---
-local musiclist = {
-["1"] = { id = "6937042327" },
-["2"] = { id = "15689455422" },
-["3"] = { id = "6681840651" },
-["4"] = { id = "9043887091" } 
-}
-
 --- Gear lists --- 
 local periastronsid = { 108158379, 99119240, 80661504, 93136802, 120307951, 159229806, 73829193, 139577901, 80597060, 69499437, 2544549379, 233520257 }
 
@@ -74,12 +67,6 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 --- Commands ---
-local music = { -- repeat the table in "id", format THE , IS VERY VERY IMPORTANT
-["9043887091"],
-["6937042327"],
-["15689455422"],
-["6681840651"]
-}
 local music = {
 ["Lofi Chill A"] = {"9043887091"},
 ["Stunning"] = {"15689455422"},

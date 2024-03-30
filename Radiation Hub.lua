@@ -73,7 +73,7 @@ local music = {
 ["Weird Music"] = {"6681840651"},
 ["Unknown"] = {"6937042327"}
 }
-local music = string.sub(msg:lower(), #prefix + 4) then
+string.sub(msg:lower(), #prefix + 4) then
 game.Players:Chat("music "..music[math.random(1, #music)])
 end
 
@@ -98,7 +98,7 @@ end
                 end 
         end
 
-        local lock = string.sub(msg:lower(), #prefix + 6)
+        string.sub(msg:lower(), #prefix + 6)
 	local name = string.sub(msg:lower(), #prefix + 8)
                 Loops.lock =  true 
                 repeat task.wait()

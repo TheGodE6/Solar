@@ -178,8 +178,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         		chat("punish "..blacklistables)
 				end
 			until not Loops.lock
-		else
-			Remind("Player cannot be found")
 		end
 	end
 end)

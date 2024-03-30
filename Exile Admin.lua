@@ -128,6 +128,16 @@ local function onPlayerLeaving(player)
         chat("h \n\n\n\n\n\n\n\n " .. player.Name .. " \n has left the game. \n~Exile Admin~")
 end
 
+function PLAYERCHECK(plr)
+  for i, v in pairs(game.Players:GetPlayers()) do
+      if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
+          nplr = v.Name
+	  cplr = v
+          Remind("[debug]: Found "..nplr)
+      end
+  end
+end
+
 --- Commands ---
 localplayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
@@ -155,9 +165,11 @@ localplayer.Chatted:Connect(function(msg)
         end
 end)
 
+-- unfinish
 localplayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 4) == prefix..'lock' then
-    		local name = string.sub(msg:lower(), #prefix + 6)
+    		local blacklistables = string.sub(msg:lower(), #prefix + 6)
+         	PLAYERCHECK(blacklistables)
                 Loops.lock = true 
                 repeat task.wait()
               		if not game:GetService("Lighting"):FindFirstChild(name) then

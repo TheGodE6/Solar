@@ -154,9 +154,9 @@ end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 2) == prefix ..'dc'then
-            chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
+            chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~. \n\n\n\n\n\n")
                 Loops.dc = true
-            repeat task.wait()
+                repeat task.wait()
                           chat("clone all all all")
                           chat("dog all all all")
                 end
@@ -173,7 +173,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			Loops.lock = true 
                 	repeat task.wait()
               			if not game:GetService("Lighting"):FindFirstChild(blacklistables) then
-                        	chat("name "..blacklistables.." [~Exile Admin~]\n I'm locked cuz I'm bad!")
+                        	chat("name "..blacklistables.." [~Exile Admin~]\n LOCKED")
                         	chat("clone "..blacklistables)
                         	chat("trip "..blacklistables)
                         	chat("punish "..blacklistables)

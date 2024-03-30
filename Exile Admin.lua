@@ -1,4 +1,3 @@
-
 --- General Locals ---
 local prefix = ">"
 local players = game.Players
@@ -10,7 +9,7 @@ local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local localplayer = game.Players.LocalPlayer
 local Loops = {} -- idk why the fuck u have lock labeled in here have your loops empty 
 
--- you settings --
+-- Anti settings [you] --
 local YOUantiblind = true
 local YOUantichar = true
 local YOUanticlone = true
@@ -40,10 +39,12 @@ local YOUantispeed = true
 local YOUantispin = true
 local YOUantistun = true
 local YOUantiswag = true
+
+-- Other settings [you] --
 local autoff = true
 local autogod = true
 
--- plr settings --
+-- Anti settings [all] --
 local ALLantichar = true
 local ALLanticlone = false
 local ALLantidog = true
@@ -71,8 +72,6 @@ local ALLantispin = true
 local ALLantistun = true
 local ALLantiswag = true
 
--- ^ added the defaults (your antis had "if" statements which had no starting point)
-
 --- Music list ---
 local musiclist = {
 ["1"] = { id = "9043887091" , name = "Lofi Chill A" },
@@ -83,7 +82,6 @@ local musiclist = {
 
 --- Gear lists --- 
 local periastronsid = {"108158379", "99119240", "80661504", "93136802", "120307951", "159229806", "73829193", "139577901", "80597060", "69499437", "2544549379", "233520257"}
--- added "" to the ids ^
 
 --- Execution ---
 local function Remind(msg)
@@ -133,7 +131,7 @@ end
 --- Commands ---
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
-              chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
+              chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~. \n\n\n\n\n\n")
               chat("gear me 00000000000000094794847")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
               local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
@@ -143,13 +141,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
               task.wait(.15)
               for i = 1,100 do
                 chat("unsize me me me")
-            end
-		end
+              end
+	end
 end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix ..'dogcrash'then
-	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
+	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~. \n\n\n\n\n\n")
                 for i = 1,100 do
                           chat("clone all all all")
                           chat("dog all all all")

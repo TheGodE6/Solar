@@ -73,7 +73,7 @@ local music = {
 ["Weird Music"] = {"6681840651"},
 ["Unknown"] = {"6937042327"}
 }
-if cmd == prefix .."music" then
+if cmd == prefix .. "music" then
 game.Players:Chat("music "..music[math.random(1, #music)])
 end
 

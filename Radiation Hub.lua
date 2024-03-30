@@ -8,8 +8,7 @@ local Map = Kohls:WaitForChild("Workspace")
 local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local localplayer = game.Players.LocalPlayer
-local Loops = {lock
-}
+local Loops = {}
 
 --- Music list ---
 local musiclist = {
@@ -20,7 +19,7 @@ local musiclist = {
 }
 
 --- Gear lists --- 
-local periastronsid = { "108158379", "9911924", "80661504", "93136802", "120307951", "159229806, 73829193, 139577901, 80597060, 69499437, 2544549379, 233520257 }
+local periastronsid = { "108158379", "9911924", "80661504", "93136802", "120307951", "159229806, "73829193", "139577901", "80597060", "69499437", "2544549379", "233520257" }
 
 --- Execution ---
 local function Remind(msg)

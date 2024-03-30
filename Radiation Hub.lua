@@ -40,6 +40,7 @@ local YOUantispeed = true
 local YOUantispin = true
 local YOUantistun = true
 local YOUantiswag = true
+local autoff = true
 local autogod = true
 
 -- plr settings --

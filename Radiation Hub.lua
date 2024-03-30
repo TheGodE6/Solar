@@ -98,7 +98,7 @@ end
                 end 
         end
 
-        string.sub(msg:lower(), #prefix + 6)
+        string.sub(msg:lower(), #prefix + 6) == prefix..'lock' then
 	local name = string.sub(msg:lower(), #prefix + 8)
                 Loops.lock =  true 
                 repeat task.wait()

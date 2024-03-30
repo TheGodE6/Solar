@@ -96,7 +96,7 @@ end
         end
 
 if string.sub(msg:lower(), #prefix + 6) == prefix..'lock' then
-    local name = string.sub(msg:lower(), #prefix + 8)
+    local name = string.sub(msg:lower(), #prefix + 4)
                 Loops.lock =  true 
                 repeat task.wait()
               if not game:GetService("Lighting"):FindFirstChild(name) then

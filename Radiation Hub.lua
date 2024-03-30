@@ -8,7 +8,69 @@ local Map = Kohls:WaitForChild("Workspace")
 local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local localplayer = game.Players.LocalPlayer
-local Loops = {}
+local Loops = {} -- idk why the fuck u have lock labeled in here have your loops empty 
+
+-- you settings --
+local YOUantiblind = true
+local YOUantichar = true
+local YOUanticlone = true
+local YOUantidog = true
+local YOUantiexplode = true
+local YOUantiff = true
+local YOUantifire = true
+local YOUantifly = true
+local YOUantifreeze = true
+local YOUantiglow = false
+local YOUantigs = true
+local YOUantihealthc = true
+local YOUantijail = true
+local YOUantijump = false
+local YOUantikill = true
+local YOUantimsg = true -- always
+local YOUantiname = true
+local YOUantiparticles = false
+local YOUantipunish = true
+local YOUantirocket = true -- always
+local YOUantiseizure = true
+local YOUantisetgrav = true
+local YOUantisit = false
+local YOUantismoke = true
+local YOUantisparkles = false
+local YOUantispeed = true
+local YOUantispin = true
+local YOUantistun = true
+local YOUantiswag = true
+local autogod = true
+
+-- plr settings --
+local ALLantichar = true
+local ALLanticlone = false
+local ALLantidog = true
+local ALLantiexplode = true
+local ALLantiff = true
+local ALLantifire = true
+local ALLantifly = false
+local ALLantifreeze = true
+local ALLantiglow = false
+local ALLantihealthc = true
+local ALLantijail = true
+local ALLantijump = false
+local ALLantikill = true
+local ALLantiname = true
+local ALLantiparticles = true
+local ALLantipunish = true
+local ALLantirocket = true
+local ALLantiseizure = true
+local ALLantisetgrav = true
+local ALLantisit = true
+local ALLantismoke = true
+local ALLantisparkles = false
+local ALLantispeed = false
+local ALLantispin = true
+local ALLantistun = true
+local ALLantiswag = true
+
+-- ^ added the defaults (your antis had "if" statements which had no starting point)
 
 --- Music list ---
 local musiclist = {
@@ -19,14 +81,15 @@ local musiclist = {
 }
 
 --- Gear lists --- 
-local periastronsid = { "108158379", "9911924", "80661504", "93136802", "120307951", "159229806, "73829193", "139577901", "80597060", "69499437", "2544549379", "233520257" }
+local periastronsid = {"108158379", "99119240", "80661504", "93136802", "120307951", "159229806", "73829193", "139577901", "80597060", "69499437", "2544549379", "233520257"}
+-- added "" to the ids ^
 
 --- Execution ---
 local function Remind(msg)
         game.StarterGui:SetCore("SendNotification", {
                 Title = "Radiation Hub",
                 Text = msg,
-                Duration = 1
+                Duration = 5.5 -- 1 is too short do 5.5
         })
 end
 
@@ -58,20 +121,17 @@ local function onPlayerAdded(player)
                 print("Exfamous_X [dev of Radiation Hub] joined the server!")
 
         else
-                chat("h \n\n\n " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n~Exile Admin~")
+                chat("h \n\n\n\n\n\n\n\n " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n~Exile Admin~")
         end
 end
 
 local function onPlayerLeaving(player)
-        chat("h \n\n\n " .. player.Name .. " \n has left the game. \n~Exile Admin~")
+        chat("h \n\n\n\n\n\n\n\n " .. player.Name .. " \n has left the game. \n~Exile Admin~")
 end
-
-game.Players.PlayerAdded:Connect(onPlayerAdded)
-game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 --- Commands ---
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
-              chat("h \n\n\n Server closed by ~Exile Admin~.\n\n\n")
+              chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
               chat("gear me 00000000000000094794847")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
               local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
@@ -80,12 +140,12 @@ game.Players.PlayerRemoving:Connect(onPlayerLeaving)
               vg:Activate()
               task.wait(.15)
               for i = 1,100 do
-                          chat("unsize me me me")
-              end
+                chat("unsize me me me")
+            end
         end
                 
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix ..'dogcrash'then
-	        chat("h \n\n\n Server closed by ~Exile Admin~.\n\n\n")
+	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
                 for i = 1,100 do
                           chat("clone all all all")
                           chat("dog all all all")
@@ -97,18 +157,18 @@ game.Players.PlayerRemoving:Connect(onPlayerLeaving)
                 Loops.lock = true 
                 repeat task.wait()
               		if not game:GetService("Lighting"):FindFirstChild(name) then
-                        	chat("name [~Exile Admin~] "..name.." Stewie Groomed Me")
+                        	chat("name "..name.." [~Exile Admin~]\nStewie Groomed Me") -- your exile admin part was before name which means it was looking for a player called [~Exile]
                         	chat("clone "..name)
                         	chat("trip "..name)
                         	chat("punish "..name)
-               		end 
 		until not Loops.lock
+	end 
 	end
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")
 print("WhoIsTano for helping very much even when people called me a skid.")
-print("TS2021 - I skidded a little bit from him 🧌 but he still supported.")
+print("TS2021 - I skidded a little bit from him ð§ but he still supported.")
 print("Razan for helped me so much.")
 
 --- Boot Messages ---
@@ -438,8 +498,11 @@ task.spawn(function()
 				end
 
 				if table.find(loopkill, v.Name) then
+					Loops.kill = true
+					repeat wait()
 					if v.Character.Humanoid.Health ~= 0 then
-                    				chat("kill "..v.Name)
+                    	chat("kill "..v.Name)
+					until not Loops.kill
 					end
         			end
 
@@ -544,14 +607,14 @@ end)
 
 
 game:GetService("RunService").RenderStepped:Connect(function()
-	task.wait(0)
+	task.wait()
         for i, v in ipairs(game.Players:GetPlayers()) do
 	    if v.Backpack and v.Character then
             if v.Backpack:FindFirstChild("VampireVanquisher") or v.Character:FindFirstChild("VampireVanquisher") then
                if v ~= game.Players.LocalPlayer and anticrash2 == true --[[and not table.find(GWhitelisted, v.Name)]] then
-                c("ungear "..v.Name)
+                chat("ungear "..v.Name)
                 chat("punish "..v.Name)
-                chat("h \n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n")
+                chat("h \n\n\n\n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Vampire Vanquisher due to anti crash (2). \n\n\n\n\n\n")
                end
             end
 			
@@ -559,7 +622,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                if v ~= game.Players.LocalPlayer and anticrash2 == true --[[and not table.find(GWhitelisted, v.Name)]] then
                 chat("ungear "..v.Name)
                 chat("punish "..v.Name)
-                chat("h \n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n")
+                chat("h \n\n\n\n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n\n\n\n")
                end
             end
 			
@@ -568,7 +631,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                		if v.Name ~= game.Players.LocalPlayer.Name --[[and not table.find(GWhitelisted, v.Name)]] then
 				chat("ungear "..v.Name)
 				chat("punish "..v.Name)
-                		chat("h \n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n")
+                		chat("h \n\n\n\n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use gears due to anti gear (2). \n\n\n\n\n\n")
 			end
             	end
        	    end

@@ -159,7 +159,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                 repeat task.wait()
                           chat("clone all all all")
                           chat("dog all all all")
-                end
 		until not Loops.dc
 	end
 end)

@@ -179,9 +179,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 				end
 			until not Loops.lock
 		end
-	end
-end)
-
+	end)
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

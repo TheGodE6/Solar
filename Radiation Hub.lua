@@ -1,8 +1,5 @@
 --- Settings ---
-local Settings = {
-prefix = ">",
-}
-
+local prefix = ">"
 --- General Locals ---
 local players = game.Players
 local SPlayers = game:GetService("Players")

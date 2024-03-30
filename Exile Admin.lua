@@ -178,8 +178,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                         		chat("punish "..blacklistables)
 				end
 			until not Loops.lock
+		else
+			Remind("Player cannot be found")
 		end
-	end)
+	end
+end)
+
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

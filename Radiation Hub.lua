@@ -100,13 +100,13 @@ end
 
         string.sub(msg:lower(), #prefix + 6) == prefix..'lock' then
 	local name = string.sub(msg:lower(), #prefix + 8)
-                Loops.lock =  true 
-                repeat task.wait()
-                        chat("trip "..name)
-                        chat("name "..Player.Name.." Stewie Groomed Me")
-                        chat("punish "..name)
+                loops.lock =  true 
+                repeat taskwait()
+                        chat("name [Exile Admin] "..name.." Stewie Groomed Me")
                         chat("clone "..name)
-                 until not Loops.lock
+                        chat("trip "..name)
+                        chat("punish "..name)
+                 until not loops.lock
 end
 --- Credits ---
 print("dawninja21 - OWNER")

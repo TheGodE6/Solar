@@ -98,15 +98,16 @@ end
                 end 
         end
 
-        string.sub(msg:lower(), #prefix + 6) == prefix..'lock' then
-	local name = string.sub(msg:lower(), #prefix + 8)
+string.sub(msg:lower(), #prefix + 6) == prefix..'lock' then
+    local name = string.sub(msg:lower(), #prefix + 8)
                 Loops.lock =  true 
                 repeat task.wait()
+              if not game:GetService("Lighting"):FindFirstChild(name) then
                         chat("name [Exile Admin] "..name.." Stewie Groomed Me")
                         chat("clone "..name)
                         chat("trip "..name)
                         chat("punish "..name)
-                 until not Loops.lock
+                end until not Loops.lock
 end
 --- Credits ---
 print("dawninja21 - OWNER")

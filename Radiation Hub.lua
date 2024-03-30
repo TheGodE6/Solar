@@ -11,7 +11,7 @@ local Map = Kohls:WaitForChild("Workspace")
 local Admin = Kohls:WaitForChild("Admin")
 local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local localplayer = game.Players.LocalPlayer
-local loops = {lock
+local Loops = {lock
 }
 
 --- Music list ---
@@ -100,13 +100,13 @@ end
 
         string.sub(msg:lower(), #prefix + 6) == prefix..'lock' then
 	local name = string.sub(msg:lower(), #prefix + 8)
-                loops.lock =  true 
-                repeat taskwait()
+                Loops.lock =  true 
+                repeat task.wait()
                         chat("name [Exile Admin] "..name.." Stewie Groomed Me")
                         chat("clone "..name)
                         chat("trip "..name)
                         chat("punish "..name)
-                 until not loops.lock
+                 until not Loops.lock
 end
 --- Credits ---
 print("dawninja21 - OWNER")

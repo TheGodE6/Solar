@@ -130,7 +130,7 @@ local function onPlayerLeaving(player)
 end
 
 --- Commands ---
-	game.Players.LocalPlayer.Chatted:Connect(function(msg)
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
               chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
               chat("gear me 00000000000000094794847")
@@ -144,9 +144,9 @@ end
                 chat("unsize me me me")
             end
 		end
-        end)
+end)
 
-		game.Players.LocalPlayer.Chatted:Connect(function(msg)
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix ..'dogcrash'then
 	        chat("h \n\n\n\n\n\n Server closed by ~Exile Admin~.\n\n\n\n\n\n")
                 for i = 1,100 do
@@ -154,9 +154,9 @@ end
                           chat("dog all all all")
                 end 
         end
-	end)
+end)
 
-	game.Players.LocalPlayer.Chatted:Connect(function(msg)
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 4) == prefix..'lock' then
     		local name = string.sub(msg:lower(), #prefix + 6)
                 Loops.lock = true 
@@ -170,6 +170,7 @@ end
 		until not Loops.lock
 	end
 end)
+
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

@@ -183,6 +183,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 end)
 
+if string.sub(msg:lower(), #prefix + 8) == "antikill" then
+	Loops.antikill = true
+	repeat task.wait()
+	if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
+                    chat("reset me")
+                end
+	end
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

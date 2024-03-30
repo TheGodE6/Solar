@@ -171,12 +171,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			blacklistables = nplr
 			Loops.lock = true 
                 	repeat task.wait()
-              			if not game:GetService("Lighting"):FindFirstChild(blacklistables) then
-                        	chat("name "..blacklistables.." [~Exile Admin~]\n LOCKED")
-                        	chat("clone "..blacklistables)
-                        	chat("trip "..blacklistables)
-                        	chat("punish "..blacklistables)
-			end
+              			if not game.Lighting:FindFirstChild(blacklistables) then
+                        		chat("name "..blacklistables.." [~Exile Admin~]\n LOCKED")
+                        		chat("clone "..blacklistables)
+                        		chat("trip "..blacklistables)
+                        		chat("punish "..blacklistables)
+				end
 			until not Loops.lock
 		end
 	end

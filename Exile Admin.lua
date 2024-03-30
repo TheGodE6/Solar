@@ -3,6 +3,7 @@ local prefix = ">"
 local players = game.Players
 local SPlayers = game:GetService("Players")
 local Loops = {}
+local loopkill = {}
 
 -- Anti settings [you] --
 

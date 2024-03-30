@@ -72,12 +72,6 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 --- Commands ---
-game.Players.LocalPlayer.chatted:Connect(function(msg)
-	if string.sub(msg(), 1, #prefix + 5) == prefix..'music' then
-			  musicplay = string.sub(msg, #prefix + 7)
-	    		  chat("music " .. musiclist[musicplay].id)
-	end
-
         if string.sub(msg(), 1, #prefix + 5) == prefix .. "crash" then
               chat("h \n\n\n Server closed by ~Exile Admin~.\n\n\n")
               chat("gear me 00000000000000094794847")
@@ -121,8 +115,7 @@ print("TS2021 - I skidded a little bit from him 🧌 but he still supported.")
 print("Razan for helped me so much.")
 
 --- Boot Messages ---
-chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The Radiation Dev Team.")
-chat("h \n\n\n From now on, this server will be protected thanks to "..game.Players.LocalPlayer.Name..". \n\n\n")
+chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The ~Exile Admin Dev Team.")
 
 --- Module autos ---
 local objs = game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()

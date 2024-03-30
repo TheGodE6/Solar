@@ -64,17 +64,20 @@ game.Players.PlayerAdded:Connect(onPlayerAdded)
 game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 --- Commands ---
-local music = {
-["Lofi Chill A"] = {"9043887091"},
-["Stunning"] = {"15689455422"},
-["Weird Music"] = {"6681840651"},
-["Unknown"] = {"6937042327"}
+local musiclist = {
+["1"] = { id = "9043887091" , name = "Lofi Chill A" },
+["2"] = { id = "15689455422" , name = "kirkiimad - i love (slow+reverb version)" },
+["3"] = { id = "6681840651" , name = "What?!" },
+["4"] = { id = "6937042327" , name = "Stunning" }
 }
-if string.sub(msg(), 1, #prefix + 6) == prefix..'music' then
-game.Players:Chat("music "..music[math.random(1, #music)])
-end
 
-        if cmd == prefix .. "crash" then
+game.Players.LocalPlayer.chatted:Connect(function(msg)
+	if string.sub(msg(), 1, #prefix + 5) == prefix..'music' then
+			  musicplay = string.sub(msg, #prefix + 7)
+	    		  chat("music " .. musiclist[musicplay].id)
+	end
+
+        if string.sub(msg(), 1, #prefix + 5) == prefix .. "crash" then
               chat("h \n\n\n Server closed by ~Exile Admin~.\n\n\n")
               chat("gear me 00000000000000094794847")
               repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
@@ -88,24 +91,27 @@ end
               end
         end
                 
-        if cmd == prefix .. "dogcrash" then
+        if string.sub(msg(), 1, #prefix + 8) == prefix .. "dogcrash" then
+	        chat("h \n\n\n Server closed by ~Exile Admin~.\n\n\n")
                 for i = 1,100 do
                           chat("clone all all all")
                           chat("dog all all all")
                 end 
         end
 
-if string.sub(msg:lower(), #prefix + 6) == prefix..'lock' then
-    local name = string.sub(msg:lower(), #prefix + 4)
-                Loops.lock =  true 
+	if string.sub(msg:lower(), #prefix + 4) == prefix..'lock' then
+    		local name = string.sub(msg:lower(), #prefix + 6)
+                Loops.lock = true 
                 repeat task.wait()
-              if not game:GetService("Lighting"):FindFirstChild(name) then
-                        chat("name [~Exile Admin~] "..name.." Stewie Groomed Me")
-                        chat("clone "..name)
-                        chat("trip "..name)
-                        chat("punish "..name)
-                end until not Loops.lock
-end
+              		if not game:GetService("Lighting"):FindFirstChild(name) then
+                        	chat("name [~Exile Admin~] "..name.." Stewie Groomed Me")
+                        	chat("clone "..name)
+                        	chat("trip "..name)
+                        	chat("punish "..name)
+               		end 
+		until not Loops.lock
+	end
+end)
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

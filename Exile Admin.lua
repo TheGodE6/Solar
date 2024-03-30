@@ -189,6 +189,7 @@ if string.sub(msg:lower(), #prefix + 8) == "antikill" then
 	if game.Players.LocalPlayer.Character.Humanoid.Health == 0 then
                     chat("reset me")
                 end
+	until not Loops.antikill
 	end
 --- Credits ---
 print("dawninja21 - OWNER")

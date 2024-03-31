@@ -195,16 +195,25 @@ end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 7) == 'antimsg' then
-		YOUantimsg = true
+		for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
+			if v.Name == "MessageGUI" or v.Name == "Message" or v.Name == "HintGUI" or v.Name == "Ice" then
+					v:Destroy()
+			end
+		end
+for i, v in pairs(game.Workspace.Terrain["_Game"].Folder:GetDescendants()) do
+	if v.Name == "Message" then
+		v:Destroy()
 	end
-end)
+end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-	if string.sub(msg:lower(), #prefix + 10) == "antipunish" then
-		YOUantipunish == true 
-	end
-end)
-							
+if msg:lower() == ">antipunish" then
+	Loops.antipunish + true
+	    if game.Lighting:FindFirstChild(game.Players.LocalPlayer.Name) then
+                chat("unpunish me")
+            end
+		until not Loops.antipunish
+end
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")
@@ -216,9 +225,17 @@ print("Razan for helped me so much.")
 chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The ~Exile Admin Dev Team.")
 
 --- Module autos ---
-for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do -- also removes obby walls collision 
-        		v.CanTouch = false
+
+--[[
+local objs = game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()
+for i, obj in pairs(objs) do
+        coroutine.wrap(function()
+        	pcall(function()
+                    obj.TouchInterest:Destroy()
+                end)
+        end)()
 end
+--]]
 
 task.spawn(function()
 	while true do
@@ -229,7 +246,7 @@ task.spawn(function()
                     v:Destroy()
                 end
             end
-	end
+		end
 		
 	if YOUantigs == true then
 		if game.Workspace.CurrentCamera:FindFirstChild("GrayScale") then

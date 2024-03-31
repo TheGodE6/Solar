@@ -182,6 +182,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
 	end
 end)
+
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 if string.sub(msg:lower(), #prefix + 8) == "antikill" then
 	Loops.antikill = true

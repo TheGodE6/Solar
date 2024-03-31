@@ -623,8 +623,8 @@ task.spawn(function()
 
 				if ALLantispin == true then
 					if v.Character:FindFirstChild("Torso") then
-                				if v.Torso:FindFirstChild("SPINNER") then
-                    					chat("unspin "..v.Name)
+                				if v.Character.Torso:FindFirstChild("SPINNER") then
+                    					Chat("unspin "..v.Name)
                 				end
                				 end
 				end

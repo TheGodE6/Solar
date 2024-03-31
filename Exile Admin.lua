@@ -166,11 +166,13 @@ end)
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 4) == prefix..'lock' then
     		local blacklistables = string.sub(msg:lower(), #prefix + 6)
+		local name = string.sub(msg:lower(), #prefix + 4)
 		PLAYERCHECK(blacklistables)
          	if nplr ~= nil then
 			blacklistables = nplr
 			Loops.lock = true 
                 	repeat task.wait()
+				insert.table(blacklistables, name)
               			if not game.Lighting:FindFirstChild(blacklistables) then
                         		chat("name "..blacklistables.." [~Exile Admin~]\n LOCKED")
                         		chat("clone "..blacklistables)
@@ -181,6 +183,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 		end
 	end
 end)
+
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	if string.sub(msg:lower(), #prefix + 8) == "antikill" then

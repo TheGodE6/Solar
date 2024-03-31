@@ -39,7 +39,7 @@ local YOUantiswag = true
 
 -- Other settings [you] --
 local autogod = true
-local autoff = false
+local autoff = true
 
 -- Anti settings [others] --
 local ALLantichar = true

@@ -4,7 +4,6 @@ local players = game.Players
 local SPlayers = game:GetService("Players")
 local Loops = {}
 local loopkill = {}
-
 -- Anti settings [you] --
 
 local YOUantiblind = true
@@ -192,6 +191,28 @@ if string.sub(msg:lower(), #prefix + 8) == "antikill" then
                 end
 	until not Loops.antikill
 	end
+end
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+	if string.sub(msg:lower(), #prefix + 7) == 'antimsg' then
+		for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
+			if v.Name == "MessageGUI" or v.Name == "Message" or v.Name == "HintGUI" or v.Name == "Ice" then
+					v:Destroy()
+			end
+		end
+for i, v in pairs(game.Workspace.Terrain["_Game"].Folder:GetDescendants()) do
+	if v.Name == "Message" then
+		v:Destroy()
+	end
+end
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if msg:lower() == ">antipunish" then
+	if YOUantipunish == true then
+	    if game.Lighting:FindFirstChild(game.Players.LocalPlayer.Name) then
+                chat("unpunish me")
+            end
+end
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

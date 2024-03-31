@@ -194,17 +194,27 @@ if string.sub(msg:lower(), #prefix + 8) == "antikill" then
 end
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-	if string.sub(msg:lower(), #prefix + 7) == 'antimsg' then
-		YOUantimsg = true
+	if string.sub(msg:lower(), #prefix + 7) == 'antipunish' then
+				Loops.antipunish = true
+				repeat task.wait()
+ if game.Lighting:FindFirstChild(game.Players.LocalPlayer.Name) then
+                chat("unpunish me")
+            end
+				until not Loops.antipunish				
 	end
-end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-	if string.sub(msg:lower(), #prefix + 10) == "antipunish" then
-		YOUantipunish == true 
-	end
-end)
-							
+	if string.sub(msg:lower(), #prefix + 7) == "antimsg" then
+for i, v in pairs(game.Players.LocalPlayer.PlayerGui:GetDescendants()) do
+                	if v.Name == "MessageGUI" or v.Name == "Message" or v.Name == "HintGUI" or v.Name == "Ice" then
+                    		v:Destroy()
+                	end
+                end
+		for i, v in pairs(game.Workspace.Terrain["_Game"].Folder:GetDescendants()) do
+			if v.Name == "Message" then
+				v:Destroy()
+			end
+		end				
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

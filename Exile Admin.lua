@@ -172,8 +172,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 			blacklistables = nplr
 			Loops.lock = true 
                 	repeat task.wait()
-				insert.table(blacklistables, name)
               			if not game.Lighting:FindFirstChild(blacklistables) then
+						table.insert(blacklistables, name)
                         		chat("name "..blacklistables.." [~Exile Admin~]\n LOCKED")
                         		chat("clone "..blacklistables)
                         		chat("trip "..blacklistables)

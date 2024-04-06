@@ -42,15 +42,6 @@ end
 -- Prefix --
 local prefix = ">" -- This can be of any length
 
---- Execution ---
-local function Remind(msg)
-        game.StarterGui:SetCore("SendNotification", {
-                Title = "Radiation Hub",
-                Text = msg,
-                Duration = 5.5 -- 1 is too short do 5.5
-        })
-end
-
 --- Startup commands ---
 local defaults = {}
 

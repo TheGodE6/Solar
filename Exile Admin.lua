@@ -1,6 +1,12 @@
 -- Loops --
 local Loops = {}
 
+-- general locals--
+local wl = {} ---wl person on sight
+local rkick = [] --- rkick on sight
+local pmkick = {} -- auto pmkick on sight
+local lock = {} -- auto lock on sight
+
 -- Remind --
 local function Remind(msg)
 	game.StarterGui:SetCore("SendNotification", {

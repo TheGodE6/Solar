@@ -222,6 +222,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 	end
 end)
 
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+local rkick = string.sub(msg:lower(), #prefix + 5)
+if string.sub(msg:lower(), #prefix + 6) == ">rkick" then
+			
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

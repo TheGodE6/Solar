@@ -224,6 +224,10 @@ game.Players.ChildAdded:Connect(function(player)
                 chat("h \n\n\n Exfamous_X (dev of Exile Admin) has joined! \n\n\n")
                 print("Exfamous_X [dev of Radiation Hub] joined the server!")
 
+	elseif player.Name == "3cxos" then 
+                chat("h \n\n\n Cxo (dev of Exile Admin) has joined! \n\n\n")
+                print("Exfamous_X [dev of Radiation Hub] joined the server!")
+
         else
                 chat("h \n\n\n\n\n\n\n\n Username: " .. player.Name .. " \n Age: " .. player.AccountAge .. " \nhas joined the game. \n~Exile Admin~")
         end

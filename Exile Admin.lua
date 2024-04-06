@@ -198,7 +198,7 @@ print("Razan for helped me so much.")
 
 --- Boot Messages ---
 chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The ~Exile Admin Dev Team.")
-speak("Exile Admin Loaded! [Exile Admin]: Please Message stewiegod1090 For Support!")
+speak("Exile Admin Loaded! [Exile Admin]: Made By StewieCat Please Dm stewiecatgod1090 For Support!")
 
 --- Module autos ---
 for i, v in pairs(game:GetService("Workspace").Terrain["_Game"].Workspace.Obby:GetChildren()) do -- also removes obby walls collision

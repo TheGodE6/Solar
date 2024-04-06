@@ -134,6 +134,11 @@ game.Players.ChildRemoved:Connect(function(player)
         chat("h \n\n\n\n\n\n\n\n " .. player.Name .. " \n has left the game. \n~Exile Admin~")
 end)
 
+local function Antilogs()
+      for i = 1,100 do
+		chat("[Exile Admin]: Exile Admin On Top )!#&)(!&#!_@*!#&!&#_!@&*_!&@(*")
+      end
+end
 --- Commands ---
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. "crash" then
@@ -224,8 +229,13 @@ end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
 local rkick = string.sub(msg:lower(), #prefix + 5)
-if string.sub(msg:lower(), #prefix + 6) == ">rkick" then
-			
+if string.sub(msg:lower(), #prefix + 5) == prefix.."rkick" then
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if string.sub(msg:lower(), #prefix + 8) == prefix.."antilogs" then
+		Antilogs()				
+					end
+				end
 --- Credits ---
 print("dawninja21 - OWNER")
 print("Gojo for SimpleKAH v2. He taught me very well and I wouldn't know how to make this script without him.")

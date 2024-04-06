@@ -3,7 +3,7 @@ local Loops = {}
 
 -- general locals--
 local wl = {} ---wl person on sight
-local rkick = [] --- rkick on sight
+local rkick = {} --- rkick on sight
 local pmkick = {} -- auto pmkick on sight
 local lock = {} -- auto lock on sight
 
@@ -35,7 +35,7 @@ local periastronsid = {"108158379", "99119240", "80661504", "93136802", "1203079
 -- Check execution --
 if _G.kohlsexecuted then 
 	return 
-	Remind("You've already executed KohlsLite!") 
+	Remind("You've already executed ~Exile ADmin SCript~") 
 end
 
 _G.kohlsexecuted = true

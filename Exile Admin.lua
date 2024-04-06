@@ -4,7 +4,7 @@ local Loops = {}
 -- Remind --
 local function Remind(msg)
 	game.StarterGui:SetCore("SendNotification", {
-		Title = "KohlsLite",
+		Title = "~Exile Admin Script~",
 		Text = msg,
 		Duration = 1
 	})
@@ -40,7 +40,7 @@ local function speak(msg)
 end
 
 -- Prefix --
-local prefix = "." -- This can be of any length
+local prefix = ">" -- This can be of any length
 
 --- Execution ---
 local function Remind(msg)

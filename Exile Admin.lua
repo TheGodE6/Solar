@@ -13,7 +13,7 @@ local YOUantidog = true
 local YOUantiexplode = true
 local YOUantiff = false
 local YOUantifire = true
-local YOUantifly = true
+local YOUantifly = false
 local YOUantifreeze = true
 local YOUantiglow = false
 local YOUantigs = true
@@ -33,7 +33,7 @@ local YOUantismoke = true
 local YOUantisparkles = false
 local YOUantispeed = true
 local YOUantispin = true
-local YOUantistun = true
+local YOUantistun = false
 local YOUantiswag = true
 
 -- Other settings [you] --
@@ -233,7 +233,7 @@ print("Razan for helped me so much.")
 chat("h \n\n\n\n\n\n ~Exile Admin~ V3.17 Loaded! \n\n\n\n\n\n Made By The ~Exile Admin Dev Team.")
 
 --- Module autos ---
-for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do -- also removes obby walls collision 
+for i, v in pairs(game:GetService("Workspace").Terrain["_Game"].Workspace.Obby:GetChildren()) do -- also removes obby walls collision
         		v.CanTouch = false
 end
 

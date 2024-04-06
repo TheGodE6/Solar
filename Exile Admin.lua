@@ -151,7 +151,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 end)
 
 -- Anti Crash/Gear --
-function anticrash()
 game:GetService("RunService").RenderStepped:Connect(function()
 	task.wait()
         for i, v in ipairs(game.Players:GetPlayers()) do
@@ -171,8 +170,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
                 chat("h \n\n\n\n\n\n [~Exile Admin~]: Sorry, "..v.Name.. ", you cannot use the Orinthian Sword and Shield due to anti crash (2). \n\n\n\n\n\n")
                end
             end
-
-	function antigear()	
+	
 	    for i, gear in pairs(v.Backpack:GetChildren()) do
             	if gear:IsA("Tool") and antigear2 == true then
                		if v.Name ~= game.Players.LocalPlayer.Name  then

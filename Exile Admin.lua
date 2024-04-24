@@ -319,6 +319,8 @@ game.Players.ChildAdded:Connect(function(player)
         end
 end)
 
+									local blacklist = msg:sub(1,9)
+
 game.Players.ChildRemoved:Connect(function(player)
         chat("h \n\n\n\n\n\n\n\n " .. player.Name .. " \n has left the game. \n~Exile Admin~")
 end)

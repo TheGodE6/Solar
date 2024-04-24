@@ -1,3 +1,5 @@
+-- Deprecated DO NOT USE--
+
 -- Loops --
 local Loops = {}
 

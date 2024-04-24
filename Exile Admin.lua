@@ -1,5 +1,6 @@
 -- Deprecated DO NOT USE--
-
+----Credits----
+Corev6 devs, cxo, kohlslite owner- ts2021
 -- Loops --
 local Loops = {}
 

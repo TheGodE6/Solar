@@ -1,6 +1,6 @@
 -- Deprecated DO NOT USE--
 ----Credits----
-Corev6 devs, cxo, kohlslite owner- ts2021
+--_Corev6 devs, cxo, kohlslite owner- ts2021---
 -- Loops --
 local Loops = {}
 
@@ -46,6 +46,9 @@ end
 
 _G.kohlsexecuted = true
 
+----msgsplit----
+local msgsplit = string.lower(msg):split(" ")
+local args = msgsplit[1]
 -- Speak --
 local function speak(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")

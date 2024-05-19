@@ -3,6 +3,7 @@
 --_Corev6 devs, cxo, kohlslite owner- ts2021---
 -- Loops --
 local Loops = {}
+getgenv().webhooks = true
 
 -- general locals--
 local wl = {} ---wl person on sight

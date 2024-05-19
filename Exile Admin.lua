@@ -1,6 +1,6 @@
 -- Deprecated DO NOT USE--
 ----Credits----
---_Corev6 devs, cxo, kohlslite owner- ts2021---
+---Corev6 devs, cxo, kohlslite owner- ts2021---
 -- Loops --
 local Loops = {}
 getgenv().webhooks = true

@@ -4,7 +4,7 @@
 -- Loops --
 local Loops = {}
 getgenv().webhooks = true
-
+getgenv().Premium = false
 -- general locals--
 local wl = {} ---wl person on sight
 local rkicker = {} --- rkick on sight

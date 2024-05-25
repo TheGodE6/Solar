@@ -61,7 +61,7 @@ addcommand("pmkick",{"player"},function()
 chat("pm"..v.Name.." [Radiation Hub]: 😖🙂‍↔️😖🙂‍↔️😫😒😩😞😞😖😞🙂‍↔️😩🙂‍↔️😞😞😩😞😞😖😞😖😞😫😞😖😞😖🥳")
                   chat("freeze "..v.Name)
 chat("rainbowify "..v.Name)
-chat("name " .. v.Name .. " "..srcname.."\n Currently Getting Kicked.")
+chat("name " .. v.Name .. " [Radiation Hub]:\n Currently Getting Kicked.")
 until not Loops.pmkick
 end
 end)

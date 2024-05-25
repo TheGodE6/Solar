@@ -198,6 +198,10 @@ servermsg("Server Purged By "..srcname)
 task.wait(0.0005)
 purge()
 end)
+
+addcommand("altkick",{},function()
+notify("This Command Is In Progress")
+end)
 ------Gear codes----
 local periastronsid = {"108158379", "99119240", "80661504", "93136802", "120307951", "159229806", "73829193", "139577901", "80597060", "6949943", "2544549379", "233520257"}
 --------Execution--------

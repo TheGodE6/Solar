@@ -1,4 +1,3 @@
----------DARK V1--------------
 ---------SETTINGS-------------
 local settings = {
 ["AutoRun"] = {}, -- Set To Any Value

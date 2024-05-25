@@ -6,6 +6,7 @@ local settings = {
 ["Prefix"] = ">" -- Set This To Any Value
 }
 ----General Locals----
+local args = string.split(msg, " ")
 local GetPlayers = game:GetService("Players")
 local gojo = false
 local prefix = settings["Prefix"]

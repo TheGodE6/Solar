@@ -4,7 +4,7 @@ local settings = {
 ["AutoRun"] = {}, -- Set To Any Value
 ["Default Whitelisted"] = {}, -- Default whitelisted
 ["Prefix"] = ">" -- Set This To Any Value
-["joins"] -- soon
+["joins"] = true,
 }
 ----General Locals----
 getgenv().joins = true
@@ -208,6 +208,15 @@ addcommand("notify",{"player"},function(args)
 for i,v in pairs(GetPlayers(args[1])) do
 chat("pm "..v.Name.." You Have Been Warned.")
 end)
+
+addcommand("supportlist",{},function()
+notify("This Script Does Not Run On Solara.")
+notify("This Script Runs On Arceus X")
+notify("This Script Runs On Codex")
+notify("This Script Runs On Wave")
+notify("This Script Does Not Run On Incognito")
+notify("Credits To Corev6 Dev Team.")
+end)
 ------Gear codes----
 local periastronsid = {"108158379", "99119240", "80661504", "93136802", "120307951", "159229806", "73829193", "139577901", "80597060", "6949943", "2544549379", "233520257"}
 --------Execution--------
@@ -324,7 +333,7 @@ local whitelist = {
 
 local function checkwhitelist()
           for _, whitelistedName in ipairs(whitelist) do
-                  if localplayer.Name == whitelistedName then
+                  if lp.Name == whitelistedName then
                         isWhitelisted = true
                   break
                   end

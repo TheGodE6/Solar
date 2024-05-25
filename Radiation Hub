@@ -20,7 +20,7 @@ local commandlist = {}
 -----MUSIC LIST--------
 local musiclist = {
 ["1"] = { id = "6937042327" },
-["2"] = { id = "15689455422" }
+["2"] = { id = "15689455422", name = "BB-Balls" }
 }
 ---COMMAND HANDLER---
   function addcommand(name,args,func)
@@ -320,7 +320,6 @@ notify("Game Supported!")
 
 
 ----joins-----
-for joins do
 local function onPlayerAdded(player)
     Chat("h\n\n\n\n\n\n\n☢️Radiation Hub☢️\n" .. player.Name .. " \nAge: "..player.AccountAge.." \nhas joined the game.\☢️Radiation Hub☢️\n\n\n\n\n\n\n")
 end

@@ -236,7 +236,7 @@ local function chat(msg)
 end
 
 local function onPlayerAdded(player)
-if joins = true then
+if getgenv().joins = true then
       chat("pm "..player.Name.." Welcome, "..player.Name.."\nThis Server Is Protected By ☢️Radiation Hub☢️ Hope You Enjoy Your Stay!")
 end
 

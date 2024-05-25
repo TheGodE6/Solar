@@ -2,8 +2,8 @@
 local settings = {
 ["AutoRun"] = {}, -- Set To Any Value
 ["Default Whitelisted"] = {}, -- Default whitelisted
-["Prefix"] = ">" -- Set This To Any Value
-["joins"] = true,
+["Prefix"] = ">", -- Set This To Any Value
+["joins"] = true
 }
 ----General Locals----
 getgenv().joins = true
@@ -30,7 +30,7 @@ end
 ---COMMANDS---
 addcommand("crash",{},function()  
 chat("blind all")
-servermsg("This Server Has Been Closed Due To An Issue.\nRadiation Hub.)
+servermsg("This Server Has Been Closed Due To An Issue.\nRadiation Hub.")
 task.wait(0.0005)
 dcrash()
 end)
@@ -206,7 +206,7 @@ end)
 addcommand("notify",{"player"},function(args)
 for i,v in pairs(GetPlayers(args[1])) do
 chat("pm "..v.Name.." You Have Been Warned.")
-end)
+end
 
 addcommand("supportlist",{},function()
 notify("This Script Does Not Run On Solara.")
@@ -236,7 +236,6 @@ local function chat(msg)
 end
 
 local function onPlayerAdded(player)
-if getgenv().joins = true then
       chat("pm "..player.Name.." Welcome, "..player.Name.."\nThis Server Is Protected By ☢️Radiation Hub☢️ Hope You Enjoy Your Stay!")
 end
 
@@ -347,5 +346,6 @@ checkwhitelist()
 end
 end
 end
+end)
 end)
 end)

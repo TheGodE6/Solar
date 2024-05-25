@@ -4,8 +4,10 @@ local settings = {
 ["AutoRun"] = {}, -- Set To Any Value
 ["Default Whitelisted"] = {}, -- Default whitelisted
 ["Prefix"] = ">" -- Set This To Any Value
+["joins"] -- soon
 }
 ----General Locals----
+getgenv().joins = true
 local args = string.split(msg, " ")
 local gojo = false
 local prefix = settings["Prefix"]
@@ -29,7 +31,7 @@ end
 ---COMMANDS---
 addcommand("crash",{},function()  
 chat("blind all")
-servermsg("This Server Has Been Closed Due To An Issue.\n"..srcname)
+servermsg("This Server Has Been Closed Due To An Issue.\nRadiation Hub.)
 task.wait(0.0005)
 dcrash()
 end)
@@ -226,8 +228,8 @@ local function chat(msg)
 end
 
 local function onPlayerAdded(player)
-if getgenv().joins = true then
-      chat("pm "..player.Name.." Welcome, "..player.Name.."\nThis Server Is Protected By Radiation Hub Hope You Enjoy Your Stay!")
+if joins = true then
+      chat("pm "..player.Name.." Welcome, "..player.Name.."\nThis Server Is Protected By ☢️Radiation Hub☢️ Hope You Enjoy Your Stay!")
 end
 
 game.Players.PlayerAdded:Connect(onPlayerAdded)

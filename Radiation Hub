@@ -226,15 +226,11 @@ local function chat(msg)
 end
 
 local function onPlayerAdded(player)
-      chat("h \n\n\n [System]: "..player.Name.." Has Joined The Server.\n\n\n")
-end
-
-local function onPlayerLeaving(player)
-chat("h \n\n\n [System]: "..player.Name.." Has Left The Server.\n\n\n")
+if getgenv().joins = true then
+      chat("pm "..player.Name.." Welcome, "..player.Name.."\nThis Server Is Protected By Radiation Hub Hope You Enjoy Your Stay!")
 end
 
 game.Players.PlayerAdded:Connect(onPlayerAdded)
-game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 function dcrash()
 for i = 1,100 do
@@ -317,20 +313,6 @@ print("idk")
 game.Players:Chat("h \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n☢️Radiation Hub☢️ V2.17 Loaded!\n\n\nMade By The Radiation Dev Team.")
 notiy("Game Name: Kohls Admin House")
 notify("Game Supported!")
-
-
-----joins-----
-local function onPlayerAdded(player)
-    Chat("h\n\n\n\n\n\n\n☢️Radiation Hub☢️\n" .. player.Name .. " \nAge: "..player.AccountAge.." \nhas joined the game.\☢️Radiation Hub☢️\n\n\n\n\n\n\n")
-end
-
-local function onPlayerLeaving(player)
-    Chat("h \n\n\n\n\n\n\n☢️Radiation Hub☢️\n" .. player.Name .. " \nhas left the game.\n☢️Radiation Hub☢️\n\n\n\n\n\n\n")
-end
-
-game.Players.PlayerAdded:Connect(onPlayerAdded)
-game.Players.PlayerRemoving:Connect(onPlayerLeaving)
-end
 -------Whitelist-------
 local whitelist = {
 "dawninja21",

@@ -7,7 +7,6 @@ local settings = {
 }
 ----General Locals----
 local args = string.split(msg, " ")
-local GetPlayers = game:GetService("Players")
 local gojo = false
 local prefix = settings["Prefix"]
 local Loops = {}

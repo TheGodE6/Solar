@@ -8,7 +8,6 @@ local settings = {
 ----General Locals----
 getgenv().rhVersion = "0.27"
 getgenv().joins = true
-local args = string.split(msg, " ")
 local gojo = false
 local prefix = settings["Prefix"]
 local Loops = {}
@@ -56,7 +55,11 @@ function getCommand(param1)
         end
     return fat
 end
+
+local args = string.split(msg, " ")
+local msgsplit = string.lower(msg):split(" ")
 ---COMMANDS---
+game.Players.LocalPlayer.Chatted:Connect(function(commandlist)
 addcommand("crash",{},function()  
 chat("blind all")
 servermsg("This Server Has Been Closed Due To An Issue.\nRadiation Hub.")

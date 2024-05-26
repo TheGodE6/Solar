@@ -61,7 +61,7 @@ function runCommand(param1, specargs)
 end
 
 -- Function shit --
-function servermsg(name,text)
+function servermsg(name, text)
     if PersonsAdmin then
         game.Players:Chat("h/"..string.rep("\n",34).."["..name.."]")
         game.Players:Chat("h/"..string.rep("\n",36)..text)

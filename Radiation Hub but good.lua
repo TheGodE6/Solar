@@ -61,7 +61,7 @@ function runCommand(param1, specargs)
 end
 
 -- Function shit --
-function GUI:SendMessage(name,text)
+function servermsg(name,text)
     if PersonsAdmin then
         game.Players:Chat("h/"..string.rep("\n",34).."["..name.."]")
         game.Players:Chat("h/"..string.rep("\n",36)..text)
@@ -73,10 +73,6 @@ end
 
 function chat(msg)
         game.Players:Chat(msg)
-end
-
-function servermsg(msg)
-        chat("h \n\n\n ["..srcname.."]: "..msg.." \n\n\n")
 end
 
 function aservermsg(msg)

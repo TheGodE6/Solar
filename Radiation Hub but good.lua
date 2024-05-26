@@ -4,6 +4,10 @@ He was such a skid that I (ts2021) had to fix it
 If you're going to skid, do it right! xd
 ]]
 
+--[[
+Ts i am not a skid my script is inspired by urs.
+and also tip how did i skid?
+]]
 -- Settings --
 local Settings = {
     ["Autorun Commands"] = {}, -- Commands to run automatically

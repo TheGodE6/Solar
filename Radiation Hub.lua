@@ -338,7 +338,7 @@ local function checkwhitelist()
           end
 
           if not isWhitelisted then
-                localplayer:Kick("You are not whitelisted.")
+                lp:Kick("You are not whitelisted.")
           end
     end
 

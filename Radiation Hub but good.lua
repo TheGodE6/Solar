@@ -1,6 +1,8 @@
--- TheGodE6 is a skid
--- if you're going to skid do it right xd - ts2021
--- i dont condone on this
+--[[
+TheGodE6 is a skid!
+He was such a skid that I (ts2021) had to fix it
+If you're going to skid, do it right! xd
+]]
 
 -- Settings --
 local Settings = {
@@ -22,6 +24,8 @@ local GUI = {}
 
 local prefix = Settings["Prefix"]
 local srcname = Settings["Script Name"]
+
+local lp = game.Players.LocalPlayer
 
 -- Command shit --
 function addCommand(name,args,func)
@@ -148,6 +152,14 @@ addCommand("purge",{},function()
         purge()
 end)
 
+-- Credits section --
+addCommand("credits",{},function()
+        print("dawninja21 (me) - owner")
+        print("WhoIsTano - helped me very much even when people called me a skid.")
+        print("ts2021 - i skidded a little bit from him  but he still supported me.")
+        print("Razan - helped me so much")
+end)
+
 -- Command handler shit
 Connections.Chatted = game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if not running then 
@@ -177,3 +189,27 @@ Connections.Chatted = game.Players.LocalPlayer.Chatted:Connect(function(msg)
               end
     end
 end)
+
+-- Whitelist section --
+local whitelist = {
+"dawninja21",
+"Di33le2",
+"ScriptingProgrammer"
+}
+
+local isWhitelisted = false
+
+function checkwhitelist()
+          for _, whitelistedName in ipairs(whitelist) do
+                  if lp.Name == whitelistedName then
+                        isWhitelisted = true
+                  break
+                  end
+          end
+
+          if not isWhitelisted then
+                lp:Kick("You are not whitelisted. Please wait for the official release of this script.")
+          end
+end
+
+checkwhitelist()

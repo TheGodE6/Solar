@@ -6,6 +6,7 @@ local settings = {
 ["joins"] = true
 }
 ----General Locals----
+getgenv().rhVersion = "0.27"
 getgenv().joins = true
 local args = string.split(msg, " ")
 local gojo = false
@@ -229,7 +230,7 @@ end;
 ------StartUp Commands------
 notify("Radiation Hub Executed!")
 chat("vrtx")
-servermsg("Radiation Hub Loaded!")
+servermsg("☢️Radiation Hub☢️ Loaded!\n Made By The ☢️Radiation Dev Team☢️\n Version: "..getgenv().rhVersion.."")
 -------FUNCTIONS-------
 local function chat(msg)
     game.Players:Chat(msg)
@@ -319,7 +320,6 @@ print("ts2021 i skid a little bit from him 🧌 but he still supported")
 print("Razan Helped me sm")
 print("idk")
 ------Boot Messages------
-game.Players:Chat("h \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n☢️Radiation Hub☢️ V2.17 Loaded!\n\n\nMade By The Radiation Dev Team.")
 notiy("Game Name: Kohls Admin House")
 notify("Game Supported!")
 -------Whitelist-------

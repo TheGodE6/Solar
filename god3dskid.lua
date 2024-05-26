@@ -141,7 +141,7 @@ addCommand("ecrash",{},function()
             fcrash()
 end)
 
-addcommand("purge",{},function()
+addCommand("purge",{},function()
         chat("blind all")
         aservermsg("Server purged by "..srcname)
         task.wait(0.0005)

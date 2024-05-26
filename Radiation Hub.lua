@@ -25,7 +25,7 @@ local musiclist = {
 ["2"] = { id = "15689455422", name = "BB-Balls" }
 }
 ---COMMAND HANDLER---
-  function addcommand(name,args,func)
+  function addcommand(name,args,func) --Credits To ii Admin
     table.insert(commandlist,{name,args,func})
 end
 

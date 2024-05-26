@@ -56,8 +56,7 @@ function getCommand(param1)
     return fat
 end
 
-local args = string.split(msg, " ")
-local msgsplit = string.lower(msg):split(" ")
+local args = {}
 ---COMMANDS---
 game.Players.LocalPlayer.Chatted:Connect(function(commandlist)
 addcommand("crash",{},function()  

@@ -1,13 +1,3 @@
---[[
-TheGodE6 is a skid!
-He was such a skid that I (ts2021) had to fix it
-If you're going to skid, do it right! xd
-]]
-
---[[
-Ts i am not a skid my script is inspired by urs.
-and also tip how did i skid?
-]]
 -- Settings --
 local Settings = {
     ["Autorun Commands"] = {}, -- Commands to run automatically
@@ -61,6 +51,8 @@ function runCommand(param1, specargs)
 end
 
 -- Function shit --
+
+-- bruh why did you change the code here but nothing else
 function servermsg(name, text)
     if PersonsAdmin then
         game.Players:Chat("h/"..string.rep("\n",34).."["..name.."]")

@@ -7,6 +7,7 @@ local settings = {
 ["Srcname"] = "☢️Radiation Hub☢️"
 }
 ----General Locals----
+local args = {}
 getgenv().rhVersion = "0.27"
 getgenv().joins = true
 local srcname = settings["Srcname"]
@@ -25,40 +26,6 @@ local musiclist = {
 ["1"] = { id = "6937042327" },
 ["2"] = { id = "15689455422", name = "BB-Balls" }
 }
----COMMAND HANDLER---
-  function addcommand(name,args,func) --Credits To ii Admin
-    table.insert(commandlist,{name,args,func})
-end
-
-function runCommand(param1,specargs)
-    for i,asdfuhiswuejfniuserf in pairs(commandlist) do
-        if prefix..asdfuhiswuejfniuserf[1] == param1 and running then
-            if #specargs > #asdfuhiswuejfniuserf[2]-1 then
-		pcall(function()
-            local s,f = pcall(asdfuhiswuejfniuserf[3](specargs))
-            if not s then if consoleOn then print(f) end end
-end)
-            return
-            else
-                local lister = prefix..asdfuhiswuejfniuserf[1].." "
-                for i,d in pairs(asdfuhiswuejfniuserf[2]) do lister = lister..d.." " end
-                GUI:SendMessage(ScriptName, "\n\nThe command you have recently sent is not properly formatted.\n The correct format is: \n "..lister)
-            end
-        end
-    end
-end
-
-function getCommand(param1)
-    local fat={}
-    for i,v in pairs(commandlist) do
-        if param1:lower() == v[1]:lower():sub(1,#param1) and not table.find(fat,v) then
-        table.insert(fat,v)
-        end
-        end
-    return fat
-end
-
-local args = {}
 ---COMMANDS---
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     

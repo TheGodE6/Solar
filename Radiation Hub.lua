@@ -3,7 +3,7 @@ local settings = {
 ["AutoRun"] = {}, -- Set To Any Value
 ["Default Whitelisted"] = {}, -- Default whitelisted
 ["Prefix"] = ">", -- Set This To Any Value
-["joins"] = true
+["joins"] = true,
 ["Srcname"] = "☢️Radiation Hub☢️"
 }
 ----General Locals----
@@ -61,6 +61,7 @@ end
 local args = {}
 ---COMMANDS---
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    
 if string.sub(msg, 1, #prefix + 5) == prefix.."crash" then
 chat("blind all")
 servermsg(Srcname, "This Server Has Been Closed Due To An Issue.\nRadiation Hub.")
@@ -73,19 +74,19 @@ dcrash()
                 chat("outdoorambient 0 0 0")
                 chat("brightness 0.5")
                 chat("ambient 125 0 255")
-            end)
+            end
 
-if string.sub(msg, 1, #prefix + 6) == prefix.."perias"
+if string.sub(msg, 1, #prefix + 6) == prefix.."perias" then
 chat("gear me "..periastronsid)
-             end)
+             end
 
 if string.sub(msg, 1, #prefix + 3) == prefix.."nok" then
 for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do
                         v.CanTouch = false
             end
-end)
+end
 
-if string.sub(msg. 1, #prefix + 5) == prefix.."pmkick" then
+if string.sub(msg, 1, #prefix + 5) == prefix.."pmkick" then
 local Player = string.sub(msg, 1, #prefix + 7)
        Loops.pmkick = true
             repeat task.wait()
@@ -97,8 +98,8 @@ until not Loops.pmkick
 end
 end
 
-if string.sub(msg, 1, #prefix + 7) == prefix.."neatdev" --Partnership With DeemV1
-    serversg("Loading Boss Fight....")
+if string.sub(msg, 1, #prefix + 7) == prefix.."neatdev" then --Partnership With DeemV1
+    servermsg(Srcname, "Loading Boss Fight...")
     wait(5)
     servermsg("BOSS FIGHT LOADED NO CHEATING")
     wait(3)
@@ -119,7 +120,7 @@ if string.sub(msg, 1, #prefix + 7) == prefix.."neatdev" --Partnership With DeemV
     chat("gear me 94233344")
 end
 
-addcommand("xester",{},function()--Partnership With DeemV1
+if string.sub(msg:lower(), 1, #prefix + 6) == "xester" then--Partnership With DeemV1
 chat("music")
       wait(2)
       chat("h Loading Boss Fight")
@@ -148,21 +149,23 @@ chat("music")
       chat(":m Jester: " .. bosschat)
       task.wait()
       chat("music 1843358057")
-end)
-    addcommand("antikill",{},function()
+end
+
+    if string.sub(msg, 1, #prefix + 8) == prefix.."antikill" then
     if game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
         chat("reset me")
         end
 
-addcommand("autogod",{},function()
+if string.sub(msg, 1, #prefix + 6) == prefix.."autogod" then
 if game.Players.LocalPlayer.Character.Humanoid.MaxHealth ~= "inf" then
                         chat("god me")
                     game.Players.LocalPlayer.Character.Humanoid.MaxHealth = math.huge
                     game.Players.LocalPlayer.Character.Humanoid.Health = 9e9            
 end
+end
 
-            addcommand("lock",{"player"},function(args)
-    for i,v in pairs(GetPlayers(args[1])) do
+if string.sub(msg, 1, #prefix + 4) == prefix.."lock" then
+   local Player = string.sub(msg, 1, #prefix + 6)
         Loops.lock = true
         repeat task.wait()
             if not game.Lighting:FindFirstChild(v.Name) then
@@ -174,20 +177,22 @@ end
                                         chat("pm "..v.Name.." you are locked from the server. Please Join Another One.")            end
         until not Loops.lock
                                 end
-end)
+end
 
-addcommand("ecrash",{},function()                
+if string.sub(msg, 1, #prefix + 6) == prefix.."ecrash" then              
 chat("time 0")
 chat("char all 236577266")
-chat("name all "..srcnamr.." On Top!")
+chat("name all Radiation Hub On Top!")
 servermsg("Server Closed By "..srcname)
 task.wait(0.0005)
 dcrash()
 fcrash()
-end)
+end
+end
 
-addcommand("xester2",{},function() --Partnership With DeemV1
-    servermsg("U Defeated me...")
+
+if string.sub(msg, 1, #prefix + 7) == prefix.."xester2" then --Partnership With DeemV1
+    servermsg(Srcname, "U Defeated me...")
     chat("music")
       wait(2)
       chat("h Loading Boss Fight")
@@ -223,30 +228,18 @@ addcommand("xester2",{},function() --Partnership With DeemV1
       chat("music 1843358057")
 end)
 
-addcommand("purge",{},function()
-chat("blind all")
-servermsg("Server Purged By "..srcname)
-task.wait(0.0005)
-purge()
-end)
-
-addcommand("altkick",{},function()
+if string.sub(msg, 1, #prefix + 7) == prefix.."altkick"
 notify("This Command Is In Progress")
-end)
-
-addcommand("notify",{"player"},function(args)
-for i,v in pairs(GetPlayers(args[1])) do
-chat("pm "..v.Name.." You Have Been Warned.")
 end
 
-addcommand("supportlist",{},function()
+if string.sub(msg, 1, #prefix + 11) == prefix.."supportlist" then
 notify("This Script Does Not Run On Solara.")
 notify("This Script Runs On Arceus X")
 notify("This Script Runs On Codex")
 notify("This Script Runs On Wave")
 notify("This Script Does Not Run On Incognito")
 notify("Credits To Corev6 Dev Team.")
-end)
+end
 ------Gear codes----
 local periastronsid = {"108158379", "99119240", "80661504", "93136802", "120307951", "159229806", "73829193", "139577901", "80597060", "6949943", "2544549379", "233520257"}
 --------Execution--------
@@ -377,6 +370,7 @@ checkwhitelist()
 end
 end
 end
+end)
 end)
 end)
 end)

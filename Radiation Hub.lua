@@ -1,5 +1,5 @@
 ---------SETTINGS-------------
-local settings = {
+local Settings = {
 ["AutoRun"] = {}, -- Set To Any Value
 ["Default Whitelisted"] = {}, -- Default whitelisted
 ["Prefix"] = ">", -- Set This To Any Value
@@ -7,12 +7,13 @@ local settings = {
 ["Srcname"] = "☢️Radiation Hub☢️"
 }
 ----General Locals----
-local args = {}
 getgenv().rhVersion = "0.27"
 getgenv().joins = true
-local srcname = settings["Srcname"]
+local args = {}
+local msg = msg:lower()
+local Srcname = Settings["Srcname"]
 local gojo = false
-local prefix = settings["Prefix"]
+local prefix = Settings["Prefix"]
 local Loops = {}
 local player = game.Players
 local Kohls = workspace.Terrain:WaitForChild("_Game")

@@ -1,3 +1,5 @@
+---For The Devs Do Not Work On This Anymore.--- Go To New
+
 ---------SETTINGS-------------
 local settings = {
 ["AutoRun"] = {}, -- Set To Any Value

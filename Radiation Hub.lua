@@ -9,6 +9,7 @@ local Settings = {
 ----General Locals----
 getgenv().rhVersion = "0.27"
 getgenv().joins = true
+local joins = Settings["Joins"]
 local args = {}
 local msg = msg:lower()
 local Srcname = Settings["Srcname"]

@@ -95,6 +95,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     chat("name "..Player.." [Radiation Hub]:\n Currently Getting Kicked.")
                 until not Loops.pmkick -- make a way to turn this off
         end
+        
+        if string.sub(msg, 1, #prefix + 8) == prefix.."unpmkick" then
+            Loops.pmkick = false
+            end
 
         if string.sub(msg, 1, #prefix + 7) == prefix.."neatdev" then -- Partnership With DeemV1
                 servermsg(Srcname, "Loading Boss Fight...")
@@ -150,40 +154,48 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg, 1, #prefix + 8) == prefix.."antikill" then
-        -- You need to make this as a loop
+        Loops.antikill = true
+        repeat task.wait()
         if game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
                 chat("reset me")
         end
+        until not Loops.antikill
     end
 
     if string.sub(msg, 1, #prefix + 6) == prefix.."autogod" then
-        -- You need to make this a loop 
+        Loops.autogod = true
+        repeat task.wait()
         if game.Players.LocalPlayer.Character.Humanoid.MaxHealth ~= "inf" then
                         chat("god me")
                         game.Players.LocalPlayer.Character.Humanoid.MaxHealth = math.huge
                         game.Players.LocalPlayer.Character.Humanoid.Health = 9e9            
         end
+        until not Loops.autogod
     end
 
     if string.sub(msg, 1, #prefix + 4) == prefix.."lock" then
             local Player = string.sub(msg, 1, #prefix + 6)
             Loops.lock = true
             repeat task.wait()
-                if not game.Lighting:FindFirstChild(v.Name) then
+                if not game.Lighting:FindFirstChild(player) then
                 
                     -- v.Name? v.Name implies you've found the full length of the player from game.Players:GetPlayers() 
                     -- You need to look through the player list game.Players:GetPlayers() to find the full username of Player. e.g. "scr", find "scriptingprogrammer".
                     -- when you get the full username of the player, then you can use v.Name.
                 
-                    chat("name "..v.Name.." "..Srcname.."\n LOCKED")
-                    chat("clone "..v.Name)
-                    chat("trip "..v.Name)
-                    chat("punish "..v.Name)
-                    chat("blind "..v.Name)
-                    chat("pm "..v.Name.." you are locked from the server. Please Join Another One.")
+                    chat("name "..Player.." "..Srcname.."\n LOCKED")
+                    chat("clone "..Player)
+                    chat("trip "..Player)
+                    chat("punish "..Player)
+                    chat("blind "..Player)
+                    chat("pm "..Player.." you are locked from the server. Please Join Another One.")
                 end
             until not Loops.lock -- make a way to turn this off
     end
+    
+    if string.sub(msg, 1, #prefix + 6) == "unlock" then
+Loops.lock = false
+end
 
     if string.sub(msg, 1, #prefix + 6) == prefix.."ecrash" then              
         chat("time 0")

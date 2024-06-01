@@ -3,7 +3,7 @@ local Settings = {
 ["AutoRun"] = {}, -- Set To Any Value
 ["Default Whitelisted"] = {}, -- Default whitelisted
 ["Prefix"] = ">", -- Set This To Any Value
-["joins"] = true,
+["Joins"] = true,
 ["Srcname"] = "☢️Radiation Hub☢️"
 }
 ----General Locals----

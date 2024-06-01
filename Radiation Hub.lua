@@ -55,7 +55,7 @@ for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetC
             end
 end
 
-if string.sub(msg, 1, #prefix + 5) == prefix.."pmkick" then
+if string.sub(msg, 1, #prefix + 6) == prefix.."pmkick" then
 local Player = string.sub(msg, 1, #prefix + 7)
        Loops.pmkick = true
             repeat task.wait()

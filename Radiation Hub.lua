@@ -60,7 +60,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     
 if string.sub(msg, 1, #prefix + 3) == prefix.."vgc" then
 vgcrash()
- end
+end
 
         if string.sub(msg, 1, #prefix + 5) == prefix.."crash" then
                 chat("blind all")
@@ -356,6 +356,7 @@ function vgcrash() ---Credits To KohlsLite.
       game.Players.LocalPlayer.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
       for i = 1,100 do
         Chat("unsize me")
+end
 end
 -----CREDITS------
 print("dawninja21 - OWNER")

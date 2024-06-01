@@ -260,32 +260,6 @@ end
         notify("Credits To Corev6 Dev Team.")
     end
 end)
-
-----MODES----
-game.Players.LocalPlayer.Chatted:Connect(function(cmd)
-        if cmd == "mode!gojo" then -- Why steal from simplekah?
-            local gojo = true
-        end
-
-        if cmd == "disablemode!gojo" then
-            local gojo = false
-        end
-
-        if cmd == "dx" then
-            Loops.dx = true
-            repeat task.wait()
-                    chat("speed all 0.5")
-                    servermsg(Srcname, "Domain Expansion: INFINITY VOID") -- You're spamming this servermsg.
-            until not Loops.dx -- add a way to turn this off
-         end
-                    
-        if cmd == "red" then
-            servermsg(Srcname, "Universal Red...")
-            servermsg(Srcname, "MUAHAHAH")
-            chat("speed all inf")
-        end
-end)
-
 ------StartUp Commands------
 notify("Radiation Hub Executed!")
 chat("vrtx")

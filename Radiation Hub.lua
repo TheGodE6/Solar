@@ -157,7 +157,7 @@ task.wait(0.0005)
 dcrash()
 fcrash()
 end
-end
+end)
 
 
 if string.sub(msg, 1, #prefix + 7) == prefix.."xester2" then --Partnership With DeemV1
@@ -195,9 +195,9 @@ if string.sub(msg, 1, #prefix + 7) == prefix.."xester2" then --Partnership With 
       chat(":m Corrupted Jester: " .. bosschat)
       wait(2)
       chat("music 1843358057")
-end)
+end
 
-if string.sub(msg, 1, #prefix + 7) == prefix.."altkick"
+if string.sub(msg, 1, #prefix + 7) == prefix.."altkick" then
 notify("This Command Is In Progress")
 end
 
@@ -229,7 +229,7 @@ local function chat(msg)
 end
 
 local function onPlayerAdded(player)
-if joins = true then
+if joins == true then
       chat("pm "..player.Name.." Welcome, "..player.Name.."\nThis Server Is Protected By ☢️Radiation Hub☢️ Hope You Enjoy Your Stay!")
 end
 
@@ -340,7 +340,4 @@ checkwhitelist()
 end
 end
 end
-end)
-end)
-end)
-end)
+end

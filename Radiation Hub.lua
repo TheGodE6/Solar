@@ -347,16 +347,16 @@ end
 end
 
 function vgcrash() ---Credits To KohlsLite.
-     chat("gear me 00000000000000094794847")
+      chat("gear me 00000000000000094794847")
       repeat task.wait() until game.Players.LocalPlayer.Backpack:WaitForChild("VampireVanquisher")
       local vg = game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")
       vg.Parent = game.Players.LocalPlayer.Character
-      repeat task.wait() until not game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Coffin")
-      repeat task.wait() until game.Players.LocalPlayer.Character.VampireVanquisher:FindFirstChild("Remote")
-      game.Players.LocalPlayer.Character.VampireVanquisher.Remote:FireServer(Enum.KeyCode.Q)
+      task.wait(0.2)
+      vg:Activate()
+      wait(.15)
       for i = 1,100 do
-        Chat("unsize me")
-end
+          chat("unsize me me me")
+      end
 end
 -----CREDITS------
 print("dawninja21 - OWNER")

@@ -261,7 +261,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(cmd)
             repeat task.wait()
                     chat("speed all 0.5")
                     servermsg(Srcname, "Domain Expansion: INFINITY VOID") -- You're spamming this servermsg.
-            until not Loops.dx
+            until not Loops.dx -- add a way to turn this off
          end
                     
         if cmd == "red" then

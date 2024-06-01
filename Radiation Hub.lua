@@ -32,7 +32,7 @@ end
 
 -----MUSIC LIST--------
 local musiclist = {
-["1"] = { id = "6937042327" },
+["1"] = { id = "6937042327" , name = "All dropping 8 beats" },
 ["2"] = { id = "15689455422", name = "BB-Balls" }
 }
 
@@ -93,7 +93,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     chat("freeze "..Player)
                     chat("rainbowify "..Player)
                     chat("name "..Player.." [Radiation Hub]:\n Currently Getting Kicked.")
-                until not Loops.pmkick
+                until not Loops.pmkick -- make a way to turn this off
         end
 
         if string.sub(msg, 1, #prefix + 7) == prefix.."neatdev" then -- Partnership With DeemV1
@@ -182,7 +182,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     chat("blind "..v.Name)
                     chat("pm "..v.Name.." you are locked from the server. Please Join Another One.")
                 end
-            until not Loops.lock
+            until not Loops.lock -- make a way to turn this off
     end
 
     if string.sub(msg, 1, #prefix + 6) == prefix.."ecrash" then              

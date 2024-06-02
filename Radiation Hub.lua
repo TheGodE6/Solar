@@ -1,14 +1,14 @@
----------SETTINGS-------------
+-- Settings --
 local Settings = {
-["AutoRun"] = {}, -- Set To Any Value
-["Default Whitelisted"] = {}, -- Default whitelisted
-["Prefix"] = ">", -- Set This To Any Value
-["Joins"] = true, ---- Up to You Pms User When Joined.
-["Autoafk"] = true, -- Still In Devlopment
-["Srcname"] = "☢️Radiation Hub☢️"
+["Autorun Commands"] = {}, -- Commands that will autorun upon start up
+["Default Whitelisted"] = {}, -- People that are whitelisted by default
+["Prefix"] = ">", -- The prefix that you want to use for this script
+["Joins"] = true, ---- When a user joins, they get PMed about the fact this script protects the server
+["Autoafk"] = true, -- When you're AFK, it will name you AFK, god you and ff you. Still in development
+["Script Name"] = "☢️Radiation Hub☢️" -- Name of the script
 }
 
-----General Locals----
+-- Local variables --
 getgenv().rhVersion = "0.27"
 getgenv().joins = true
 local joins = Settings["Joins"]
@@ -24,21 +24,21 @@ local Pads = Admin:WaitForChild("Pads"):GetChildren()
 local lp = game.Players.LocalPlayer
 local commandlist = {}
 
--------FUNCTIONS-------
+-- Functions --
 local function chat(msg)
     game.Players:Chat(msg)
 end
 
------MUSIC LIST--------
+-- Music ---
 local musiclist = {
 ["1"] = { id = "6937042327" , name = "All dropping 8 beats" },
 ["2"] = { id = "15689455422", name = "BB-Balls" }
 }
 
-------Gear codes----
+-- Gear codes --
 local periastronsid = {"108158379", "99119240", "80661504", "93136802", "120307951", "159229806", "73829193", "139577901", "80597060", "6949943", "2544549379", "233520257"}
 
---------Execution--------
+-- Execution --
 local function notify(msg)
       game.StarterGui:SetCore("SendNotification", {
           Title = "Radiation Hub",
@@ -47,18 +47,18 @@ local function notify(msg)
 })
 end;
 
--- server msg
+-- Server message --
 function servermsg(name, text)
         game.Players:Chat("h/"..string.rep("\n",34).."["..name.."]")
         game.Players:Chat("h/"..string.rep("\n",36)..text)
 end
 
----COMMANDS---
+-- Commands --
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     
-if string.sub(msg, 1, #prefix + 3) == prefix.."vgc" then
-vgcrash()
-end
+        if string.sub(msg, 1, #prefix + 3) == prefix.."vgc" then
+            vgcrash()
+        end
 
         if string.sub(msg, 1, #prefix + 5) == prefix.."crash" then
                 chat("blind all")
@@ -101,7 +101,7 @@ end
         
         if string.sub(msg, 1, #prefix + 8) == prefix.."unpmkick" then
             Loops.pmkick = false
-            end
+        end
 
         if string.sub(msg, 1, #prefix + 7) == prefix.."neatdev" then -- Partnership With DeemV1
                 servermsg(Srcname, "Loading Boss Fight...")
@@ -180,12 +180,7 @@ end
             local Player = string.sub(msg, 1, #prefix + 6)
             Loops.lock = true
             repeat task.wait()
-                if not game.Lighting:FindFirstChild(player) then
-                
-                    -- v.Name? v.Name implies you've found the full length of the player from game.Players:GetPlayers() 
-                    -- You need to look through the player list game.Players:GetPlayers() to find the full username of Player. e.g. "scr", find "scriptingprogrammer".
-                    -- when you get the full username of the player, then you can use v.Name.
-                
+                if not game.Lighting:FindFirstChild(Player) then -- this line needs to get fixed
                     chat("name "..Player.." "..Srcname.."\n LOCKED")
                     chat("clone "..Player)
                     chat("trip "..Player)
@@ -197,8 +192,8 @@ end
     end
     
     if string.sub(msg, 1, #prefix + 6) == "unlock" then
-Loops.lock = false
-end
+            Loops.lock = false
+    end
 
     if string.sub(msg, 1, #prefix + 6) == prefix.."ecrash" then              
         chat("time 0")
@@ -260,11 +255,13 @@ end
         notify("Credits To Corev6 Dev Team.")
     end
 end)
-------StartUp Commands------
+
+-- Start up commands --
 notify("Radiation Hub Executed!")
 chat("vrtx")
 servermsg(Srcname, "☢️Radiation Hub☢️ Loaded!\n Made By The ☢️Radiation Dev Team☢️\n Version: "..getgenv().rhVersion.."")
 
+-- Joins feature
 local function onPlayerAdded(player)
         if joins == true then
               chat("pm "..player.Name.." Welcome, "..player.Name.."\nThis Server Is Protected By ☢️Radiation Hub☢️ Hope You Enjoy Your Stay!")
@@ -273,6 +270,7 @@ end
 
 game.Players.PlayerAdded:Connect(onPlayerAdded)
 
+-- Player finder
 function PLAYERCHECK(plr)
   for i, v in pairs(game.Players:GetPlayers()) do
       if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
@@ -283,6 +281,7 @@ function PLAYERCHECK(plr)
   end
 end
 
+-- Crashes
 function dcrash()
     for i = 1,100 do
         chat("dog all all")
@@ -297,23 +296,24 @@ function fcrash()
     end
 end
 
- function purge() --Credits To Knocks/Kneekers
+-- Purge  (credits to knocks/kneekers)
+ function purge() 
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(455.448242, 3.63637614, 453.299042, 0.649438977, 6.72485001e-08, 0.760413706, -7.56329328e-08, 1, -2.38416611e-08, -0.760413706, -4.20286135e-08, 0.649438977)
         wait(1)
-        game.Players:Chat("tp others me") -- use chat function
-        game.Players:Chat("speed all 0")
-        game.Players:Chat("setgrav all 10000")
-        game.Players:Chat("blind others")
+        chat("tp others me") 
+        chat("speed all 0")
+        chat("setgrav all 10000")
+        chat("blind others")
         wait(.5)
         for i = 1,100 do
-            game.Players:Chat("rocket/all all al")
+            chat("rocket/all all al")
         end
         wait(.5)
-        game.Players:Chat("size all 9.9")
+        chat("size all 9.9")
         wait(2)
-        for i=1,10 do
-            game.Players:Chat("tp others me")
-            game.Players:Chat("unskydive all")
+        for i = 1,10 do
+            chat("tp others me")
+            chat("unskydive all")
         end
         wait(.5)
 end
@@ -330,18 +330,18 @@ function vgcrash() ---Credits To KohlsLite.
           chat("unsize me me me")
       end
 end
------CREDITS------
+
+-- Credits --
 print("dawninja21 - OWNER")
-print("WhoIsTano helped very much even when people called me a skid.prefix")
-print("ts2021 i skid a little bit from him 🧌 but he still supported")
-print("Razan Helped me sm")
-print("idk")
+print("WhoIsTano - helped very much even when people called me a skid.")
+print("ts2021 - I skidded a little bit from him but he still supported")
+print("Razan - helped me so much")
                 
-------Boot Messages------
+-- Boot messages --
 notify("Game Name: Kohls Admin House") -- you need to add code to check you're in the correct game first!
 notify("Game Supported!") -- you need to add code to check you're in the correct game first!
                 
--------Whitelist-------
+-- Whitelist --
 local whitelist = {
 "dawninja21",
 "Di33le2",

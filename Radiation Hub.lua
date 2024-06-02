@@ -9,7 +9,7 @@ local Settings = {
 }
 
 -- Local variables --
-getgenv().rhVersion = "0.27"
+getgenv().rhVersion = "0.29"
 getgenv().joins = true
 local joins = Settings["Joins"]
 local Srcname = Settings["Srcname"]

@@ -29,6 +29,45 @@ local function chat(msg)
     game.Players:Chat(msg)
 end
 
+-- SHORTCUT V2 scr2 -- 
+function addcommand(cmdName, cmdDescription, cmdFunction)
+    commands[cmdName] = cmdName
+    descriptions[cmdName] = cmdDescription
+    connections[#connections + 1] = plr.Chatted:Connect(function(msg)
+            msg = msg:lower()
+            args = msg:split(" ")
+            if args[1] == admin.prefix3 .. cmdName then
+                cmdFunction()
+        end)
+end
+
+-- KOHLSECO --
+
+function addcommand(information)
+    local cmdName = information.name
+    local cmdAlias = information.aliases
+    local cmdFunction = information.funct
+    local cmdDescription = information.description
+    
+    commands[cmdName] = cmdName
+    descriptions[cmdName] = cmdDescription
+
+    connections[#connections + 1] = 
+        game.Players.LocalPlayer.Chatted:Connect(function(msg)
+            msg = msg:lower()
+            args = string.split(msg, " ")
+            if args[1] == admin.klprefix2 .. cmdName then
+                cmdFunction()
+            end
+            
+            for _, alias in ipairs(cmdAlias) do
+                if args[1] == admin.klprefix2 .. alias then
+                    cmdFunction()
+                    break
+                end
+            end
+        end)
+end
 -- Music ---
 local musiclist = {
 ["1"] = { id = "6937042327" , name = "All dropping 8 beats" },

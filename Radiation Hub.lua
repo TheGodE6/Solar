@@ -177,7 +177,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg, 1, #prefix + 4) == prefix.."lock" then
-            local Player = string.sub(msg, 1, #prefix + 6)
+            local Player = string.sub(msg, #prefix + 6)
             Loops.lock = true
             repeat task.wait()
                 if not game.Lighting:FindFirstChild(Player) then -- this line needs to get fixed
@@ -330,13 +330,11 @@ function vgcrash() ---Credits To KohlsLite.
           chat("unsize me me me")
       end
 end
-
 -- Credits --
 print("dawninja21 - OWNER")
 print("WhoIsTano - helped very much even when people called me a skid.")
 print("ts2021 - I skidded a little bit from him but he still supported")
 print("Razan - helped me so much")
-                
 -- Boot messages --
 notify("Game Name: Kohls Admin House") -- you need to add code to check you're in the correct game first!
 notify("Game Supported!") -- you need to add code to check you're in the correct game first!

@@ -23,6 +23,7 @@ local lp = game.Players.LocalPlayer
 
 -- Command shit --
 function addCommand(name,args,func)
+    args = string.split(msg, " ")
     table.insert(commandlist,{name,args,func})
 end
 

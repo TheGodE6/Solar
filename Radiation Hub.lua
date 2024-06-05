@@ -257,6 +257,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 end)
 
+if string.sub(msg, 1, #prefix + 2) == "to" then
+local args = string.split(msg, " ")
+local Player = args[2]
+chat("tp me "..Player)
+end
+
+if string.sub(msg, 1, #prefix + 5) == "bring" then
+local args = string.split(msg, " ")
+local Player = args[2]
+chat("tp "..Player.." me")
+end
 -- Start up commands --
 notify("Radiation Hub Executed!")
 chat("vrtx")

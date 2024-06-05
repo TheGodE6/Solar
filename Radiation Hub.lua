@@ -268,6 +268,16 @@ local args = string.split(msg, " ")
 local Player = args[2]
 chat("tp "..Player.." me")
 end
+
+if string.sub(msg, 1, #prefix + 5) == prefix.."fling" then
+local args = string.sub(msg, " ")
+local Player = args[2]
+chat("tp "..Player.." me")
+speak("HEY I DONT LIKE U SO IM GONNA FLING U")
+chat("/e point")
+task.wait(0.0005)
+chat("fling "..Player)
+end
 -- Start up commands --
 notify("Radiation Hub Executed!")
 chat("vrtx")

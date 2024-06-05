@@ -10,8 +10,6 @@ local Settings = {
 
 -- Local variables --
 getgenv().rhVersion = "0.29"
-getgenv().joins = true
-local joins = Settings["Joins"]
 local Srcname = Settings["Srcname"]
 local gojo = false
 local prefix = Settings["Prefix"]
@@ -282,7 +280,6 @@ end
 notify("Radiation Hub Executed!")
 chat("vrtx")
 servermsg(Srcname, "☢️Radiation Hub☢️ Loaded!\n Made By The ☢️Radiation Dev Team☢️\n Version: "..getgenv().rhVersion.."")
-
 -- Joins feature
 local function onPlayerAdded(player)
         if joins == true then

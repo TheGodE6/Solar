@@ -257,13 +257,13 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 end)
 
-if string.sub(msg, 1, #prefix + 2) == "to" then
+if string.sub(msg, 1, #prefix + 2) == prefix.."to" then
 local args = string.split(msg, " ")
 local Player = args[2]
 chat("tp me "..Player)
 end
 
-if string.sub(msg, 1, #prefix + 5) == "bring" then
+if string.sub(msg, 1, #prefix + 5) == prefix.."bring" then
 local args = string.split(msg, " ")
 local Player = args[2]
 chat("tp "..Player.." me")

@@ -89,7 +89,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
         if string.sub(msg, 1, #prefix + 6) == prefix.."pmkick" then
-                local Player = string.sub(msg, #prefix + 8)
+                local args = string.sub(msg, " ")
+                local Player = args[2]
                 Loops.pmkick = true
                 repeat task.wait()
                     chat("pm "..Player.." [Radiation Hub]: 😖🙂‍↔️😖🙂‍↔️😫😒😩😞😞😖😞🙂‍↔️😩🙂‍↔️😞😞😩😞😞😖😞😖😞😫😞😖😞😖🥳")
@@ -97,7 +98,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     chat("rainbowify "..Player)
                     chat("name "..Player.." [Radiation Hub]:\n Currently Getting Kicked.")
                 until not Loops.pmkick -- make a way to turn this off
-        end
+        end.   
         
         if string.sub(msg, 1, #prefix + 8) == prefix.."unpmkick" then
             Loops.pmkick = false

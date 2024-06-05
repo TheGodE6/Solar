@@ -1,5 +1,6 @@
 -- Settings --
 local Settings = {
+["rhVersion"] = "0.29",
 ["Autorun Commands"] = {}, -- Commands that will autorun upon start up
 ["Default Whitelisted"] = {}, -- People that are whitelisted by default
 ["Prefix"] = ">", -- The prefix that you want to use for this script
@@ -8,8 +9,8 @@ local Settings = {
 ["Script Name"] = "☢️Radiation Hub☢️" -- Name of the script
 }
 
--- Local variables --
-getgenv().rhVersion = "0.29"
+-- Local Variables --
+local Version = Settings["rhVersion"]
 local Srcname = Settings["Srcname"]
 local gojo = false
 local prefix = Settings["Prefix"]
@@ -96,7 +97,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     chat("rainbowify "..Player)
                     chat("name "..Player.." [Radiation Hub]:\n Currently Getting Kicked.")
                 until not Loops.pmkick -- make a way to turn this off
-        end.   
+        end
         
         if string.sub(msg, 1, #prefix + 8) == prefix.."unpmkick" then
             Loops.pmkick = false
@@ -279,7 +280,7 @@ end
 -- Start up commands --
 notify("Radiation Hub Executed!")
 chat("vrtx")
-servermsg(Srcname, "☢️Radiation Hub☢️ Loaded!\n Made By The ☢️Radiation Dev Team☢️\n Version: "..getgenv().rhVersion.."")
+servermsg(Srcname, "☢️Radiation Hub☢️ Loaded!\n Made By The ☢️Radiation Dev Team☢️\n Version: "..Version)
 -- Joins feature
 local function onPlayerAdded(player)
         if joins == true then

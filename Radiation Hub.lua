@@ -49,8 +49,8 @@ end;
 
 -- Server message --
 function servermsg(name, text)
-        game.Players:Chat("h/"..string.rep("\n",34).."["..name.."]")
-        game.Players:Chat("h/"..string.rep("\n",36)..text)
+        chat("h/"..string.rep("\n",34).."["..name.."]")
+        chat("h/"..string.rep("\n",36)..text)
 end
 
 -- Commands --

@@ -183,7 +183,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg, 1, #prefix + 4) == prefix.."lock" then
-     local args = string.split("msg, " ")
+     local args = string.split(msg, " ")
             local Player = args[2]
             Loops.lock = true
             repeat task.wait()

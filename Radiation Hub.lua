@@ -1,9 +1,12 @@
+--[[
 __________    _____  ________  .___   ________________.___________    _______      ___ ___  ____ _____________ 
 \______   \  /  _  \ \______ \ |   | /  _  \__    ___/|   \_____  \   \      \    /   |   \|    |   \______   \
  |      _/ /  /_\  \ |    |  \|   |/  /_\  \|    |   |   |/   |   \  /   |   \  /    ~    \    |   /|    |  _/
  |    |   \/    |    \|    `   \   /    |    \    |   |   /    |    \/    |    \ \    Y    /    |  / |    |   \
  |____|_  /\____|__  /_______  /___\____|__  /____|   |___\_______  /\____|__  /  \___|_  /|______/  |______  /
         \/         \/        \/            \/                     \/         \/         \/                  \/                                                                                                                                                                                                                                 
+]]
+
 -- Settings --
 local Settings = {
 ["rhVersion"] = "0.29",
@@ -362,7 +365,7 @@ function vgcrash() ---Credits To KohlsLite.
 end
  
 -- Credits --
-print("dawninja21 - OWNER")
+print("dawninja21 - skiddy OWNER")
 print("WhoIsTano - helped very much even when people called me a skid.")
 print("ts2021 - I skidded a little bit from him but he still supported")
 print("Razan - helped me so much")

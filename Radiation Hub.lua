@@ -261,34 +261,37 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         notify("This Script Does Not Run On Incognito")
         notify("Credits To Corev6 Dev Team.")
     end
+
+    if string.sub(msg, 1, #prefix + 2) == prefix.."to" then
+         local args = string.split(msg, " ")
+         local Player = args[2]
+         chat("tp me "..Player)
+    end
+
+    if string.sub(msg, 1, #prefix + 5) == prefix.."bring" then
+         local args = string.split(msg, " ")
+         local Player = args[2]
+         chat("tp "..Player.." me")
+    end
+
+    if string.sub(msg, 1, #prefix + 5) == prefix.."fling" then
+      local args = string.sub(msg, " ")
+      local Player = args[2]
+      chat("tp "..Player.." me")
+      speak("HEY I DONT LIKE U SO IM GONNA FLING U")
+      chat("/e point")
+      task.wait(0.0005)
+      chat("fling "..Player)
+    end
+   
 end)
 
-if string.sub(msg, 1, #prefix + 2) == prefix.."to" then
-local args = string.split(msg, " ")
-local Player = args[2]
-chat("tp me "..Player)
-end
-
-if string.sub(msg, 1, #prefix + 5) == prefix.."bring" then
-local args = string.split(msg, " ")
-local Player = args[2]
-chat("tp "..Player.." me")
-end
-
-if string.sub(msg, 1, #prefix + 5) == prefix.."fling" then
-local args = string.sub(msg, " ")
-local Player = args[2]
-chat("tp "..Player.." me")
-speak("HEY I DONT LIKE U SO IM GONNA FLING U")
-chat("/e point")
-task.wait(0.0005)
-chat("fling "..Player)
-end
 -- Start up commands --
 notify("Radiation Hub Executed!")
 chat("vrtx")
 servermsg(Srcname, "☢️Radiation Hub☢️ Loaded!\n Made By The ☢️Radiation Dev Team☢️\n Version: "..Version)
--- Joins feature
+
+ -- Joins feature
 local function onPlayerAdded(player)
         if joins == true then
               chat("pm "..player.Name.." Welcome, "..player.Name.."\nThis Server Is Protected By ☢️Radiation Hub☢️ Hope You Enjoy Your Stay!")
@@ -323,7 +326,7 @@ function fcrash()
     end
 end
 
--- Purge  (credits to knocks/kneekers)
+-- Purge (credits to knocks/kneekers)
  function purge() 
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(455.448242, 3.63637614, 453.299042, 0.649438977, 6.72485001e-08, 0.760413706, -7.56329328e-08, 1, -2.38416611e-08, -0.760413706, -4.20286135e-08, 0.649438977)
         wait(1)
@@ -357,11 +360,13 @@ function vgcrash() ---Credits To KohlsLite.
           chat("unsize me me me")
       end
 end
+ 
 -- Credits --
 print("dawninja21 - OWNER")
 print("WhoIsTano - helped very much even when people called me a skid.")
 print("ts2021 - I skidded a little bit from him but he still supported")
 print("Razan - helped me so much")
+ 
 -- Boot messages --
 notify("Game Name: Kohls Admin House") -- you need to add code to check you're in the correct game first!
 notify("Game Supported!") -- you need to add code to check you're in the correct game first!

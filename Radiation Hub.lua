@@ -21,7 +21,6 @@ local Settings = {
 -- Local Variables --
 local Version = Settings["rhVersion"]
 local Srcname = Settings["Srcname"]
-local gojo = false
 local prefix = Settings["Prefix"]
 local Loops = {}
 local player = game.Players

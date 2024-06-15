@@ -185,8 +185,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 
     if string.sub(msg, 1, #prefix + 4) == prefix.."lock" then
-     local args = string.split(msg, " ")
-            local Player = string.sub(msg, #prefix + 7)
+            local Player = string.sub(msg, #prefix + 6)
             Loops.lock = true
             repeat task.wait()
                 if not game.Lighting:FindFirstChild(Player) then -- this line needs to get fixed
@@ -197,7 +196,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
                     chat("blind "..Player)
                     chat("pm "..Player.." you are locked from the server. Please Join Another One.")
                 end
-            until not Loops.lock -- make a way to turn this off
+            until not Loops.lock
     end
     
     if string.sub(msg, 1, #prefix + 6) == "unlock" then

@@ -1,0 +1,2 @@
+ local Settings = {
+["prefix"] = "-"

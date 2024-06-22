@@ -1,4 +1,4 @@
-local Settings = {
+ local Settings = {
 ["Version"] = "0.1",
 ["Autorun Commands"] = {}, -- Commands that will autorun upon start up
 ["Default Whitelisted"] = {}, -- People that are whitelisted by default
@@ -12,6 +12,11 @@ local Settings = {
 local Version = Settings["Version"]
 local Prefix = Settings["Prefix"]
 local Srcname = Settings["Script Name"]
+local Loops = {}
+--- Functions ---
+function chat(msg)
+game.Players:Chat(msg)
+end
 
 
 --- Command Handler ---
@@ -39,3 +44,10 @@ end
 --- Command Hub! ---
 addCommand("Whitelist",{},function()
 end
+
+addCommand("mute,{"player"},function(args, MuteReason)
+for i,v in pairs(GetPlayers(args[1])) do
+Loops.mute = true
+repeat task.wait()
+chat("pm "..v.Name.." You Are Now Muted for MuteReason[1]")
+end)

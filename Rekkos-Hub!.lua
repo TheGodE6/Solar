@@ -21,7 +21,7 @@ game.Players:Chat(msg)
 end
 
 
---- Command Handler (stolen from ii) ---
+--- Command Handler (credits to ii) ---
 function addCommand(name,args,func)
     table.insert(commandlist,{name,args,func})
 end
@@ -47,7 +47,7 @@ end
 addCommand("whitelist",{},function()
 end
 
-addCommand("mute",{player},function(args, MuteReason)
+addCommand("mute",{"player"},function(args, MuteReason)
 for i,v in pairs(GetPlayers(args[1])) do
 Loops.mute = true
 repeat task.wait()

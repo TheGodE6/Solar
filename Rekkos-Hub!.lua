@@ -1,4 +1,5 @@
 -- dawninja STOP CHANGING THE NAME OF YOUR SCRIPT!!!!!!!!
+-- wdym im not
 
 local Settings = {
 ["Version"] = "0.1",
@@ -14,6 +15,7 @@ local Settings = {
 local Version = Settings["Version"]
 local Prefix = Settings["Prefix"]
 local Srcname = Settings["Script Name"]
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local Loops = {}
 --- Functions ---
 function chat(msg)
@@ -49,7 +51,14 @@ end
 
 addCommand("mute",{"player"},function(args, MuteReason)
 for i,v in pairs(GetPlayers(args[1])) do
+OrionLib:MakeNotification({
+            Name = "Rekkos Hub",
+            Content = "Person Is Now Muted......",
+            Image = "rbxassetid://562993",
+            Time = 8
+        })
 Loops.mute = true
 repeat task.wait()
 chat("pm "..v.Name.." You Are Now Muted for MuteReason[1]")
 end)
+

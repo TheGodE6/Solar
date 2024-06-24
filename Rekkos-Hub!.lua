@@ -62,3 +62,6 @@ repeat task.wait()
 chat("pm "..v.Name.." You Are Now Muted for MuteReason[1]")
 end)
 
+addCommand("house",{},function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-29.809, 8.229, 72.000) --- credits to ultra i didnt have iy
+				end

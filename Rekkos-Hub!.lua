@@ -8,7 +8,7 @@ local Settings = {
 ["Prefix"] = ">", -- The prefix that you want to use for this script
 ["Joins"] = false, ---- When a user joins, they get PMed about the fact this script protects the server
 ["Autoafk"] = false, -- When you're AFK, it will name you AFK, god you and ff you. Still in development
-["Script Name"] = ["Rekkos-Hub-Beta"] -- Name of the script
+["Script Name"] = "Rekkos-Hub-Beta" -- Name of the script
 }
 
 --- Rekkos General Locals! ---
@@ -22,6 +22,20 @@ function chat(msg)
 game.Players:Chat(msg)
 end
 
+-- Crashes
+function dcrash()
+    for i = 1,100 do
+        chat("dog all all")
+        chat("clone all all")
+    end
+end
+
+function fcrash()
+    for i = 1,100 do
+        chat("freeze all")
+        chat("clone all")
+    end
+end
 
 --- Command Handler (credits to ii) ---
 function addCommand(name,args,func)
@@ -47,7 +61,7 @@ end
 
 --- Command Hub! ---
 addCommand("whitelist",{},function()
-end
+end)
 
 addCommand("mute",{"player"},function(args, MuteReason)
 for i,v in pairs(GetPlayers(args[1])) do
@@ -59,9 +73,30 @@ OrionLib:MakeNotification({
         })
 Loops.mute = true
 repeat task.wait()
-chat("pm "..v.Name.." You Are Now Muted for MuteReason[1]")
+chat("pm "..v.Name.." You Are Now Muted for "..MuteReason)
+until Loops.mute
+end
 end)
 
 addCommand("house",{},function()
+		OrionLib:MakeNotification({
+            Name = "Rekkos Hub",
+            Content = "You Have Been Teleported To The House!",
+            Image = "rbxassetid://562993",
+            Time = 8
+        })
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-29.809, 8.229, 72.000) --- credits to ultra i didnt have iy
-				end
+				end)
+
+addCommand("crash",{},function()
+		OrionLib:MakeNotification({
+            Name = "Rekkos Hub",
+            Content = "crashing...",
+            Image = "rbxassetid://562993",
+            Time = 8
+        })
+task.wait(0.0005)
+		fcrash()
+		dcrash()
+	end)
+	

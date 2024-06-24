@@ -1,5 +1,5 @@
 -- dawninja STOP CHANGING THE NAME OF YOUR SCRIPT!!!!!!!!
--- wdym im not
+-- wdym im not its  a new one
 
 local Settings = {
 ["Version"] = "0.1",

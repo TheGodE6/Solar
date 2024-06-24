@@ -16,6 +16,7 @@ local Version = Settings["Version"]
 local Prefix = Settings["Prefix"]
 local Srcname = Settings["Script Name"]
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local gearblacklist = { "RainbowPeriastron","CrimsonPeriastron","JoyfulPeriastron","AzurePeriastron","FestivePeriastron","FallPeriastron","GrimgoldPeriastron","NoirPeriastron","ChartreusePeriastron","IvoryPeriastron"}
 local Loops = {}
 --- Functions ---
 function chat(msg)
@@ -99,4 +100,22 @@ task.wait(0.0005)
 		fcrash()
 		dcrash()
 	end)
-	
+
+addCommand("anticrash",{},function(args)
+		for i,v in pairs(GetPlayers(args[1])) do
+			OrionLib:MakeNotification({
+            Name = "Rekkos Hub",
+            Content = "Someone Just Tried To Crash!",
+            Image = "rbxassetid://562993",
+            Time = 8
+        })
+                                Loops.anticrash = true
+                                repeat task.wait()
+                             if v.Backpack:FindFirstChild(bannedgears) or v.Character:FindFirstChild(gearblacklist) then
+                                                  chat("ungear "..v.Name)      
+
+chat("h\n\n\n\n\n\n\n\n\n\n\n\n\n\n "..v.Name.." HAS JUST TRIED TO CRASH POINT AND LAUGH LOLLL")
+                                        end
+                                        until not Loops.anticrash
+                                end
+	end)

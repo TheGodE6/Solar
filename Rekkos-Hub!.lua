@@ -1,12 +1,13 @@
 -- Stop making new scripts that are similar to your old ones! Continue updating your old ones.
 -- Defender v3 -> Radiation Hub -> Exile Admin -> Radiation Hub -> Rekkos-Hub! 5 scripts???
 -- fine ill stop i swear but do u think my anticrash id decent and yes i made it
+-- this script was to honor someone who left me with this script i didnt make it
 
 local Settings = {
 ["Version"] = "0.3",
 ["Autorun Commands"] = {}, -- Commands that will autorun upon start up
 ["Default Whitelisted"] = {}, -- People that are whitelisted by default
-["Prefix"] = ">", -- The prefix that you want to use for this script
+["Prefix"] = "-", -- The prefix that you want to use for this script
 ["Joins"] = false, ---- When a user joins, they get PMed about the fact this script protects the server
 ["Autoafk"] = false, -- When you're AFK, it will name you AFK, god you and ff you. Still in development
 ["Script Name"] = "Rekkos-Hub-Beta" -- Name of the script

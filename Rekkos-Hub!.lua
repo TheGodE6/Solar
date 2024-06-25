@@ -151,3 +151,9 @@ addCommand("to",{"player"},function(args)
 		chat("tp me "..v.Name)
 	end
 end)
+
+addCommand("slock,{},function(args) --- Worst Slock Ever I know Dont Hate
+     for i,v in pairs(GetPlayers(args[1)) do
+   if game.Players.Playeradded then
+   chat("-mute "..v.Name)
+end)

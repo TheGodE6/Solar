@@ -4,7 +4,8 @@
 -- this script was to honor someone who left me with this script i didnt make it
 
 local Settings = {
-["Version"] = "0.3",
+["AutoRun Commands"] = {}
+["Version"] = "0.5",
 ["Autorun Commands"] = {}, -- Commands that will autorun upon start up
 ["Default Whitelisted"] = {}, -- People that are whitelisted by default
 ["Prefix"] = "-", -- The prefix that you want to use for this script
@@ -13,14 +14,17 @@ local Settings = {
 ["Script Name"] = "Rekkos-Hub-Beta" -- Name of the script
 }
 
+--- StartUps ---
+servermsg("Rekkos Hub Loaded In "..LoadTime.." ms")
 --- Rekkos General Locals! ---
 local Version = Settings["Version"]
 local Prefix = Settings["Prefix"]
 local Srcname = Settings["Script Name"]
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local StartUps = Settings["AutoRun Commands"]
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() -- Credits To WhoIsTano
 local gearblacklist = {"RainbowPeriastron","CrimsonPeriastron","JoyfulPeriastron","AzurePeriastron","FestivePeriastron","FallPeriastron","GrimgoldPeriastron","NoirPeriastron","ChartreusePeriastron","IvoryPeriastron"}
 local Loops = {}
-
+local LoadTime = math.random(0, 1000)
 --- Functions ---
 function chat(msg)
 	game.Players:Chat(msg)
@@ -154,6 +158,14 @@ end)
 
 addCommand("slock,{},function(args) --- Worst Slock Ever I know Dont Hate
      for i,v in pairs(GetPlayers(args[1)) do
+OrionLib:MakeNotification({
+            	Name = "Rekkos Hub",
+            	Content = "Server Is Now Locked!",
+            	Image = "rbxassetid://562993",
+            	Time = 10
+        })
    if game.Players.Playeradded then
-   chat("-mute "..v.Name This Server Is ServerLocked Right Now.)
+   chat("-mute "..v.Name.." This Server Is ServerLocked Right Now.)
 end)
+
+	

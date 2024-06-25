@@ -1,5 +1,5 @@
--- dawninja STOP CHANGING THE NAME OF YOUR SCRIPT!!!!!!!!
--- wdym im not its  a new one
+-- Stop making new scripts that are similar to your old ones! Continue updating your old ones.
+-- Defender v3 -> Radiation Hub -> Exile Admin -> Radiation Hub -> Rekkos-Hub! 5 scripts???
 
 local Settings = {
 ["Version"] = "0.3",
@@ -16,15 +16,18 @@ local Version = Settings["Version"]
 local Prefix = Settings["Prefix"]
 local Srcname = Settings["Script Name"]
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local gearblacklist = { "RainbowPeriastron","CrimsonPeriastron","JoyfulPeriastron","AzurePeriastron","FestivePeriastron","FallPeriastron","GrimgoldPeriastron","NoirPeriastron","ChartreusePeriastron","IvoryPeriastron"}
+local gearblacklist = {"RainbowPeriastron","CrimsonPeriastron","JoyfulPeriastron","AzurePeriastron","FestivePeriastron","FallPeriastron","GrimgoldPeriastron","NoirPeriastron","ChartreusePeriastron","IvoryPeriastron"}
 local Loops = {}
+
 --- Functions ---
 function chat(msg)
-game.Players:Chat(msg)
+	game.Players:Chat(msg)
 end
 
 function servermsg(msg)
 	chat("h \n\n\n\n\n\n"..Srcname..": "..msg.."\n\n\n\n\n\n\n")
+end
+
 -- Crashes
 function dcrash()
     for i = 1,100 do
@@ -67,41 +70,41 @@ addCommand("whitelist",{},function()
 end)
 
 addCommand("mute",{"player"},function(args, MuteReason)
-for i,v in pairs(GetPlayers(args[1])) do
-OrionLib:MakeNotification({
-            Name = "Rekkos Hub",
-            Content = "Person Is Now Getting Muted...",
-            Image = "rbxassetid://562993",
-            Time = 10
-        })
-Loops.mute = true
-repeat task.wait()
-chat("pm "..v.Name.." You Are Now Muted for "..MuteReason)
-until Loops.mute
-end
+	for i,v in pairs(GetPlayers(args[1])) do
+		OrionLib:MakeNotification({
+            		Name = "Rekkos Hub",
+            		Content = "Person Is Now Getting Muted...",
+            		Image = "rbxassetid://562993",
+            		Time = 10
+        	})
+		Loops.mute = true
+		repeat task.wait()
+			chat("pm "..v.Name.." You Are Now Muted for "..MuteReason)
+		until not Loops.mute
+	end
 end)
 
 addCommand("house",{},function()
-		OrionLib:MakeNotification({
-            Name = "Rekkos Hub",
-            Content = "You Have Been Teleported To The House!",
-            Image = "rbxassetid://562993",
-            Time = 10
+	OrionLib:MakeNotification({
+            	Name = "Rekkos Hub",
+            	Content = "You Have Been Teleported To The House!",
+            	Image = "rbxassetid://562993",
+            	Time = 10
         })
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-29.809, 8.229, 72.000) --- credits to ultra i didnt have iy
-				end)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-29.809, 8.229, 72.000) --- credits to ultra i didnt have iy
+end)
 
 addCommand("crash",{},function()
-		OrionLib:MakeNotification({
+	OrionLib:MakeNotification({
             Name = "Rekkos Hub",
             Content = "crashing...",
             Image = "rbxassetid://562993",
             Time = 10
         })
-task.wait(0.0005)
-		fcrash()
-		dcrash()
-	end)
+	task.wait(0.0005)
+	fcrash()
+	dcrash()
+end)
 
 addCommand("anticrash",{},function(args)
 		for i,v in pairs(GetPlayers(args[1])) do
@@ -123,23 +126,26 @@ chat("h\n\n\n\n\n\n\n\n\n\n\n\n\n\n "..v.Name.." HAS JUST TRIED TO CRASH POINT A
 	end)
 
 addCommand("bring",{"player"},function(args)
-		for i,v in pairs(GetPlayers(args[1])) do
-			OrionLib:MakeNotification({
-            Name = "Rekkos Hub",
-            Content = "Succesfuly Bringed!!",
-            Image = "rbxassetid://562993",
-            Time = 10
-        })
-			chat("bring "..v.Name)
-		end)
+	for i,v in pairs(GetPlayers(args[1])) do
+		OrionLib:MakeNotification({
+            		Name = "Rekkos Hub",
+            		Content = "Succesfuly Bringed!!",
+         		Image = "rbxassetid://562993",
+            		Time = 10
+       		 })
+		chat("tp "..v.Name.." me")
+	end
+end)
 
-	addCommand("to",{"player"},function(args)
-			for i,v in pairs(GetPlayers(args[1])) do
-				OrionLib:MakeNotification({
-            Name = "Rekkos Hub",
-            Content = "Succesfuly Tp-ed!",
-            Image = "rbxassetid://562993",
-            Time = 10
-				chat("tp me "..v.Name)
-			end)
-			
+	
+addCommand("to",{"player"},function(args)
+	for i,v in pairs(GetPlayers(args[1])) do
+		OrionLib:MakeNotification({
+            		Name = "Rekkos Hub",
+            		Content = "Succesfuly Tp-ed!",
+         		Image = "rbxassetid://562993",
+            		Time = 10
+       		 })
+		chat("tp me "..v.Name)
+	end
+end)

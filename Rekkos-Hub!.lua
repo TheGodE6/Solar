@@ -2,7 +2,7 @@
 -- wdym im not its  a new one
 
 local Settings = {
-["Version"] = "0.1",
+["Version"] = "0.3",
 ["Autorun Commands"] = {}, -- Commands that will autorun upon start up
 ["Default Whitelisted"] = {}, -- People that are whitelisted by default
 ["Prefix"] = ">", -- The prefix that you want to use for this script
@@ -23,6 +23,8 @@ function chat(msg)
 game.Players:Chat(msg)
 end
 
+function servermsg(msg)
+	chat("h \n\n\n\n\n\n"..Srcname..": "..msg.."\n\n\n\n\n\n\n")
 -- Crashes
 function dcrash()
     for i = 1,100 do
@@ -68,9 +70,9 @@ addCommand("mute",{"player"},function(args, MuteReason)
 for i,v in pairs(GetPlayers(args[1])) do
 OrionLib:MakeNotification({
             Name = "Rekkos Hub",
-            Content = "Person Is Now Muted......",
+            Content = "Person Is Now Getting Muted...",
             Image = "rbxassetid://562993",
-            Time = 8
+            Time = 10
         })
 Loops.mute = true
 repeat task.wait()
@@ -84,7 +86,7 @@ addCommand("house",{},function()
             Name = "Rekkos Hub",
             Content = "You Have Been Teleported To The House!",
             Image = "rbxassetid://562993",
-            Time = 8
+            Time = 10
         })
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-29.809, 8.229, 72.000) --- credits to ultra i didnt have iy
 				end)
@@ -94,7 +96,7 @@ addCommand("crash",{},function()
             Name = "Rekkos Hub",
             Content = "crashing...",
             Image = "rbxassetid://562993",
-            Time = 8
+            Time = 10
         })
 task.wait(0.0005)
 		fcrash()
@@ -107,7 +109,7 @@ addCommand("anticrash",{},function(args)
             Name = "Rekkos Hub",
             Content = "Someone Just Tried To Crash!",
             Image = "rbxassetid://562993",
-            Time = 8
+            Time = 10
         })
                                 Loops.anticrash = true
                                 repeat task.wait()
@@ -119,3 +121,25 @@ chat("h\n\n\n\n\n\n\n\n\n\n\n\n\n\n "..v.Name.." HAS JUST TRIED TO CRASH POINT A
                                         until not Loops.anticrash
                                 end
 	end)
+
+addCommand("bring",{"player"},function(args)
+		for i,v in pairs(GetPlayers(args[1])) do
+			OrionLib:MakeNotification({
+            Name = "Rekkos Hub",
+            Content = "Succesfuly Bringed!!",
+            Image = "rbxassetid://562993",
+            Time = 10
+        })
+			chat("bring "..v.Name)
+		end)
+
+	addCommand("to",{"player"},function(args)
+			for i,v in pairs(GetPlayers(args[1])) do
+				OrionLib:MakeNotification({
+            Name = "Rekkos Hub",
+            Content = "Succesfuly Tp-ed!",
+            Image = "rbxassetid://562993",
+            Time = 10
+				chat("tp me "..v.Name)
+			end)
+			

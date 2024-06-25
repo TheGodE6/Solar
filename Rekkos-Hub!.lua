@@ -14,6 +14,17 @@ local Settings = {
 ["Script Name"] = "Rekkos-Hub-Beta" -- Name of the script
 }
 
+
+
+--- Autorun Function ---
+function autorunCommands()
+    for _, command in pairs(StartUps) do
+        local splitCommand = string.split(command, " ")
+        local cmdName = splitCommand[1]
+        table.remove(splitCommand, 1)
+        runCommand(Prefix..cmdName, splitCommand)
+    end
+end
 --- StartUps ---
 servermsg("Rekkos Hub Loaded In "..LoadTime.." ms")
 --- Rekkos General Locals! ---

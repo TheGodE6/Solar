@@ -1,6 +1,6 @@
 -- Stop making new scripts that are similar to your old ones! Continue updating your old ones.
 -- Defender v3 -> Radiation Hub -> Exile Admin -> Radiation Hub -> Rekkos-Hub! 5 scripts???
-fine ill stop i swear but do u think my anticrash id decent and yes i made it
+--- fine ill stop i swear but do u think my anticrash id decent and yes i made it
 
 local Settings = {
 ["Version"] = "0.3",

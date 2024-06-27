@@ -1,2 +1,1 @@
--- ts stfu 
-a kah script that has potential to be better than iis admin maybe
+These are KAH scripts that have potential to be better than ii's stupid admin...

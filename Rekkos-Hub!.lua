@@ -1,8 +1,3 @@
--- Stop making new scripts that are similar to your old ones! Continue updating your old ones.
--- Defender v3 -> Radiation Hub -> Exile Admin -> Radiation Hub -> Rekkos-Hub! 5 scripts???
--- fine ill stop i swear but do u think my anticrash id decent and yes i made it
--- this script was to honor someone who left me with this script i didnt make it
-
 local Settings = {
 ["AutoRun Commands"] = {},
 ["Version"] = "0.5",
@@ -14,8 +9,6 @@ local Settings = {
 ["Script Name"] = "Rekkos-Hub-Beta" -- Name of the script
 }
 
-
-
 --- Autorun Function ---
 function autorunCommands()
     for _, command in pairs(StartUps) do
@@ -25,17 +18,20 @@ function autorunCommands()
         runCommand(Prefix..cmdName, splitCommand)
     end
 end
+
 --- StartUps ---
 servermsg("Rekkos Hub Loaded In "..LoadTime.." ms")
+
 --- Rekkos General Locals! ---
 local Version = Settings["Version"]
 local Prefix = Settings["Prefix"]
 local Srcname = Settings["Script Name"]
 local StartUps = Settings["AutoRun Commands"]
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() -- Credits To WhoIsTano
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() -- Credits To WhoIsTano -- tano didn't make orion LOL
 local gearblacklist = {"RainbowPeriastron","CrimsonPeriastron","JoyfulPeriastron","AzurePeriastron","FestivePeriastron","FallPeriastron","GrimgoldPeriastron","NoirPeriastron","ChartreusePeriastron","IvoryPeriastron"}
 local Loops = {}
-local LoadTime = math.random(0, 1000)
+local LoadTime = math.random(0, 1000) -- wow great coding :skull:
+
 --- Functions ---
 function chat(msg)
 	game.Players:Chat(msg)
@@ -92,7 +88,7 @@ addCommand("mute",{"player"},function(args, MuteReason)
             		Name = "Rekkos Hub",
             		Content = "Person Is Now Getting Muted...",
             		Image = "rbxassetid://562993",
-            		Time = 10
+            		Time = 10 -- 10 seconds?
         	})
 		Loops.mute = true
 		repeat task.wait()
@@ -127,7 +123,7 @@ addCommand("nok",{},function()
             for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do
 			OrionLib:MakeNotification({
             Name = "Rekkos Hub",
-            Content = "No Obby Kill On!",
+            Content = "No Obby Kill On!", -- Why does it repeat for EACH obby brick
             Image = "rbxassetid://562993",
             Time = 10
         })
@@ -144,18 +140,17 @@ addCommand("vrtx",{},function()
         chat("ambient 125 0 255")
 end)
 
-
 addCommand("anticrash",{},function(args)
 		for i,v in pairs(GetPlayers(args[1])) do
 			OrionLib:MakeNotification({
             Name = "Rekkos Hub",
-            Content = "Someone Just Tried To Crash!",
+            Content = "Someone Just Tried To Crash!", -- why is it here??
             Image = "rbxassetid://562993",
             Time = 10
         })
                                 Loops.anticrash = true
                                 repeat task.wait()
-                             if v.Backpack:FindFirstChild(bannedgears) or v.Character:FindFirstChild(gearblacklist) then
+                             if v.Backpack:FindFirstChild(bannedgears) or v.Character:FindFirstChild(gearblacklist) then -- what two lists??
                                                   chat("ungear "..v.Name)      
 
 chat("h\n\n\n\n\n\n\n\n\n\n\n\n\n\n "..v.Name.." HAS JUST TRIED TO CRASH POINT AND LAUGH LOLLL")
@@ -168,20 +163,19 @@ addCommand("bring",{"player"},function(args)
 	for i,v in pairs(GetPlayers(args[1])) do
 		OrionLib:MakeNotification({
             		Name = "Rekkos Hub",
-            		Content = "Succesfuly Bringed!!",
+            		Content = "Succesfuly Bringed!!", -- well, that's if you actually have admin. also there's a spelling error
          		Image = "rbxassetid://562993",
             		Time = 10
        		 })
 		chat("tp "..v.Name.." me")
 	end
 end)
-
 	
 addCommand("to",{"player"},function(args)
 	for i,v in pairs(GetPlayers(args[1])) do
 		OrionLib:MakeNotification({
             		Name = "Rekkos Hub",
-            		Content = "Succesfuly Tp-ed!",
+            		Content = "Succesfuly Tp-ed!", -- well, that's if you actually have admin
          		Image = "rbxassetid://562993",
             		Time = 10
        		 })
@@ -197,8 +191,8 @@ OrionLib:MakeNotification({
             	Image = "rbxassetid://562993",
             	Time = 10
         })
-   if game.Players.Playeradded then
-   chat("-mute "..v.Name.." This Server Is ServerLocked Right Now.")
+   if game.Players.Playeradded then -- what is that??
+   chat("-mute "..v.Name.." This Server Is ServerLocked Right Now.") -- who is v.Name here?? why does it use "-" instead of the set prefix value?
 end
 end
 end)

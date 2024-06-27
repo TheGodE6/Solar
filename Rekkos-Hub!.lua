@@ -21,7 +21,7 @@ end
 
 --- StartUps ---
 servermsg("Rekkos Hub Loaded In "..LoadTime.." ms")
-
+say("Rekkos.lua Loaded In "..LoadTime.." ms")
 --- Rekkos General Locals! ---
 local Version = Settings["Version"]
 local Prefix = Settings["Prefix"]
@@ -33,6 +33,10 @@ local Loops = {}
 local LoadTime = math.random(0, 1000) -- wow great coding :skull:
 
 --- Functions ---
+function say(msg)
+	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+end
+
 function chat(msg)
 	game.Players:Chat(msg)
 end

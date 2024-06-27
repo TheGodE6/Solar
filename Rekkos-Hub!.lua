@@ -4,7 +4,7 @@
 -- this script was to honor someone who left me with this script i didnt make it
 
 local Settings = {
-["AutoRun Commands"] = {}
+["AutoRun Commands"] = {},
 ["Version"] = "0.5",
 ["Autorun Commands"] = {}, -- Commands that will autorun upon start up
 ["Default Whitelisted"] = {}, -- People that are whitelisted by default
@@ -167,8 +167,8 @@ addCommand("to",{"player"},function(args)
 	end
 end)
 
-addCommand("slock,{},function(args) --- Worst Slock Ever I know Dont Hate
-     for i,v in pairs(GetPlayers(args[1)) do
+addCommand("slock",{},function(args) --- Worst Slock Ever I know Dont Hate
+     for i,v in pairs(GetPlayers(args[1])) do
 OrionLib:MakeNotification({
             	Name = "Rekkos Hub",
             	Content = "Server Is Now Locked!",
@@ -176,7 +176,7 @@ OrionLib:MakeNotification({
             	Time = 10
         })
    if game.Players.Playeradded then
-   chat("-mute "..v.Name.." This Server Is ServerLocked Right Now.)
+   chat("-mute "..v.Name.." This Server Is ServerLocked Right Now.")
+end
+end
 end)
-
-	

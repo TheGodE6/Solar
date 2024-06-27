@@ -123,6 +123,28 @@ addCommand("crash",{},function()
 	dcrash()
 end)
 
+addCommand("nok",{},function()
+            for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do
+			OrionLib:MakeNotification({
+            Name = "Rekkos Hub",
+            Content = "No Obby Kill On!",
+            Image = "rbxassetid://562993",
+            Time = 10
+        })
+                        v.CanTouch = false
+            end
+end)
+
+addCommand("vrtx",{},function()
+        chat("fogcolor 100 0 255")
+        chat("fogend 1000")
+        chat("time 6")
+        chat("outdoorambient 0 0 0")
+        chat("brightness 0.5")
+        chat("ambient 125 0 255")
+end)
+
+
 addCommand("anticrash",{},function(args)
 		for i,v in pairs(GetPlayers(args[1])) do
 			OrionLib:MakeNotification({

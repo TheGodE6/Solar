@@ -162,10 +162,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             local MuteReason = string.sub(msg:lower(), #prefix + 8)
             check(plr)
             if player ~= nil then
-                notify(v.Name .." is being muted")
+                notify("..plr.." is being muted")
                 Loops.mute = true
                 repeat task.wait()
-                    chat("pm/".. plr.Name .."/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou are muted!\nReason: ".. MuteReason .."\n😹😹😹\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+                    chat("pm/"..plr.."/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou are muted!\nReason: ".. MuteReason .."\n😹😹😹\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
                 until not Loops.mute
             end
         end

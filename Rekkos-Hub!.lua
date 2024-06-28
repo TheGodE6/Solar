@@ -11,7 +11,7 @@ local Settings = {
     ["Autoafk"] = false,
     ["bannedgears"] = {"VampireVanquisher", "OrinthianSwordAndShield", "RainbowPeriastron", "CrimsonPeriastron", "JoyfulPeriastron", "AzurePeriastron", "FestivePeriastron", "FallPeriastron", "GrimgoldPeriastron", "NoirPeriastron", "ChartreusePeriastron", "IvoryPeriastron"},
     ["Script Name"] = "Rekkos-Hub-Beta",
-    ["gearwhitelist"] = {"dawninja21", "dawninja21alt"}, -- players you do not want to be effected by antigear
+    ["gearwhitelist"] = {"dawninja21", "dawninja21alt"} -- players you do not want to be effected by antigear
 }
 
 local enabled = {

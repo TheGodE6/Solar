@@ -138,6 +138,19 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             end
         end
 
+         if string.sub(msg, 1, #prefix + 8) == prefix.."antikill" then
+        Loops.antikill = true
+        repeat task.wait()
+        if game.Players.LocalPlayer.Character.Humanoid.Health ~= 0 then
+                chat("reset me")
+        end
+        until not Loops.antikill
+    end
+
+if string.sub(msg, 1, #prefix + 8) == prefix.."unantikill" then
+        Loops.antikill = false
+        end
+
         if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'to' then
             local plr = string.sub(msg:lower(), #prefix + 4)
             check(plr)

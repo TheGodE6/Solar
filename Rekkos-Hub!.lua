@@ -2,7 +2,6 @@
 
 repeat task.wait() until game:IsLoaded()
 
--- stops script from running 2 times ( remove if u want )
 local Settings = {
     ["AutoRun Commands"] = {},
     ["Version"] = "0.5",

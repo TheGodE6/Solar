@@ -22,6 +22,7 @@ end
 --- StartUps ---
 servermsg("Rekkos Hub Loaded In "..LoadTime.." ms")
 say("Rekkos.lua Loaded In "..LoadTime.." ms")
+local LoadTime = math.random(0, 1000) -- wow great coding :skull:
 --- Rekkos General Locals! ---
 local Version = Settings["Version"]
 local Prefix = Settings["Prefix"]
@@ -31,7 +32,6 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local gearblacklist = {"RainbowPeriastron","CrimsonPeriastron","JoyfulPeriastron","AzurePeriastron","FestivePeriastron","FallPeriastron","GrimgoldPeriastron","NoirPeriastron","ChartreusePeriastron","IvoryPeriastron"}
 local Loops = {}
 local LoadTime = math.random(0, 1000) -- wow great coding :skull:
-
 --- Functions ---
 function say(msg)
 	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")

@@ -31,12 +31,7 @@ local lp = game.Players.LocalPlayer
 local lpc = lp.Character
 local hideid = "00000000000000000000000000000000000000000000000000000000000000000000"
 
-local no2ndnoti = false
-
---[[ OLD NOTIFIER
--- just say like notify("blah blah blah") to notify
 local function notify(msg)
-    if not no2ndnoti then
         no2ndnoti = true
         OrionLib:MakeNotification({
             Name = "Rekkos Hub",
@@ -44,24 +39,6 @@ local function notify(msg)
             Image = "rbxassetid://562993",
             Time = 5.5
         })
-        no2ndnoti = false
-    end
-end]]
-
-local nonotix2
-
-local function notify(msg)
-    if nonotix2 == true then return
-    else
-        nonotix2 = true
-        task.wait(0.005)
-    game.StarterGui:SetCore("SendNotification",
-        {
-            Title = Srcname,
-            Text = message,
-            Duration = 5.5
-        })
-        nonotix2 = false
     end
 end
 

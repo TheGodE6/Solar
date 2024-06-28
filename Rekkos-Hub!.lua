@@ -118,12 +118,11 @@ end
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     task.wait()
 
-        if string.sub(msg, 1, #prefix = 4) == prefix.."spam" then
+        if string.sub(msg, 1, #prefix + 4) == prefix.."spam" then
             local spam = string.sub(msg, #prefix + 6)
             Loops.spam = true
             repeat task.wait()
             chat(spam)
-            end
         until not Loops.spam
     end
 
@@ -162,7 +161,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             local MuteReason = string.sub(msg:lower(), #prefix + 8)
             check(plr)
             if player ~= nil then
-                notify("..plr.." is being muted")
+                notify(""..plr.." is being muted")
                 Loops.mute = true
                 repeat task.wait()
                     chat("pm/"..plr.."/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou are muted!\nReason: ".. MuteReason .."\n😹😹😹\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")

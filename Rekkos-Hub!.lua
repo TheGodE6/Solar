@@ -118,6 +118,15 @@ end
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     task.wait()
 
+        if string.sub(msg, 1, #prefix = 4) == prefix.."spam" then
+            local spam = string.sub(msg, #prefix + 6)
+            Loops.spam = true
+            repeat task.wait()
+            chat(spam)
+            end
+        until not Loops.spam
+    end
+
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'house' then
             lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-28.6829948, 8.2299995, 66.4913253))
         end
@@ -135,7 +144,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             check(plr)
             if player ~= nil then
                 lpc.HumanoidRooPart.CFrame = plr.Character.HumanoidRootPart.CFrame
-            notify("Brought you to ".. plr.Name)
+            notify("Brought you to "..plr)
             end
         end
 
@@ -164,6 +173,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         -- use this here if u wanna stop shit, put all Loops in here --
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'stop' then
             Loops.mute = false
+            Loops.spam = false
         end
 
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'dogcrash' then

@@ -152,8 +152,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             local plr = string.sub(msg:lower(), #prefix + 7)
             check(plr)
             if player ~= nil then
-                chat("tp ".. plr.Name .." me")
-            notify("Brought ".. plr.Name .." to you!")
+                chat("tp "..plr.." me")
+            notify("Brought "..plr.." to you!")
             end
         end
 
@@ -254,11 +254,11 @@ local bawlls
             end
         end
 
-        if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antigears on' then
+        if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antigear' then
             enabled.antigears = true
         end
 
-        if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antigears off' then
+        if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantigear' then
             enabled.antigears = false
         end
 

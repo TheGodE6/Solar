@@ -32,7 +32,6 @@ local lpc = lp.Character
 local hideid = "00000000000000000000000000000000000000000000000000000000000000000000"
 
 local function notify(msg)
-        no2ndnoti = true
         OrionLib:MakeNotification({
             Name = "Rekkos Hub",
             Content = msg,

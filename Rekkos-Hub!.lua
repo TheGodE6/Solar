@@ -8,17 +8,6 @@ local Settings = {
 ["Autoafk"] = false, -- When you're AFK, it will name you AFK, god you and ff you. Still in development
 ["Script Name"] = "Rekkos-Hub-Beta" -- Name of the script
 }
-
---- Autorun Function ---
-function autorunCommands()
-    for _, command in pairs(StartUps) do
-        local splitCommand = string.split(command, " ")
-        local cmdName = splitCommand[1]
-        table.remove(splitCommand, 1)
-        runCommand(Prefix..cmdName, splitCommand)
-    end
-end
-
 --- StartUps ---
 servermsg("Rekkos Hub Loaded In "..LoadTime.." ms")
 say("Rekkos.lua Loaded In "..LoadTime.." ms")

@@ -189,3 +189,35 @@ OrionLib:MakeNotification({
 end
 end
 end)
+
+addCommand("hkick",{"player"},function(args) --- Credits To Exfamous.
+    local Player = GetPlayers(args[1])
+    for i,v in pairs(GetPlayers(args[1])) do
+			Loops.hkick = true
+			repeat task.wait()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(455.448242, 3.63637614, 453.299042, 0.649438977, 6.72485001e-08, 0.760413706, -7.56329328e-08, 1, -2.38416611e-08, -0.760413706, -4.20286135e-08, 0.649438977)
+        task.wait(.23)
+        game.Players:Chat("bring "..v.Name.." me")
+        task.wait(.4)
+        game.Players:Chat("reset "..v.Name)
+        task.wait(.1)
+        game.Players:Chat("blind ".. v.Name)
+        game.Players:Chat("spin ".. v.Name)
+        game.Players:Chat("speed "..v.Name.." 0")
+        game.Players:Chat("size "..v.Name .." nan")
+        game.Players:Chat("jail "..v.Name)
+        task.wait(.3)
+        for i = 1,93 do
+        game.Players:Chat("hat "..v.Name.. " 18101265026")
+        end
+    task.wait(.3)
+    for i = 1,93 do
+        game.Players:Chat("hat "..v.Name.. " 18101265026")
+    end
+    until not Loops.hkick
+    end
+    end)
+
+addCommand("hkick",{},function()
+		Loops.hkick = false
+	end

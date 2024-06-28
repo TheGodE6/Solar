@@ -3,11 +3,6 @@
 repeat task.wait() until game:IsLoaded()
 
 -- stops script from running 2 times ( remove if u want )
-if scriptrunning then
-    return
-end
-getgenv().scriptrunning = true
-
 local Settings = {
     ["AutoRun Commands"] = {},
     ["Version"] = "0.5",

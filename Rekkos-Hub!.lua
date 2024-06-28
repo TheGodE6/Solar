@@ -147,7 +147,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         until not Loops.antikill
     end
 
-if string.sub(msg, 1, #prefix + 8) == prefix.."unantikill" then
+if string.sub(msg, 1, #prefix + 10) == prefix.."unantikill" then
         Loops.antikill = false
         end
 

@@ -200,45 +200,45 @@ local bawlls
                     bawlls = true
                 lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048))
                 task.wait(.23)
-                chat("tp ".. plr.Name .." me")
+                chat("tp "..plr.." me")
                 task.wait(.4)
-                chat("reset ".. plr.Name)
+                chat("reset "..plr)
                 task.wait(.1)
-                chat("blind ".. plr.Name)
-                chat("speed ".. plr.Name .." 0")
-                chat("size ".. plr.Name .." nan")
+                chat("blind "..plr)
+                chat("speed "..plr.." 0")
+                chat("size "..plr.." nan")
                 lpc.HumanoidRootPart.CFrame = rnpos
                 task.wait(.3)
-                chat("spin ".. plr.Name)
-                chat("jail/".. plr.Name)
+                chat("spin "..plr)
+                chat("jail/ ..plr)
                 for i = 1,90 do
-                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                    chat("hat "..plr.." ".. hideid .."18101265026")
                 end
                 task.wait(.3)
                 for i = 1,100 do
-                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                    chat("hat "..plr.." ".. hideid .."18101265026")
                 end
                 task.wait(.3)
                 for i = 1,99 do
-                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                    chat("hat "..plr.." ".. hideid .."18101265026")
                 end
                 task.wait(.3)
-                chat("clone ".. plr.Name)
+                chat("clone "..plr)
                 task.wait(.3)
                 for i = 1,99 do
-                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                    chat("hat "..plr.." ".. hideid .."18101265026")
                 end
                 task.wait(.3)
                 for i = 1,100 do
-                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                    chat("hat "..plr.." ".. hideid .."18101265026")
                 end
                 task.wait(.3)
                 for i = 1,100 do
-                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                    chat("hat "..plr.." ".. hideid .."18101265026")
                 end
                 task.wait(.3)
                 for i = 1,100 do
-                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                    chat("hat "..plr.." ".. hideid .."18101265026")
                 end
             bawlls = false
             end

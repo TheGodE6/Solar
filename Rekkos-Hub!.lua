@@ -1,223 +1,299 @@
+--- Revamp ---
+
+repeat task.wait() until game:IsLoaded()
+
+-- stops script from running 2 times ( remove if u want )
+if scriptrunning then
+    return
+end
+getgenv().scriptrunning = true
+
 local Settings = {
-["AutoRun Commands"] = {},
-["Version"] = "0.5",
-["Autorun Commands"] = {}, -- Commands that will autorun upon start up
-["Default Whitelisted"] = {}, -- People that are whitelisted by default
-["Prefix"] = "-", -- The prefix that you want to use for this script
-["Joins"] = false, ---- When a user joins, they get PMed about the fact this script protects the server
-["Autoafk"] = false, -- When you're AFK, it will name you AFK, god you and ff you. Still in development
-["Script Name"] = "Rekkos-Hub-Beta" -- Name of the script
+    ["AutoRun Commands"] = {},
+    ["Version"] = "0.5",
+    ["Default Whitelisted"] = {},
+    ["Prefix"] = "-",
+    ["Joins"] = false,
+    ["Autoafk"] = false,
+    ["bannedgears"] = {"VampireVanquisher", "OrinthianSwordAndShield", "RainbowPeriastron", "CrimsonPeriastron", "JoyfulPeriastron", "AzurePeriastron", "FestivePeriastron", "FallPeriastron", "GrimgoldPeriastron", "NoirPeriastron", "ChartreusePeriastron", "IvoryPeriastron"},
+    ["Script Name"] = "Rekkos-Hub-Beta",
+    ["gearwhitelist"] = {"dawninja21", "dawninja21alt"}, -- players you do not want to be effected by antigear
 }
---- StartUps ---
-servermsg("Rekkos Hub Loaded In "..LoadTime.." ms")
-say("Rekkos.lua Loaded In "..LoadTime.." ms")
-local LoadTime = math.random(0, 1000) -- wow great coding :skull:
---- Rekkos General Locals! ---
+
+local enabled = {
+    ["antigears"] = true, -- enables anti gears ( so that people cant abuse them )
+}
+
+-- u aint gon like this but im doing string.sub ( the current way ur doing it doesnt work at all )
+
 local Version = Settings["Version"]
-local Prefix = Settings["Prefix"]
 local Srcname = Settings["Script Name"]
-local StartUps = Settings["AutoRun Commands"]
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))() -- Credits To WhoIsTano -- tano didn't make orion LOL
-local gearblacklist = {"RainbowPeriastron","CrimsonPeriastron","JoyfulPeriastron","AzurePeriastron","FestivePeriastron","FallPeriastron","GrimgoldPeriastron","NoirPeriastron","ChartreusePeriastron","IvoryPeriastron"}
+local prefix = Settings["Prefix"]
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local LoadTime = tick()
 local Loops = {}
-local LoadTime = math.random(0, 1000) -- wow great coding :skull:
---- Functions ---
-function say(msg)
-	game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+local connections = {}
+local lp = game.Players.LocalPlayer
+local lpc = lp.Character
+local hideid = "00000000000000000000000000000000000000000000000000000000000000000000"
+
+local no2ndnoti = false
+
+--[[ OLD NOTIFIER
+-- just say like notify("blah blah blah") to notify
+local function notify(msg)
+    if not no2ndnoti then
+        no2ndnoti = true
+        OrionLib:MakeNotification({
+            Name = "Rekkos Hub",
+            Content = msg,
+            Image = "rbxassetid://562993",
+            Time = 5.5
+        })
+        no2ndnoti = false
+    end
+end]]
+
+local nonotix2
+
+local function notify(msg)
+    if nonotix2 == true then return
+    else
+        nonotix2 = true
+        task.wait(0.005)
+    game.StarterGui:SetCore("SendNotification",
+        {
+            Title = Srcname,
+            Text = message,
+            Duration = 5.5
+        })
+        nonotix2 = false
+    end
 end
 
-function chat(msg)
-	game.Players:Chat(msg)
+local function say(msg)
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
-function servermsg(msg)
-	chat("h \n\n\n\n\n\n"..Srcname..": "..msg.."\n\n\n\n\n\n\n")
+local function chat(msg)
+    game.Players:Chat(msg)
 end
 
--- Crashes
-function dcrash()
-    for i = 1,100 do
-        chat("dog all all")
-        chat("clone all all")
-    end
+local function servermsg(msg)
+    chat("h \n\n\n\n\n\n" .. Srcname .. ": " .. msg .. "\n\n\n\n\n\n\n")
 end
 
-function fcrash()
-    for i = 1,100 do
-        chat("freeze all")
-        chat("clone all")
-    end
+-- this antigear was made by dek so credit him not me --
+local function antigears()
+    while true do
+        if enabled.antigears then
+            if not connections.antigears then
+                connections.antigears = game:GetService("RunService").RenderStepped:Connect(function()
+                    for i, player in pairs(game.Players:GetPlayers()) do
+                        if player.Name ~= game.Players.LocalPlayer.Name and not table.find(Settings.gearwhitelist, player.Name) then
+                            if player.Character then
+                                for i, gear in ipairs(Settings.bannedgears) do
+                                    if player.Backpack:FindFirstChild(gear) or player.Character:FindFirstChild(gear) then
+                                        local plrname = player.Name
+                                        chat(":ungear " .. plrname .. " others clyde fuck")
+                                        for i = 1, 14 do
+                                            task.wait(.3)
+                                            chat("h/ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n".. plrname .. " Just tried to use " .. gear .. "\n\n\n(point and laugh)")
+                                        end
+                                        task.wait(3.5)
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end)
+            end
+        else
+            if connections.antigears then
+                connections.antigears:Disconnect()
+                connections.antigears = nil
+            end
+        end
+        task.wait(0.1)
+    end
 end
 
---- Command Handler (credits to ii) ---
-function addCommand(name,args,func)
-    table.insert(commandlist,{name,args,func})
+local function dcrash()
+    for i = 1, 100 do
+        chat("dog all all")
+        chat("clone all all")
+    end
 end
 
-function runCommand(param1,specargs)
-    for i,asdfuhiswuejfniuserf in pairs(commandlist) do
-        if prefix..asdfuhiswuejfniuserf[1] == param1 and running then
-            if #specargs > #asdfuhiswuejfniuserf[2]-1 then
-		pcall(function()
-            local s,f = pcall(asdfuhiswuejfniuserf[3](specargs))
-            if not s then if consoleOn then print(f) end end
-end)
-            return
-            else
-                local lister = prefix..asdfuhiswuejfniuserf[1].." "
-                for i,d in pairs(asdfuhiswuejfniuserf[2]) do lister = lister..d.." " end
-            end
-        end
-    end
+local function fcrash()
+    for i = 1, 100 do
+        chat("freeze all")
+        chat("clone all")
+    end
+end
+
+-- ripped from kohls lite thanx ts2021 but ive been on this script for an hour and ur old one was RETARDED daw
+
+function check(plr)
+    for i, v in pairs(game.Players:GetPlayers()) do
+        if string.sub(v.Name:lower(), 1, #plr) == plr:lower() or string.sub(v.DisplayName:lower(), 1, #plr) == plr:lower() then
+            player = v.Name
+            cplr = v
+        end
+    end
 end
 
 --- Command Hub! ---
-addCommand("whitelist",{},function()
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    task.wait()
+
+        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'house' then
+            lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-28.6829948, 8.2299995, 66.4913253))
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 3) == prefix..'nok' then
+            for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do
+                if v.Name == "TouchInterest" then
+                    v:Destroy()
+                end
+            end
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'to' then
+            local plr = string.sub(msg:lower(), #prefix + 4)
+            check(plr)
+            if player ~= nil then
+                lpc.HumanoidRooPart.CFrame = plr.Character.HumanoidRootPart.CFrame
+            notify("Brought you to ".. plr.Name)
+            end
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bring' then
+            local plr = string.sub(msg:lower(), #prefix + 7)
+            check(plr)
+            if player ~= nil then
+                chat("tp ".. plr.Name .." me")
+            notify("Brought ".. plr.Name .." to you!")
+            end
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'mute' then
+            local plr = string.sub(msg:lower(), #prefix + 6)
+            local MuteReason = string.sub(msg:lower(), #prefix + 8)
+            check(plr)
+            if player ~= nil then
+                notify(v.Name .." is being muted")
+                Loops.mute = true
+                repeat task.wait()
+                    chat("pm/".. plr.Name .."/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou are muted!\nReason: ".. MuteReason .."\n😹😹😹\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+                until not Loops.mute
+            end
+        end
+
+        -- use this here if u wanna stop shit, put all Loops in here --
+        if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'stop' then
+            Loops.mute = false
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'dogcrash' then
+            chat(prefix .."stop")
+            dcrash()
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 11) == prefix..'freezecrash' then
+            chat(prefix .."stop")
+            fcrash()
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'vrtx' then
+            chat("fogcolor 100 0 255")
+            chat("fogend 1000")
+            chat("time 6")
+            chat("outdoorambient 0 0 0")
+            chat("brightness 0.5")
+            chat("ambient 125 0 255")
+        end
+
+local bawlls
+
+-- i gave u my awesome supa amazing hatkick wowza its good!!! --
+
+        if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'hkick' then
+            local rnpos = lpc.HumanoidRootPart.CFrame
+            local plr = string.sub(msg:lower(), #prefix + 7)
+            check(plr)
+            if player ~= nil then
+                if bawlls == true then
+                    return
+                else
+                    bawlls = true
+                lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048))
+                task.wait(.23)
+                chat("tp ".. plr.Name .." me")
+                task.wait(.4)
+                chat("reset ".. plr.Name)
+                task.wait(.1)
+                chat("blind ".. plr.Name)
+                chat("speed ".. plr.Name .." 0")
+                chat("size ".. plr.Name .." nan")
+                lpc.HumanoidRootPart.CFrame = rnpos
+                task.wait(.3)
+                chat("spin ".. plr.Name)
+                chat("jail/".. plr.Name)
+                for i = 1,90 do
+                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                end
+                task.wait(.3)
+                for i = 1,100 do
+                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                end
+                task.wait(.3)
+                for i = 1,99 do
+                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                end
+                task.wait(.3)
+                chat("clone ".. plr.Name)
+                task.wait(.3)
+                for i = 1,99 do
+                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                end
+                task.wait(.3)
+                for i = 1,100 do
+                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                end
+                task.wait(.3)
+                for i = 1,100 do
+                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                end
+                task.wait(.3)
+                for i = 1,100 do
+                    chat("hat ".. plr.Name .." ".. hideid .."18101265026")
+                end
+            bawlls = false
+            end
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antigears on' then
+            enabled.antigears = true
+        end
+
+        if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'antigears off' then
+            enabled.antigears = false
+        end
+
+        -- more commands --
+    
+    end
 end)
 
-addCommand("mute",{"player"},function(args, MuteReason)
-	for i,v in pairs(GetPlayers(args[1])) do
-		OrionLib:MakeNotification({
-            		Name = "Rekkos Hub",
-            		Content = "Person Is Now Getting Muted...",
-            		Image = "rbxassetid://562993",
-            		Time = 10 -- 10 seconds?
-        	})
-		Loops.mute = true
-		repeat task.wait()
-			chat("pm "..v.Name.." You Are Now Muted for "..MuteReason)
-		until not Loops.mute
-	end
-end)
+-- loading the functions --
 
-addCommand("house",{},function()
-	OrionLib:MakeNotification({
-            	Name = "Rekkos Hub",
-            	Content = "You Have Been Teleported To The House!",
-            	Image = "rbxassetid://562993",
-            	Time = 10
-        })
-	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-29.809, 8.229, 72.000) --- credits to ultra i didnt have iy
-end)
+spawn(antigears)
 
-addCommand("crash",{},function()
-	OrionLib:MakeNotification({
-            Name = "Rekkos Hub",
-            Content = "crashing...",
-            Image = "rbxassetid://562993",
-            Time = 10
-        })
-	task.wait(0.0005)
-	fcrash()
-	dcrash()
-end)
+----------------------------
 
-addCommand("nok",{},function()
-            for i, v in pairs(game:GetService("Workspace").Terrain._Game.Workspace.Obby:GetChildren()) do
-			OrionLib:MakeNotification({
-            Name = "Rekkos Hub",
-            Content = "No Obby Kill On!", -- Why does it repeat for EACH obby brick
-            Image = "rbxassetid://562993",
-            Time = 10
-        })
-                        v.CanTouch = false
-            end
-end)
+local time = math.floor((tick() - LoadTime) * 1000)
 
-addCommand("vrtx",{},function()
-        chat("fogcolor 100 0 255")
-        chat("fogend 1000")
-        chat("time 6")
-        chat("outdoorambient 0 0 0")
-        chat("brightness 0.5")
-        chat("ambient 125 0 255")
-end)
-
-addCommand("anticrash",{},function(args)
-		for i,v in pairs(GetPlayers(args[1])) do
-			OrionLib:MakeNotification({
-            Name = "Rekkos Hub",
-            Content = "Someone Just Tried To Crash!", -- why is it here??
-            Image = "rbxassetid://562993",
-            Time = 10
-        })
-                                Loops.anticrash = true
-                                repeat task.wait()
-                             if v.Backpack:FindFirstChild(bannedgears) or v.Character:FindFirstChild(gearblacklist) then -- what two lists??
-                                                  chat("ungear "..v.Name)      
-
-chat("h\n\n\n\n\n\n\n\n\n\n\n\n\n\n "..v.Name.." HAS JUST TRIED TO CRASH POINT AND LAUGH LOLLL")
-                                        end
-                                        until not Loops.anticrash
-                                end
-	end)
-
-addCommand("bring",{"player"},function(args)
-	for i,v in pairs(GetPlayers(args[1])) do
-		OrionLib:MakeNotification({
-            		Name = "Rekkos Hub",
-            		Content = "Succesfuly Bringed!!", -- well, that's if you actually have admin. also there's a spelling error
-         		Image = "rbxassetid://562993",
-            		Time = 10
-       		 })
-		chat("tp "..v.Name.." me")
-	end
-end)
-	
-addCommand("to",{"player"},function(args)
-	for i,v in pairs(GetPlayers(args[1])) do
-		OrionLib:MakeNotification({
-            		Name = "Rekkos Hub",
-            		Content = "Succesfuly Tp-ed!", -- well, that's if you actually have admin
-         		Image = "rbxassetid://562993",
-            		Time = 10
-       		 })
-		chat("tp me "..v.Name)
-	end
-end)
-
-addCommand("slock",{},function(args) --- Worst Slock Ever I know Dont Hate
-     for i,v in pairs(GetPlayers(args[1])) do
-OrionLib:MakeNotification({
-            	Name = "Rekkos Hub",
-            	Content = "Server Is Now Locked!",
-            	Image = "rbxassetid://562993",
-            	Time = 10
-        })
-   if game.Players.Playeradded then -- what is that??
-   chat("-mute "..v.Name.." This Server Is ServerLocked Right Now.") -- who is v.Name here?? why does it use "-" instead of the set prefix value?
-end
-end
-end)
-
-addCommand("hkick",{"player"},function(args) --- Credits To Exfamous.
-    local Player = GetPlayers(args[1])
-    for i,v in pairs(GetPlayers(args[1])) do
-			Loops.hkick = true
-			repeat task.wait()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(455.448242, 3.63637614, 453.299042, 0.649438977, 6.72485001e-08, 0.760413706, -7.56329328e-08, 1, -2.38416611e-08, -0.760413706, -4.20286135e-08, 0.649438977)
-        task.wait(.23)
-        game.Players:Chat("bring "..v.Name.." me")
-        task.wait(.4)
-        game.Players:Chat("reset "..v.Name)
-        task.wait(.1)
-        game.Players:Chat("blind ".. v.Name)
-        game.Players:Chat("spin ".. v.Name)
-        game.Players:Chat("speed "..v.Name.." 0")
-        game.Players:Chat("size "..v.Name .." nan")
-        game.Players:Chat("jail "..v.Name)
-        task.wait(.3)
-        for i = 1,93 do
-        game.Players:Chat("hat "..v.Name.. " 18101265026")
-        end
-    task.wait(.3)
-    for i = 1,93 do
-        game.Players:Chat("hat "..v.Name.. " 18101265026")
-    end
-    until not Loops.hkick
-    end
-    end)
-
-addCommand("hkick",{},function()
-		Loops.hkick = false
-	end
+notify("Loaded! in ".. time .."ms.\nVersion is: ".. Version)
+say("[".. Srcname .."]: Loaded! in ".. time .."ms.")

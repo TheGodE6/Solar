@@ -210,7 +210,7 @@ local bawlls
                 lpc.HumanoidRootPart.CFrame = rnpos
                 task.wait(.3)
                 chat("spin "..plr)
-                chat("jail/ ..plr)
+                chat("jail/ "..plr)
                 for i = 1,90 do
                     chat("hat "..plr.." ".. hideid .."18101265026")
                 end

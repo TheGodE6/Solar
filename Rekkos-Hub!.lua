@@ -155,7 +155,7 @@ if string.sub(msg, 1, #prefix + 10) == prefix.."unantikill" then
             local plr = string.sub(msg:lower(), #prefix + 4)
             check(plr)
             if player ~= nil then
-                lpc.HumanoidRooPart.CFrame = plr.Character.HumanoidRootPart.CFrame
+                lpc.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame
             notify("Brought you to "..plr)
             end
         end

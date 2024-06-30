@@ -127,7 +127,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         until not Loops.spam
     end
 
-      if string.sub(msg, 1, #prefix + 5) == "music" then
+      if string.sub(msg, 1, #prefix + 5) == preifx.."music" then
             notify("In Development.")
             end
 

@@ -30,6 +30,7 @@ local connections = {}
 local lp = game.Players.LocalPlayer
 local lpc = lp.Character
 local hideid = "00000000000000000000000000000000000000000000000000000000000000000000"
+local gp = game.Players
 
 local function notify(msg)
         OrionLib:MakeNotification({
@@ -156,16 +157,16 @@ if string.sub(msg, 1, #prefix + 10) == prefix.."unantikill" then
         end
 
         if string.sub(msg:lower(), 1, #prefix + 2) == prefix..'to' then
-            local plr = string.sub(msg:lower(), #prefix + 4)
+            for i,v in pairs(gp:GetPlayers()) do
             check(plr)
             if player ~= nil then
                 lpc.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame
-            notify("Brought you to "..plr)
+            notify("Brought you to "..v.Name)
             end
         end
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bring' then
-            local plr = string.sub(msg:lower(), #prefix + 7)
+            for i,v in pairs(gp:Getplayers())
             check(plr)
             if player ~= nil then
                 chat("tp "..plr.." me")
@@ -174,7 +175,7 @@ if string.sub(msg, 1, #prefix + 10) == prefix.."unantikill" then
         end
 
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'mute' then
-            local plr = string.sub(msg:lower(), #prefix + 6)
+            for i,v in pairs(gp:GetPlayers()) do
             local MuteReason = string.sub(msg:lower(), #prefix + 8)
             check(plr)
             if player ~= nil then
@@ -217,7 +218,7 @@ local bawlls
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'hkick' then
             local rnpos = lpc.HumanoidRootPart.CFrame
-            local plr = string.sub(msg:lower(), #prefix + 7)
+            for i,v in pairs(gp:GetPlayers()) do
             check(plr)
             if player ~= nil then
                 if bawlls == true then

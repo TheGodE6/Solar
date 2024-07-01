@@ -12,6 +12,7 @@ local Settings = {
     ["bannedgears"] = {"VampireVanquisher", "OrinthianSwordAndShield", "RainbowPeriastron", "CrimsonPeriastron", "JoyfulPeriastron", "AzurePeriastron", "FestivePeriastron", "FallPeriastron", "GrimgoldPeriastron", "NoirPeriastron", "ChartreusePeriastron", "IvoryPeriastron"},
     ["Script Name"] = "Rekkos-Hub-Beta",
     ["gearwhitelist"] = {"dawninja21", "dawninja21alt"} -- players you do not want to be effected by antigear
+    ["AutoBan"] = {}
 }
 
 local enabled = {
@@ -29,9 +30,9 @@ local Loops = {}
 local connections = {}
 local lp = game.Players.LocalPlayer
 local lpc = lp.Character
-local hideid = "00000000000000000000000000000000000000000000000000000000000000000000"
+local  hideid = "00000000000000000000000000000000000000000000000000000000000000000000"
 local gp = game.Players
-
+local AutoBan = Settings["AutoBans"]
 local function notify(msg)
         OrionLib:MakeNotification({
             Name = "Rekkos Hub",
@@ -285,6 +286,13 @@ local bawlls
 end)
 
 -- loading the functions --
+task.spawn(function()
+    game.Players.PlayerAdded:connect(function(v)
+        if table.find(AutoBan, v.Name) then
+            game.Players:Chat("ban "..v.Name)
+        end
+    end)
+end)
 
 spawn(antigears)
 

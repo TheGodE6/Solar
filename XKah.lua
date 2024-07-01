@@ -17,3 +17,8 @@ function addcommand(cmdName, cmdDescription, cmdFunction)
             end
         end)
 end
+
+if string.sub(msg, 1, #prefix + 4) == "mute" then
+local muted = {}
+for i,v in pairs(muted) do
+chat("fling "..v.Name.."")

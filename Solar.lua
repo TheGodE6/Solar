@@ -11,7 +11,7 @@ local Settings = {
     ["Autoafk"] = false,
     ["bannedgears"] = {"VampireVanquisher", "OrinthianSwordAndShield", "RainbowPeriastron", "CrimsonPeriastron", "JoyfulPeriastron", "AzurePeriastron", "FestivePeriastron", "FallPeriastron", "GrimgoldPeriastron", "NoirPeriastron", "ChartreusePeriastron", "IvoryPeriastron"},
     ["Script Name"] = "Solar.lua",
-    ["gearwhitelist"] = {"dawninja21", "dawninja21alt"} -- players you do not want to be effected by antigear
+    ["gearwhitelist"] = {"dawninja21", "dawninja21alt"}, -- players you do not want to be effected by antigear
     ["AutoBan"] = {}
 }
 
@@ -119,7 +119,6 @@ end
 --- Command Hub! ---
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    task.wait()
 
         if string.sub(msg, 1, #prefix + 4) == prefix.."spam" then
             local spam = string.sub(msg, #prefix + 6)
@@ -127,11 +126,11 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             repeat task.wait()
             chat(spam)
         until not Loops.spam
-    end
+        end
 
       if string.sub(msg, 1, #prefix + 5) == preifx.."music" then
             notify("In Development.")
-            end
+      end
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'house' then
             lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-28.6829948, 8.2299995, 66.4913253))
@@ -165,10 +164,11 @@ if string.sub(msg, 1, #prefix + 10) == prefix.."unantikill" then
                 lpc.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame
             notify("Brought you to "..v.Name)
             end
-        end
+            end
+    end
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'bring' then
-            for i,v in pairs(gp:Getplayers())
+            for i,v in pairs(gp:Getplayers()) do
             check(plr)
             if player ~= nil then
                 chat("tp "..plr.." me")
@@ -187,14 +187,15 @@ if string.sub(msg, 1, #prefix + 10) == prefix.."unantikill" then
                     chat("pm/"..plr.."/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou are muted!\nReason: ".. MuteReason .."\n😹😹😹\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
                 until not Loops.mute
             end
-        end
-
+            end
+            end
         -- use this here if u wanna stop shit, put all Loops in here --
         if string.sub(msg:lower(), 1, #prefix + 4) == prefix..'stop' then
             Loops.mute = false
             Loops.spam = false
         end
-
+        end
+        
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'dogcrash' then
            servermsg("WOMP WOMP")
             chat(prefix .."stop")
@@ -284,13 +285,13 @@ local bawlls
         -- more commands --
     
     end
-end)
+end
 
 -- loading the functions --
 task.spawn(function()
     game.Players.PlayerAdded:connect(function(v)
         if table.find(AutoBan, v.Name) then
-            game.Players:Chat("prefix.."ban" "..v.Name)
+            game.Players:Chat("-ban "..v.Name)
         end
     end)
 end)
@@ -298,7 +299,7 @@ end)
 task.spawn(function()
 game.Players.PlayerAdded:connect(function(v)
         if table.find(Autohkick, v.Name) then
-            game.Players:Chat("prefix.."hkick" "..v.Name)
+            game.Players:Chat("-hkick" ..v.Name)
         end
     end)
 end)
@@ -323,3 +324,4 @@ local time = math.floor((tick() - LoadTime) * 1000)
 
 notify("Loaded! in ".. time .."ms.\nVersion is: ".. Version)
 say("[".. Srcname .."]: Loaded! in ".. time .."ms.")
+end)

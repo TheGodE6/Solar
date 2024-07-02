@@ -319,4 +319,5 @@ spawn(antigears)
 local time = math.floor((tick() - LoadTime) * 1000)
 
 notify("Loaded! in ".. time .."ms.\nVersion is: ".. Version)
+say("["Srcname"] Loaded In: "..time.." ms")
 end)

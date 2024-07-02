@@ -216,7 +216,7 @@ local bawlls
 
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'hkick' then
             local rnpos = lpc.HumanoidRootPart.CFrame
-            for i,v in pairs(gp:GetPlayers()) do
+            for i,plr in pairs(gp:GetPlayers()) do
             check(plr)
             if player ~= nil then
                 if bawlls == true then

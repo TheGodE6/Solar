@@ -283,7 +283,6 @@ local bawlls
 end
 
 -- loading the functions --
-task.spawn(function()
     game.Players.PlayerAdded:connect(function(v)
         if table.find(AutoBan, v.Name) then
             game.Players:Chat("-ban "..v.Name)
@@ -291,7 +290,6 @@ task.spawn(function()
     end)
 end)
 
-task.spawn(function()
 game.Players.PlayerAdded:connect(function(v)
         if table.find(Autohkick, v.Name) then
             game.Players:Chat("-hkick" ..v.Name)

@@ -33,7 +33,6 @@ local lpc = lp.Character
 local  hideid = "00000000000000000000000000000000000000000000000000000000000000000000"
 local gp = game.Players
 local AutoBan = Settings["AutoBans"]
-
 --- Notify ---
 local function notify(msg)
         OrionLib:MakeNotification({

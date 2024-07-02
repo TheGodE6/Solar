@@ -295,6 +295,7 @@ task.spawn(function()
     end)
 end)
 
+task.spawn(function()
 game.Players.PlayerAdded:connect(function(v)
         if table.find(Autohkick, v.Name) then
             game.Players:Chat("prefix.."hkick" "..v.Name)

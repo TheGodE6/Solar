@@ -25,7 +25,6 @@ local Version = Settings["Version"]
 local Srcname = Settings["Script Name"]
 local prefix = Settings["Prefix"]
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-local LoadTime = tick()
 local Loops = {}
 local connections = {}
 local lp = game.Players.LocalPlayer
@@ -312,7 +311,7 @@ game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 spawn(antigears)
 
 ----------------------------
-
+local LoadTime = tick()
 local time = math.floor((tick() - LoadTime) * 1000)
 
 notify("Loaded! in ".. time .."ms.\nVersion is: ".. Version)

@@ -128,10 +128,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         until not Loops.spam
         end
 
-      if string.sub(msg, 1, #prefix + 5) == preifx.."music" then
-            notify("In Development.")
-      end
-
         if string.sub(msg:lower(), 1, #prefix + 5) == prefix..'house' then
             lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-28.6829948, 8.2299995, 66.4913253))
         end

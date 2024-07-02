@@ -290,10 +290,29 @@ end)
 task.spawn(function()
     game.Players.PlayerAdded:connect(function(v)
         if table.find(AutoBan, v.Name) then
-            game.Players:Chat("prefix..ban "..v.Name)
+            game.Players:Chat("prefix.."ban" "..v.Name)
         end
     end)
 end)
+
+game.Players.PlayerAdded:connect(function(v)
+        if table.find(Autohkick, v.Name) then
+            game.Players:Chat("prefix.."hkick" "..v.Name)
+        end
+    end)
+end)
+
+local function onPlayerAdded(v)
+      chat("h \n\n\n ["..Srcname.."]: "..v.Name.." Has Joined The Server.\n\n\n")
+end
+
+local function onPlayerLeaving(v)
+chat("h \n\n\n ["..Srcname.."]: "..v.Name.." Has Left The Server.\n\n\n")
+end
+
+game.Players.PlayerAdded:Connect(onPlayerAdded)
+game.Players.PlayerRemoving:Connect(onPlayerLeaving)
+
 
 spawn(antigears)
 

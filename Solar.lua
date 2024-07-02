@@ -282,7 +282,7 @@ end)
 
 -- loading the functions --
 game.Players.PlayerAdded:Connect(function(v)
-    if table.find(AutoBan, v.Name) then
+if game.Players:FindFirstChild(AutoBan) then
         game.Players:Chat("-ban " .. v.Name)
     end
 end)

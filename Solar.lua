@@ -53,7 +53,7 @@ local function chat(msg)
 end
 
 local function servermsg(msg)
-    chat("h \n\n\n\n\n\n" .. Srcname .. ": " .. msg .. "\n\n\n\n\n\n\n")
+    chat("h \n\n\n\n\n\n".. Srcname ..": " .. msg .. "\n\n\n\n\n\n\n")
 end
 
 -- this antigear was made by dek so credit him not me --
@@ -196,6 +196,7 @@ if string.sub(msg, 1, #prefix + 10) == prefix.."unantikill" then
         end
 
         if string.sub(msg:lower(), 1, #prefix + 8) == prefix..'dogcrash' then
+           servermsg("WOMP WOMP")
             chat(prefix .."stop")
             dcrash()
         end

@@ -279,7 +279,6 @@ local bawlls
         if string.sub(msg:lower(), 1, #prefix + 12) == prefix..'unantigear' then
             enabled.antigears = false
         end
-
         -- more commands --
     
     end

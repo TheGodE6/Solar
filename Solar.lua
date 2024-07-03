@@ -296,7 +296,7 @@ game.Players.LocalPlayer:Connect(function(msg)
     end
 
 if string.sub(msg, 1, #prefix + 5) == 'slock' then
-    for i = 1,100 do
+    for i = 1,1000 do
         chat("hat me 18101265026")
     end
     chat("size me 10")

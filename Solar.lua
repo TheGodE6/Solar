@@ -185,7 +185,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
-        if string.sub(msg, 1, #prefix + 2) == 'iy' then
+        if string.sub(msg, 1, #prefix + 2) == prefix..'iy' then
             loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
         end
 
@@ -316,5 +316,6 @@ spawn(antigears)
 local LoadTime = tick()
 local time = math.floor((tick() - LoadTime) * 1000)
 
+say("["..Srcname.."]: Loaded In "..time.." ms!")
 notify("Loaded! in " .. time .. "ms.\nVersion is: " .. Version)
 servermsg("[" .. Srcname .. "] Has Loaded In " .. time .. " ms!")

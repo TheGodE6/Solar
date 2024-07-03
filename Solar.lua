@@ -185,6 +185,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
+        if string.sub(msg, 1, #prefix + 2) == 'iy' then
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+        end
+
     -- use this here if u wanna stop shit, put all Loops in here --
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix .. 'stop' then
         Loops.mute = false

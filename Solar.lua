@@ -12,7 +12,8 @@ local Settings = {
     ["bannedgears"] = {"VampireVanquisher", "OrinthianSwordAndShield", "RainbowPeriastron", "CrimsonPeriastron", "JoyfulPeriastron", "AzurePeriastron", "FestivePeriastron", "FallPeriastron", "GrimgoldPeriastron", "NoirPeriastron", "ChartreusePeriastron", "IvoryPeriastron"},
     ["Script Name"] = "Solar.lua",
     ["gearwhitelist"] = {"dawninja21", "dawninja21alt"}, -- players you do not want to be affected by antigear
-    ["AutoBan"] = {}
+    ["AutoBan"] = {},
+    ["Autohkick"] = {}
 }
 
 local enabled = {
@@ -30,6 +31,7 @@ local lpc = lp.Character
 local hideid = "00000000000000000000000000000000000000000000000000000000000000000000"
 local gp = game.Players
 local AutoBan = Settings["AutoBan"]
+local Autohkick = Settings["Autohkick"]
 
 --- Notify ---
 local function notify(msg)
@@ -50,7 +52,7 @@ local function chat(msg)
 end
 
 local function servermsg(msg)
-    chat("h \n\n\n\n\n\n\n\n\n\n".. msg .."\n\n\n\n\n\n\n\n\n\n\n")
+    chat("h \n\n\n\n\n\n\n\n\n\n" .. msg .. "\n\n\n\n\n\n\n\n\n\n\n")
 end
 
 -- this antigear was made by dek so credit him not me --
@@ -151,9 +153,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 2) == prefix .. 'to' then
         for _, v in pairs(gp:GetPlayers()) do
-            check(plr)
+            check(v.Name)
             if player ~= nil then
-                lpc.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame
+                lpc.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
                 notify("Brought you to " .. v.Name)
             end
         end
@@ -161,10 +163,10 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. 'bring' then
         for _, v in pairs(gp:GetPlayers()) do
-            check(plr)
+            check(v.Name)
             if player ~= nil then
-                chat("tp " .. plr .. " me")
-                notify("Brought " .. plr .. " to you!")
+                chat("tp " .. v.Name .. " me")
+                notify("Brought " .. v.Name .. " to you!")
             end
         end
     end
@@ -172,12 +174,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 4) == prefix .. 'mute' then
         for _, v in pairs(gp:GetPlayers()) do
             local MuteReason = string.sub(msg:lower(), #prefix + 8)
-            check(plr)
+            check(v.Name)
             if player ~= nil then
-                notify("" .. plr .. " is being muted")
+                notify("" .. v.Name .. " is being muted")
                 Loops.mute = true
                 repeat task.wait()
-                    chat("pm/" .. plr .. "/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou are muted!\nReason: " .. MuteReason .. "\n😹😹😹\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+                    chat("pm/" .. v.Name .. "/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nYou are muted!\nReason: " .. MuteReason .. "\n😹😹😹\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
                 until not Loops.mute
             end
         end
@@ -215,53 +217,53 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. 'hkick' then
         local rnpos = lpc.HumanoidRootPart.CFrame
         for _, v in pairs(gp:GetPlayers()) do
-            check(plr)
+            check(v.Name)
             if player ~= nil then
                 if bawlls == true then
                     return
                 else
                     bawlls = true
-                    lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048))
+                    lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0.714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048))
                     task.wait(0.23)
-                    chat("tp " .. plr .. " me")
+                    chat("tp " .. v.Name .. " me")
                     task.wait(0.4)
-                    chat("reset " .. plr)
+                    chat("reset " .. v.Name)
                     task.wait(0.1)
-                    chat("blind " .. plr)
-                    chat("speed " .. plr .. " 0")
-                    chat("size " .. plr .. " nan")
+                    chat("blind " .. v.Name)
+                    chat("speed " .. v.Name .. " 0")
+                    chat("size " .. v.Name .. " nan")
                     lpc.HumanoidRootPart.CFrame = rnpos
                     task.wait(0.3)
-                    chat("spin " .. plr)
-                    chat("jail/ " .. plr)
+                    chat("spin " .. v.Name)
+                    chat("jail/ " .. v.Name)
                     for _ = 1, 90 do
-                        chat("hat " .. plr .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
                     end
                     task.wait(0.3)
                     for _ = 1, 100 do
-                        chat("hat " .. plr .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
                     end
                     task.wait(0.3)
                     for _ = 1, 99 do
-                        chat("hat " .. plr .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
                     end
                     task.wait(0.3)
-                    chat("clone " .. plr)
+                    chat("clone " .. v.Name)
                     task.wait(0.3)
                     for _ = 1, 99 do
-                        chat("hat " .. plr .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
                     end
                     task.wait(0.3)
                     for _ = 1, 100 do
-                        chat("hat " .. plr .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
                     end
                     task.wait(0.3)
                     for _ = 1, 100 do
-                        chat("hat " .. plr .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
                     end
                     task.wait(0.3)
                     for _ = 1, 100 do
-                        chat("hat " .. plr .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
                     end
                     bawlls = false
                 end
@@ -282,7 +284,7 @@ end)
 
 -- loading the functions --
 game.Players.PlayerAdded:Connect(function(v)
-if game.Players:FindFirstChild(AutoBan) then
+    if table.find(AutoBan, v.Name) then
         game.Players:Chat("-ban " .. v.Name)
     end
 end)
@@ -294,11 +296,11 @@ game.Players.PlayerAdded:Connect(function(v)
 end)
 
 local function onPlayerAdded(v)
-servermsg(""["..Srcname.."]\n"..v.Name.." Has Joined The Server!\n Age: "..v.AccountAge.."\npremium: Nan")
+    servermsg("[" .. Srcname .. "]\n" .. v.Name .. " Has Joined The Server!\n Age: " .. v.AccountAge .. "\npremium: Nan")
 end
 
 local function onPlayerLeaving(v)
-servermsg(""v.Name.." Has Left The Server
+    servermsg(v.Name .. " Has Left The Server")
 end
 
 game.Players.PlayerAdded:Connect(onPlayerAdded)

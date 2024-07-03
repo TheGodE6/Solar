@@ -116,7 +116,7 @@ local function check(plr)
 end
 
 --- Command Hub! ---
-game.Players.LocalPlayer:Connect(function(msg)
+lp.Chatted:Connect(function(msg)
     
     if string.sub(msg, 1, #prefix + 4) == prefix .. "spam" then
         local spam = string.sub(msg, #prefix + 6)

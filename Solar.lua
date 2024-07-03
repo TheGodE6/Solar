@@ -296,12 +296,15 @@ lp.Chatted:Connect(function(msg)
     end
 
 if string.sub(msg, 1, #prefix + 5) == 'slock' then
+  lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-28, 4, -16))
     for i = 1,1000 do
         chat("hat me 18101265026")
     end
     chat("size me 10")
     task.wait(0.0005)
     chat("clone me")
+    task.wait(0.0005)
+    chat("respawn me")
 end
 -- loading the functions --
 local function onPlayerAdded(v)

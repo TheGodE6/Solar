@@ -294,6 +294,15 @@ game.Players.LocalPlayer:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix .. 'unantigear' then
         enabled.antigears = false
     end
+
+if string.sub(msg, 1, #prefix + 5) == 'slock' then
+    for i = 1,100 do
+        chat("hat me 18101265026")
+    end
+    chat("size me 10")
+    task.wait(0.0005)
+    chat("clone me")
+end
 -- loading the functions --
 local function onPlayerAdded(v)
     servermsg("[" .. Srcname .. "]\n" .. v.Name .. " Has Joined The Server!\n Age: " .. v.AccountAge .. "\npremium: Nan")

@@ -116,7 +116,6 @@ local function check(plr)
 end
 
 --- Command Hub! ---
-
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg, 1, #prefix + 4) == prefix .. "spam" then
         local spam = string.sub(msg, #prefix + 6)
@@ -275,6 +274,17 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
     end
 
+        if stinrg.sub(msg, 1, #prefix + 7) == prefix..'antihat' then
+            loops.antihat = true
+        repeat task.wait()
+            for i,v in pairs(workspace:GetDescendants()) do
+                if v:IsA("Accessory") and v.Name == "Accessory (Pointy)" or v.Name == "Accessory (happy)" or v.Name == "Accessory (SUN)" then
+                    v:Destroy()
+                end
+            end
+        until not loops.antihat
+        end
+
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix .. 'antigear' then
         enabled.antigears = true
     end
@@ -284,21 +294,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
     -- more commands --
 
-end)
-
+end
 -- loading the functions --
-game.Players.PlayerAdded:Connect(function(v)
-    if table.find(AutoBan, v.Name) then
-        game.Players:Chat("-ban " .. v.Name)
-    end
-end)
-
-game.Players.PlayerAdded:Connect(function(v)
-    if table.find(Autohkick, v.Name) then
-        game.Players:Chat("-hkick " .. v.Name)
-    end
-end)
-
 local function onPlayerAdded(v)
     servermsg("[" .. Srcname .. "]\n" .. v.Name .. " Has Joined The Server!\n Age: " .. v.AccountAge .. "\npremium: Nan")
 end
@@ -319,3 +316,4 @@ local time = math.floor((tick() - LoadTime) * 1000)
 say("["..Srcname.."]: Loaded In "..time.." ms!")
 notify("Loaded! in " .. time .. "ms.\nVersion is: " .. Version)
 servermsg("[" .. Srcname .. "] Has Loaded In " .. time .. " ms!")
+end

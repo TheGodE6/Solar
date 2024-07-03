@@ -116,7 +116,8 @@ local function check(plr)
 end
 
 --- Command Hub! ---
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
+game.Players.LocalPlayer:Connect(function(msg)
+    
     if string.sub(msg, 1, #prefix + 4) == prefix .. "spam" then
         local spam = string.sub(msg, #prefix + 6)
         Loops.spam = true
@@ -124,6 +125,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             chat(spam)
         until not Loops.spam
     end
+    end)
 
     if string.sub(msg:lower(), 1, #prefix + 5) == prefix .. 'house' then
         lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-28.6829948, 8.2299995, 66.4913253))
@@ -292,9 +294,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if string.sub(msg:lower(), 1, #prefix + 12) == prefix .. 'unantigear' then
         enabled.antigears = false
     end
-    -- more commands --
-
-end
 -- loading the functions --
 local function onPlayerAdded(v)
     servermsg("[" .. Srcname .. "]\n" .. v.Name .. " Has Joined The Server!\n Age: " .. v.AccountAge .. "\npremium: Nan")
@@ -310,10 +309,9 @@ game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 spawn(antigears)
 
 ----------------------------
-local LoadTime = tick()
+local LoadTime = tick()/WaitForChild()
 local time = math.floor((tick() - LoadTime) * 1000)
 
 say("["..Srcname.."]: Loaded In "..time.." ms!")
 notify("Loaded! in " .. time .. "ms.\nVersion is: " .. Version)
 servermsg("[" .. Srcname .. "] Has Loaded In " .. time .. " ms!")
-end

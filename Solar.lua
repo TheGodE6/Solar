@@ -52,7 +52,7 @@ local function chat(msg)
 end
 
 local function servermsg(msg)
-    chat("h \n\n\n\n\n\n\n\n\n\n" .. msg .. "\n\n\n\n\n\n\n\n\n\n\n")
+    chat("h \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" .. msg .. "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
 end
 
 -- this antigear was made by dek so credit him not me --

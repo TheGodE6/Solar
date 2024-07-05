@@ -963,7 +963,7 @@ addCommand("crash",{},function()
     runCommand(prefix.."shutdown",{})
 end)
 
-addCommand("vampirecrash",{},function()
+addCommand("vgc",{},function()
 	if Loops.antiservercrash then Loops.antiservercrash = false spawn(function()wait(3)runCommand(prefix.."antiservercrash",{})end)end
     game.Players:Chat("gear me 94794847")
     repeat wait() until game.Players.LocalPlayer.Backpack:FindFirstChild("VampireVanquisher")

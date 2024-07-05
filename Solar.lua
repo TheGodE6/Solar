@@ -7388,6 +7388,6 @@ task.spawn(function()
 end)
 print("Loaded in "..tostring(os.clock()-loadtime).."s / "..tostring(math.floor((os.clock()-loadtime)*1000)).."ms")
 
-local function chat(msg)
+function chat(msg)
 game.Players:Chat(msg)
 end

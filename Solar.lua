@@ -4104,7 +4104,7 @@ addCommand("unantispeed",{},function()
 	Connections.antispeedb:Disconnect()
 end)
 
-addCommand("antimessage",{},function()
+addCommand("antipm",{},function()
 	Loops.antimessage = true
 	repeat game:GetService("RunService").RenderStepped:Wait()
 		pcall(function()
@@ -4133,7 +4133,7 @@ addCommand("antimessage",{},function()
 	until not Loops.antimessage
 end)
 
-addCommand("unantimessage",{},function()
+addCommand("unantipm",{},function()
 	Loops.antimessage = false
 end)
 

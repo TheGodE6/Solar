@@ -1,10 +1,10 @@
 local Settings = {
-    ["Autorun Commands"] = {"antikick","antiservercrash","antiabuse","antiname","nokill","localremoveobby","fixvelocity","runcommand logs","antivoid","antifly","autogod","platform","crashdetector","afkindicator","antiskydive","antigrav","antiepilepsy","antilighting","nethelper","draggablelogs","serverdata","antispeed","blacklisttools DaggerOfShatteredDimensions;BlackHoleSword;HotDogOnAStick;AzureDragonMagicSlayerSword"}, -- Commands to run automatically
+    ["Autorun Commands"] = {"antikick","antiservercrash","antiabuse","antiname","nokill","fixvelocity","runcommand logs","antivoid","antifly","autogod","platform","crashdetector","afkindicator","antiskydive","antigrav","antiepilepsy","antilighting","nethelper","draggablelogs","serverdata","antispeed","blacklisttools DaggerOfShatteredDimensions;BlackHoleSword;HotDogOnAStick;AzureDragonMagicSlayerSword"}, -- Commands to run automatically
     ["Default Whitelisted"] = {}, -- People whitelisted by default
     ["Default Banned"] = {}, -- People banned by default [Buggy]
     ["Default Softlocked"] = {}, -- People softlocked by Default
     ["Player Crash Settings"] = {["Vampire"] = false, ["Players"] = {}}, -- Automatically crashes server if one of these players are in it
-    ["Prefix"] = "-", -- Prefix used for running commands
+    ["Prefix"] = ".", -- Prefix used for running commands
     ["Person299's Admin"] = true, -- If you do not own Person299's Admin, some commands will be fixed appropriately
     ["Legacy Serverlock"] = true, -- Softlocks players instead of crashing
     ["Punish Based Softlock"] = true, -- Uses punishing for softlocking instead of sizing and sending to heaven
@@ -6929,7 +6929,7 @@ for i,v in pairs(GetPlayers(args[1])) do
             end
         end)
 
-addCommand("localremoveobby",{},function()pcall(function()
+addCommand("lro",{},function()pcall(function()
     workspace.Terrain["_Game"]["Workspace"].Obby.Parent = game.Chat
     workspace.Terrain["_Game"]["Workspace"]["Obby Box"].Parent = game.Chat
 end)end)

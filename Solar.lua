@@ -6813,14 +6813,10 @@ addCommand("slock",{},function()
  for i = 1,100 do
               chat("hat me 18101265026")
 end
-task.wait(0.0005)
  runCommand(prefix.."unantiabuse")
 chat("respawn all")
-task.wait(0.0005)
           chat("size me 5")
-          task.wait(0.0005)
           chat("clone me")
-          task.wait(0.0005)
           chat("respawn me")
       end)
 

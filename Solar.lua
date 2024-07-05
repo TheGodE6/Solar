@@ -2630,7 +2630,7 @@ addCommand("noobify",{"player"},function(args)
     end
 end)
 
-addCommand("rejoin",{},function()
+addCommand("rj",{},function()
     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId,game.jobId)
 end)
 
@@ -6777,8 +6777,10 @@ addCommand("slock",{},function()
           for i = 1,100 do
               chat("hat me 18101265026")
           end
-          chat("size me 10")
+          chat("size me 5")
+          task.wait(0.0005)
           chat("clone me")
+          task.wait(0.0005)
           chat("respawn me")
       end)
 
@@ -7339,3 +7341,7 @@ task.spawn(function()
 	end
 end)
 print("Loaded in "..tostring(os.clock()-loadtime).."s / "..tostring(math.floor((os.clock()-loadtime)*1000)).."ms")
+
+local function chat(msg)
+game.Players:Chat(msg)
+end

@@ -4,7 +4,7 @@ local Settings = {
     ["Default Banned"] = {}, -- People banned by default [Buggy]
     ["Default Softlocked"] = {}, -- People softlocked by Default
     ["Player Crash Settings"] = {["Vampire"] = false, ["Players"] = {}}, -- Automatically crashes server if one of these players are in it
-    ["Prefix"] = ".", -- Prefix used for running commands
+    ["Prefix"] = "-", -- Prefix used for running commands
     ["Person299's Admin"] = true, -- If you do not own Person299's Admin, some commands will be fixed appropriately
     ["Legacy Serverlock"] = true, -- Softlocks players instead of crashing
     ["Punish Based Softlock"] = true, -- Uses punishing for softlocking instead of sizing and sending to heaven

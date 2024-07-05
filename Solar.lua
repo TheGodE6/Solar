@@ -4699,7 +4699,7 @@ addCommand("getdisplayname",{"player (optional silentmode)"},function(args)
     end
 end)
 
-addCommand("spam",{"delay","command"},function(args)
+addCommand("spam",{"command"},function(args)
     runCommand(prefix.."spamcommands",args)
 end)
 

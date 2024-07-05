@@ -6879,7 +6879,7 @@ wait(0.5)
 game.Players:Chat("respawn me")
 end)
 
-addCommand("hatkick",{"player"},function(args)
+addCommand("hkick",{"player"},function(args)
 for i,v in pairs(GetPlayers(args[1])) do
                 if bawlls == true then
                     lpc.HumanoidRootPart.CFrame = CFrame.new(Vector3.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0.714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048))

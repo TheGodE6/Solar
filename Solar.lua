@@ -6773,14 +6773,12 @@ addCommand("whitelisted",{},function()
 end)
 
 addCommand("slock",{},function()
-        lpc.HumanoidRootPart.CFrame = CFrame.new(-28, 4, -16)
+        lpc.HumanoidRootPart.CFrame = CFrame.new(-41, 4, -3)
           for i = 1,100 do
               chat("hat me 18101265026")
           end
           chat("size me 10")
-          task.wait(0.0005)
           chat("clone me")
-          task.wait(0.0005)
           chat("respawn me")
       end)
 

@@ -6933,7 +6933,8 @@ end)
 
 addCommand("hkick",{"player"},function(args)
 for i,v in pairs(GetPlayers(args[1])) do
-                    game.Players.LocalPlayer.HumanoidRootPart.CFrame = CFrame.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0.714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048)
+	lpc.HumanoidRootPart.CFrame = rnpos
+                    lpc.HumanoidRootPart.CFrame = CFrame.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0.714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048)
                     task.wait(0.23)
                     chat("tp " .. v.Name .. " me")
                     task.wait(0.4)
@@ -6942,20 +6943,19 @@ for i,v in pairs(GetPlayers(args[1])) do
                     chat("blind " .. v.Name)
                     chat("speed " .. v.Name .. " 0")
                     chat("size " .. v.Name .. " nan")
-                    lpc.HumanoidRootPart.CFrame = rnpos
                     task.wait(0.3)
                     chat("spin " .. v.Name)
                     chat("jail/ " .. v.Name)
                     for _ = 1, 90 do
-                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. " "..hideid.." 18101265026")
                     end
                     task.wait(0.3)
                     for _ = 1, 100 do
-                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. "..hideid.." "18101265026")
                     end
                     task.wait(0.3)
                     for _ = 1, 99 do
-                        chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
+                        chat("hat " .. v.Name .. "..hideid.." "18101265026")
                     end
                     task.wait(0.3)
                     chat("clone " .. v.Name)

@@ -6786,33 +6786,36 @@ end)
 
 addCommand("slock",{},function()
         lpc.HumanoidRootPart.CFrame = CFrame.new(-41, 4, -3)
-          for i = 1,100 do
+          for i = 1,99 do
+              chat("hat me 18101265026")
+   for i = 1,99 do
               chat("hat me 18101265026")
           end
- for i = 1,100 do
+   for i = 1,99 do
               chat("hat me 18101265026")
           end
- for i = 1,100 do
+   for i = 1,99 do
               chat("hat me 18101265026")
           end
- for i = 1,100 do
+   for i = 1,99 do
               chat("hat me 18101265026")
           end
- for i = 1,100 do
+   for i = 1,99 do
               chat("hat me 18101265026")
           end
- for i = 1,100 do
+   for i = 1,99 do
               chat("hat me 18101265026")
           end
- for i = 1,100 do
+   for i = 1,99 do
               chat("hat me 18101265026")
           end
- for i = 1,100 do
+   for i = 1,99 do
               chat("hat me 18101265026")
           end
- for i = 1,100 do
+   for i = 1,99 do
               chat("hat me 18101265026")
-end
+          end
+
  runCommand(prefix.."unantiabuse")
 chat("respawn all")
           chat("size me 5")

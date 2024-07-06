@@ -6951,11 +6951,11 @@ for i,v in pairs(GetPlayers(args[1])) do
                     end
                     task.wait(0.3)
                     for _ = 1, 100 do
-                        chat("hat " .. v.Name .. "..hideid.." "18101265026")
+                        chat("hat " .. v.Name .." "..hideid.." 18101265026")
                     end
                     task.wait(0.3)
                     for _ = 1, 99 do
-                        chat("hat " .. v.Name .. "..hideid.." "18101265026")
+                        chat("hat " .. v.Name .." "..hideid.." 18101265026")
                     end
                     task.wait(0.3)
                     chat("clone " .. v.Name)

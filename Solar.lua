@@ -6829,9 +6829,7 @@ addCommand("slock",{},function()
           task.wait(.3)
           chat("size me 10")
           chat("clone me")
-          task.wait()
-          end
-  end)
+          end)
 
 addCommand("hasperm",{"player"},function(args)
 	for i,v in pairs(GetPlayers(args[1])) do

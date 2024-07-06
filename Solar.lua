@@ -6828,6 +6828,7 @@ addCommand("slock",{},function()
               chat("hat me 18101265026")
           end
           task.wait(.3)
+          chat("respawn me")
           chat("size me 3")
           chat("clone me")
           end)

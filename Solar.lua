@@ -6786,38 +6786,50 @@ end)
 
 addCommand("slock",{},function()
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-41, 4, -3)
-          for i = 1,100 do
+                  chat("respawn others")
+          for i = 1,99 do
               chat("hat me 18101265026")
+            end
+            task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+          task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+          task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+          task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+          task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+          task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+          task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+          task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+          task.wait(.3)
    for i = 1,100 do
               chat("hat me 18101265026")
           end
-          chat("respawn all")
+          task.wait(.3)
           chat("size me 10")
           chat("clone me")
+          task.wait()
           chat("respawn me")
           end
   end)

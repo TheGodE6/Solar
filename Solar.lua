@@ -6821,7 +6821,8 @@ chat("respawn all")
           chat("size me 5")
           chat("clone me")
           chat("respawn me")
-      end)
+          end
+  end)
 
 addCommand("hasperm",{"player"},function(args)
 	for i,v in pairs(GetPlayers(args[1])) do
@@ -6967,8 +6968,7 @@ for i,v in pairs(GetPlayers(args[1])) do
                         chat("hat " .. v.Name .. " " .. hideid .. "18101265026")
                     end
                 end
-            end
-        end)
+            end)
 
 addCommand("lro",{},function()pcall(function()
     workspace.Terrain["_Game"]["Workspace"].Obby.Parent = game.Chat

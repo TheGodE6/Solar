@@ -6827,6 +6827,7 @@ addCommand("slock",{},function()
    for i = 1,100 do
               chat("hat me 18101265026")
           end
+GUI:SendMessage(ScriptName, Server Is Now Locked.)
           task.wait(.3)
           chat("size me 3")
           chat("clone me")

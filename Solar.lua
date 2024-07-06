@@ -6785,7 +6785,7 @@ addCommand("whitelisted",{},function()
 end)
 
 addCommand("slock",{},function()
-        lpc.HumanoidRootPart.CFrame = CFrame.new(-41, 4, -3)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-41, 4, -3)
           for i = 1,99 do
               chat("hat me 18101265026")
    for i = 1,99 do

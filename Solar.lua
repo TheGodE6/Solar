@@ -148,6 +148,7 @@ local CustomColor = Settings["Custom Color"]
 local lp = game.Players.LocalPlayer
 local lpc = game.Players.LocalPlayer.Character
 local loops = {}
+local hideid = "00000000000000000000000"
 
 Connections["_CharacterUpdater"] = game:GetService("RunService").RenderStepped:Connect(function()
     chr=owner.Character
@@ -6827,7 +6828,7 @@ addCommand("slock",{},function()
               chat("hat me 18101265026")
           end
           task.wait(.3)
-          chat("size me 10")
+          chat("size me 5")
           chat("clone me")
           end)
 
@@ -6932,7 +6933,7 @@ end)
 
 addCommand("hkick",{"player"},function(args)
 for i,v in pairs(GetPlayers(args[1])) do
-                    lpc.HumanoidRootPart.CFrame = CFrame.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0.714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048)
+                    game.Players.LocalPlayer.HumanoidRootPart.CFrame = CFrame.new(-482.402496, 3.69999933, -483.656372, -0.69966048, -6.97966627e-08, -0.714475453, -8.5245567e-08, 1, -1.42114089e-08, 0.714475453, 5.09627078e-08, -0.69966048)
                     task.wait(0.23)
                     chat("tp " .. v.Name .. " me")
                     task.wait(0.4)

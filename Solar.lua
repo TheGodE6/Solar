@@ -6833,6 +6833,10 @@ addCommand("hasperm",{"player"},function(args)
 	end
 end)
 
+addCommand("iy,{},function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
 
 addCommand("breakbaseplate",{},function()
     game.Players:Chat("gear me 111876831")

@@ -6830,7 +6830,6 @@ addCommand("slock",{},function()
           chat("size me 10")
           chat("clone me")
           task.wait()
-          chat("respawn me")
           end
   end)
 

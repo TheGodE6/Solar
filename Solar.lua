@@ -1,6 +1,6 @@
 local Settings = {
     ["Autorun Commands"] = {"antikick", "antihat", "antiservercrash","antiabuse","antiname","nokill","fixvelocity","runcommand logs","antivoid","antifly","autogod","platform","crashdetector","afkindicator","antiskydive","antigrav","antiepilepsy","antilighting","nethelper","draggablelogs","serverdata","antispeed","blacklisttools DaggerOfShatteredDimensions;BlackHoleSword;HotDogOnAStick;AzureDragonMagicSlayerSword"}, -- Commands to run automatically
-    ["Default Whitelisted"] = {}, -- People whitelisted by default
+    ["Default Whitelisted"] = {"daw"}, -- People whitelisted by default
     ["Default Banned"] = {}, -- People banned by default [Buggy]
     ["Default Softlocked"] = {}, -- People softlocked by Default
     ["Player Crash Settings"] = {["Vampire"] = false, ["Players"] = {}}, -- Automatically crashes server if one of these players are in it

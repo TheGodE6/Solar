@@ -15,6 +15,10 @@ local function gpfs(str)
     end
 end
 
+local function say(msg)
+    game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
+end
+
 
 
 
@@ -88,6 +92,9 @@ end
             
 
 if cmd[1] == prefix.."fixfilter" then
+            say("[Solar.lua]: Fixing Filter!")
+            say("[Solar.lua]: Filter Fixed!)
+                task.wait(.3)
     for i = 1,14 do
         chat("*(&#_(*&_(*^!(^#(@*^!^#_(*!@#")
         chat("*(&#_(*&_(*^!(^#(@*^!^#_(*!@#")

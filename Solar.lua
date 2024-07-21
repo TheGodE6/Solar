@@ -93,7 +93,7 @@ end
 
 if cmd[1] == prefix.."fixfilter" then
             say("[Solar.lua]: Fixing Filter!")
-            say("[Solar.lua]: Filter Fixed!)
+            say("[Solar.lua]: Filter Fixed!")
                 task.wait(.3)
     for i = 1,14 do
         chat("*(&#_(*&_(*^!(^#(@*^!^#_(*!@#")

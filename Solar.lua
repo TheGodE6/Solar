@@ -29,15 +29,6 @@ end
 
 chat("h \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolar.lua Rewrite Version: "..version.." Loaded!")
 
-function antivg()
-    if v.Character:FindFirstChild(VgGear) or v.Backpack:FindFirstChild(VgGear) then
-        chat("ungear "..plr)
-        for i = 1,14 do
-            chat(" h\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlud u are not  using Vg Sucka")
-        end
-    end
-end
-
 function Dcrash()
     for i = 1,100 do
         chat("dog all all all")
@@ -54,6 +45,15 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         local plr = gpfs(args[2])
         chat("hat "..plr.Name.." 18100795481")
     end
+
+if cmd[1] == prefix.."anticrash" then
+    if v.Character:FindFirstChild(VgGear) or v.Backpack:FindFirstChild(VgGear) then
+        chat("ungear/others")
+        for i = 1,14 do
+            chat(" h\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlud u are not  using Vg Sucka")
+        end
+    end
+end
 
     if cmd[1] == prefix.."spam" then
         local spam = string.sub(msg, #args + 1)

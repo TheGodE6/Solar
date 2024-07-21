@@ -1,4 +1,4 @@
-getgenv().prefix = "?"
+getgenv().prefix = "-"
 getgenv().joins = false
 getgenv().VgGear = "VampireVanquisher"
 getgenv().Loops = {}

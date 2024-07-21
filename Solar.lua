@@ -4,7 +4,7 @@ getgenv().VgGear = "VampireVanquisher"
 getgenv().Loops = {}
 getgenv().version = "0.5.6"
 
-local function gpfs(str)
+function gpfs(str)
     for i, v in pairs(game.Players:GetPlayers()) do
         if str:lower() == "me" then
             return game.Players.LocalPlayer
@@ -15,7 +15,7 @@ local function gpfs(str)
     end
 end
 
-local function say(msg)
+function say(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 

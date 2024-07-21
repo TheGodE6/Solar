@@ -68,8 +68,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
         if cmd [1] == prefix.."silcrash" then
+            for i = 1,14 do
             chat("h \n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\n\nSc-Kah aka Scyz Presents.\n\n\n\nThe Best Crash In The World!\n\n\nJk Hehe")
-            task.wait(3)
+            task.wait(1.5)
             Dcrash()
         end
 

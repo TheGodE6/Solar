@@ -74,7 +74,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         end
 
 if cmd[1] == prefix.."anticrash" then
-            for i,v in pairs(game.Players:GetChildren()) do
+            for i,v in pairs(game.Players:GetPlayers()) do
     if v.Character:FindFirstChild(VgGear) or v.Backpack:FindFirstChild(VgGear) then
         chat("ungear/others")
         for i = 1,14 do
@@ -92,5 +92,6 @@ if cmd[1] == prefix.."fixfilter" then
         chat("*(&#_(*&_(*^!(^#(@*^!^#_(*!@#")
         chat("*(&#_(*&_(*^!(^#(@*^!^#_(*w!@#")
     end
+end
 end
 end)

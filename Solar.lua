@@ -46,15 +46,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         chat("hat "..plr.Name.." 18100795481")
     end
 
-if cmd[1] == prefix.."anticrash" then
-    if v.Character:FindFirstChild(VgGear) or v.Backpack:FindFirstChild(VgGear) then
-        chat("ungear/others")
-        for i = 1,14 do
-            chat(" h\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlud u are not  using Vg Sucka")
-        end
-    end
-end
-
     if cmd[1] == prefix.."spam" then
         local spam = string.sub(msg, #args + 1)
         Loops.spam = true
@@ -81,6 +72,15 @@ end
             task.wait(3)
             Dcrash()
         end
+
+if cmd[1] == prefix.."anticrash" then
+    if v.Character:FindFirstChild(VgGear) or v.Backpack:FindFirstChild(VgGear) then
+        chat("ungear/others")
+        for i = 1,14 do
+            chat(" h\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlud u are not  using Vg Sucka")
+        end
+    end
+end
             
 
 if cmd[1] == prefix.."fixfilter" then

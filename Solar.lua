@@ -72,7 +72,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             chat("h \n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\n\nSc-Kah aka Scyz Presents.\n\n\n\nThe Best Crash In The World!\n\n\nJk Hehe")
             task.wait(1.5)
             Dcrash()
-        end
+            end
+    end
 
 if cmd[1] == prefix.."anticrash" then
             for i,v in pairs(game.Players:GetPlayers()) do
@@ -82,6 +83,7 @@ if cmd[1] == prefix.."anticrash" then
             chat(" h\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBlud u are not  using Vg Sucka")
         end
     end
+end
 end
             
 
@@ -93,6 +95,5 @@ if cmd[1] == prefix.."fixfilter" then
         chat("*(&#_(*&_(*^!(^#(@*^!^#_(*!@#")
         chat("*(&#_(*&_(*^!(^#(@*^!^#_(*w!@#")
     end
-end
 end
 end)

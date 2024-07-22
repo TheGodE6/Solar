@@ -15,7 +15,7 @@ function gpfs(str)
     end
 end
 
-local function say(msg)
+function say(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 

@@ -24,6 +24,8 @@ for i,v in pairs(game.Workspace:GetDescendants()) do
 if v.Name == "Rocket" then
 v:Destroy()
 end
+end
+end
 
 
 
@@ -55,23 +57,23 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         chat("reset "..plr)
     end
 
-    if cmd[1] == prefix.."spam" then
-        local spam = string.sub(msg, #args + 1)
+    if string.sub(msg, 4) == "spam" then
+        local spam = string.sub(msg, 6)
         Loops.spam = true
         repeat task.wait()
             chat(spam)
         until not Loops.spam
     end
 
-    if cmd[1] == prefix.."unspam" then
+    if string.sub(msg, 6)"unspam" then
         getgenv().Loops = false
     end
 
-    if cmd[1] == prefix.."iy" then
+    if string.sub(msg, 2) == "iy" then
         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     end
 
-    string.sub(msg, 3) == "run" then
+    if string.sub(msg, 3) == "run" then
    local code = string.sub(msg, 5) 
         loadstring(code)
 end
@@ -84,7 +86,7 @@ end
             end
     end
 
-if cmd[1] == prefix.."anticrash" then
+if string.sub(msg, 9) == "anticrash" then
             for i,v in pairs(game.Players:GetPlayers()) do
     if v.Character:FindFirstChild(VgGear) or v.Backpack:FindFirstChild(VgGear) then
         chat("ungear/others")
@@ -96,7 +98,7 @@ end
 end
             
 
-if cmd[1] == prefix.."fixfilter" then
+if string.sub(msg, 9) == prefix.."fixfilter" then
             say("[Solar.lua]: Fixing Filter!")
             say("[Solar.lua]: Filter Fixed!")
                 task.wait(.3)

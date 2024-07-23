@@ -45,9 +45,9 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     local args = msg:split(" ")
 
 
-    if cmd[1] == prefix.."sponge" then
-        local plr = gpfs(args[2])
-        chat("hat "..plr.Name.." 18100795481")
+    if string.sub(msg, #prefix + 2) == prefix.."re" then
+        local plr = string.sub(msg, #prefix + 4)
+        chat("reset "..plr)
     end
 
     if cmd[1] == prefix.."spam" then

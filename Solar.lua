@@ -19,6 +19,11 @@ function say(msg)
     game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
 
+if antirocket then
+for i,v in pairs(game.Workspace:GetDescendants()) do
+if v.Name == "Rocket" then
+v:Destroy()
+end
 
 
 
@@ -45,7 +50,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     local args = msg:split(" ")
 
 
-    if string.sub(msg, #prefix + 2) == prefix.."re" then
+    if string.sub(msg, 2) == prefix.."re" then
         local plr = string.sub(msg, #prefix + 4)
         chat("reset "..plr)
     end
@@ -66,12 +71,12 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
     end
 
-    if cmd[1] == prefix.."run" then
-            local execute = #args[1] + 1
-        loadstring(string.sub(msg, execute))()
-        end
+    string.sub(msg, 3) == "run" then
+   local code = string.sub(msg, 5) 
+        loadstring(code)
+end
 
-        if cmd [1] == prefix.."silcrash" then
+       if string.sub(msg, 8) == "silcrash" then
             for i = 1,14 do
             chat("h \n\n\n\n\n\n\n\n\n\nn\n\n\n\n\n\n\nSc-Kah aka Scyz Presents.\n\n\n\nThe Best Crash In The World!\n\n\nJk Hehe")
             task.wait(1.5)

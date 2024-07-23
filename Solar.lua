@@ -2,7 +2,7 @@ getgenv().prefix = "-"
 getgenv().joins = false
 getgenv().VgGear = "VampireVanquisher"
 getgenv().Loops = {}
-getgenv().version = "0.5.6"
+getgenv().version = "0.5.7"
 
 function gpfs(str)
     for i, v in pairs(game.Players:GetPlayers()) do

@@ -1,5 +1,4 @@
-getgenv().prefix = "-"
-getgenv().joins = false
+getgenv().joins = true
 getgenv().VgGear = "VampireVanquisher"
 getgenv().Loops = {}
 getgenv().version = "0.5.7"
@@ -99,7 +98,7 @@ end
 end
             
 
-if string.sub(msg, 9) == prefix.."fixfilter" then
+if string.sub(msg, 9) == "fixfilter" then
             say("[Solar.lua]: Fixing Filter!")
             say("[Solar.lua]: Filter Fixed!")
                 task.wait(.3)

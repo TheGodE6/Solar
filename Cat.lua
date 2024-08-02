@@ -951,8 +951,8 @@ end)
 
 addcmd({"silc"},function()
 for i = 1,100 do
-chat("dog all all all")
-chat("clone all all all")
+chatshit("dog all all all")
+chatshit("clone all all all")
 end
 end)
 

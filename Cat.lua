@@ -26,6 +26,7 @@ local onstart = { -- Commands that get said when script loaded
 
 
 local hbanned = {
+"atprog"
 }
 
 local rbanned = {

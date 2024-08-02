@@ -1343,6 +1343,7 @@ chatshit("nok")
 chatshit("antikill")
 chatshit("antihat")
 chatshit("antirocket")
+
 notif("Cat.Lua Loaded!", Color3.fromRGB(160, 32, 240), 5)
 
 for _,v in ipairs(game.Players:GetPlayers()) do

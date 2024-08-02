@@ -173,6 +173,8 @@ end
 end
 end
 
+say("Cat.lua Loaded!")
+
 function GetPing()
 
     return math.random(50, 150)

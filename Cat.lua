@@ -1,5 +1,5 @@
 --// Variables --//
-local pf: string = ">" -- don't use angle brackets
+local pf: string = "!" -- don't use angle brackets
 local lp: userdata = game:GetService("Players").LocalPlayer
 local connections = {}
 local CONS = {}
@@ -172,8 +172,6 @@ task.wait(.25)
 end
 end
 end
-
-say("Cat.lua Loaded!")
 
 function GetPing()
 

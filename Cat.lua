@@ -25,10 +25,6 @@ local onstart = { -- Commands that get said when script loaded
     "antiabuse"
 }
 
-chatshit(">antihat")
-chatshit(">antikill")
-chatshit(">nok")
-
 
 local Blacklisted = { -- Autokick on join
 }
@@ -1382,6 +1378,10 @@ for _,v in ipairs(game.Players:GetPlayers()) do
     end)
 end
 
+chatshit(">antihat")
+chatshit(">antikill")
+chatshit(">nok")
+
 game.Players.PlayerAdded:Connect(function(v)
     if table.find(Blacklisted, v.Name) then
         chatshit("!hkick".. v.Name .. "You are banned")
@@ -1405,3 +1405,4 @@ lp.Chatted:Connect(function(msg)
             
     cmds[check](args)    
 end)
+

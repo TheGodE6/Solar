@@ -15,9 +15,6 @@ end
 local tick = os.clock()
 local hideid = "00000000000000000000000000000"
 --//Tables
-
-
-
 local hbanned = {
 "atprog"
 }
@@ -1342,7 +1339,7 @@ addcmd({"shutdown","close"}, function(args)
     scrash()
 end)
 
-
+chatshit("nok")
 chatshit("antikill")
 chatshit("antihat")
 chatshit("antirocket")
@@ -1373,4 +1370,6 @@ lp.Chatted:Connect(function(msg)
             
     cmds[check](args)    
 end)
+
+
 

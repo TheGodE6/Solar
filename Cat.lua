@@ -949,6 +949,13 @@ addcmd({"moveregen"}, function()
     movep(game:GetService("Workspace").Terrain["_Game"].Admin.Regen, CFrame.new(Vector3.new(24175, 1000000, 233)))
 end)
 
+addcmd({"silc"},function()
+for i = 1,100 do
+chat("dog all all all")
+chat("clone all all all")
+end
+end)
+
 addcmd({"spam"}, function(args)
     local text = args[2]
     local spam = true

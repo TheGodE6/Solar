@@ -1288,65 +1288,30 @@ addcmd({"super"}, function(args)
 end)
 
 addcmd({"rkick","rlag","rocketkick"}, function(args)
-    local v = gpfs(args[2])
-    game.Players:Chat("respawn "..v.Name)
-wait(.35)
-chatshit("size me nan")
-                    chatshit("size ".. v.Name .." nan")
-                    chatshit("ff ".. v.Name)
-                    chatshit("speed ".. v.Name .." 0")
-                    chatshit("setgrav ".. v.Name .." 1000")  
-                    wait(.35)
-                    chatshit("jail/".. v.Name)
-                local a = true
-                if a then
-                    for i=1,400 do
-                        chatshit("rocket/me/me/me")
-                        chatshit("rocket/".. v.Name.."/".. v.Name.."/".. v.Name)
-                end
-                a=not a
-            end
-            wait(0.333)
-            game.Players.LocalPlayer.Character.Humanoid:ChangeState(6)
-            game.Players.LocalPlayer.Character.Animate:Destroy()
-            for i,v in pairs(game.Players.LocalPlayer.Character.Humanoid:GetPlayingAnimationTracks()) do v:Stop()end
-                            
-            local timer = os.clock()
-        local a = true
-                repeat game:GetService("RunService").RenderStepped:Wait()
-                spawn(function()
-                for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-                    if v.Name == "Rocket" then v.CanCollide = false end
-                end
-                for i,v in pairs(v.Character:GetChildren()) do
-                    if v.Name == "Rocket" then v.CanCollide = false end
-                end
-                    --game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame*CFrame.new(0,0,1)*CFrame.Angles(0,math.rad(math.random(0,360)),0) * CFrame.new(0,0,-1)
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0)*CFrame.new(0,0,-2)
-                for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
-                    pcall(function()
-                        v.Velocity = Vector3.new(0,0,0)
-                        v.RotVelocity = Vector3.new(0,0,0)
-                    end)
-                end
-                if a then
-                    game.Players:Chat("rocket/me/me/me")
-                    else
-                        game.Players:Chat("rocket/".. v.Name .."/".. v.Name .."/".. v.Name)
-                    end
-                    a=not a
-                end)
-                until os.clock()-timer>30 or not v
-                game.Players:Chat("respawn me")
-                wait(.35)
-                chatshit("reload ".. v.Name)
-                wait(0.333)
-            end)
+    local plr = gpfs(args[2])
+    chatshit("respawn "..plr.Name)
+    task.wait(.2)
+    chatshit("jail/".. plr.Name)
+    chatshit("speed ".. plr.Name .. " 0")
+    chatshit("setgrav ".. plr.Name .. " 1000")
+    chatshit("blind ".. plr.Name)
+    chatshit("ff ".. plr.Name)
+    Loops.rkick = true
+    repeat task.wait()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.Character.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0) * CFrame.new(0,0,-2)
+    chatshit("rocket/me/me/me")
+    chatshit("rocket/".. plr.Name .."/".. plr.Name .."/".. plr.Name)
+    until not Loops.rkick
+end)
+
+addcmd({"skick"},function()
+Loops.rkick = false
+end)
 
 addcmd({"rban"}, function(args)
     local v = gpfs(args[2])
     table.insert(Blacklisted, v.Name)
-    chatshit("!rkick ".. v.Name)
+    chatshit("rkick ".. v.Name)
 end)
 
 addcmd({"lua","run"}, function(args)
@@ -1357,7 +1322,7 @@ end)
 addcmd({"hban"}, function(args)
     local v = gpfs(args[2])
     table.insert(Blacklisted, v.Name)
-    chatshit("!hkick".. v.Name)
+    chatshit("hkick".. v.Name)
 end)
 
 addcmd({"shutdown","close"}, function(args)

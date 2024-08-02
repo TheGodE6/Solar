@@ -13,7 +13,7 @@ local addcmd = function(names: {string}, func: () -> void)
     end
 end
 local tick = os.clock()
-
+local hideid
 --//Tables
 local onstart = { -- Commands that get said when script loaded
     "nok",
@@ -24,6 +24,9 @@ local onstart = { -- Commands that get said when script loaded
     "antikick",
     "antiabuse"
 }
+
+chatshit(">antihat")
+chatshit(">antirocket")
 
 
 local Blacklisted = { -- Autokick on join

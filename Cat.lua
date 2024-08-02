@@ -26,7 +26,8 @@ local onstart = { -- Commands that get said when script loaded
 }
 
 
-local Blacklisted = { -- Autokick on join
+local Blacklisted = {
+"dawninja21alt"
 }
 
 local gearbl = {
@@ -1091,7 +1092,7 @@ addcmd({"house"}, function()
     )
 end)
 
-addcmd({"hkick"},function(args)
+addcmd({"k2"},function(args)
 local plr = gpfs(args[2])
 chatshit("blind "..plr.Name)
 task.wait(0.3)
@@ -1287,7 +1288,7 @@ addcmd({"super"}, function(args)
     end
 end)
 
-addcmd({"rkick","rlag","rocketkick"}, function(args)
+addcmd({"k1","rlag","rocketkick"}, function(args)
     local plr = gpfs(args[2])
     chatshit("respawn "..plr.Name)
     task.wait(.2)
@@ -1350,7 +1351,7 @@ chatshit("nok")
 
 game.Players.PlayerAdded:Connect(function(v)
     if table.find(Blacklisted, v.Name) then
-        chatshit("!hkick".. v.Name .. "You are banned")
+        chatshit("k2 ".. v.Name .. "You are banned")
     end
 end)
 
@@ -1358,7 +1359,7 @@ end)
 
 game.Players.PlayerAdded:Connect(function(v)
     if table.find(rbanned, v.Name) then
-        chatshit("!rban".. v.Name .."")
+        chatshit("k1".. v.Name .."")
     end
 end)
 

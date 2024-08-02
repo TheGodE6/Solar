@@ -1091,6 +1091,50 @@ addcmd({"house"}, function()
     )
 end)
 
+addcmd({"hkick"},function(args)
+local plr = gpfs(args[2])
+chatshit("blind "..plr.Name)
+task.wait(0.3)
+local cframe = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(442, 7, -492)  
+task.wait(0.3)
+chatshit("tp "..plr.Name.." me")
+chatshit("jail/"..plr.Name)
+chatshit("size "..plr.Name.." 1.5")
+chatshit("spin "..plr.Name)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = cframe
+task.wait(0.3)
+for i = 1,100 do 
+chatshit("hat "..plr.Name.." "..hideid.."18137588505")
+end
+task.wait(0.3)
+for i = 1,100 do 
+chatshit("hat "..plr.Name.." "..hideid.."18137588505")
+end
+task.wait(0.3)
+for i = 1,100 do 
+chatshit("hat "..plr.Name.." "..hideid.."18137588505")
+end
+task.wait(0.3)
+for i = 1,100 do 
+chatshit("hat "..plr.Name.." "..hideid.."18137588505")
+end
+task.wait(0.3)
+for i = 1,100 do 
+chatshit("hat "..plr.Name.." "..hideid.."18137588505")
+end
+for i = 1,100 do 
+chatshit("hat "..plr.Name.." "..hideid.."18137588505")
+end
+task.wait(0.3)
+for i = 1,100 do 
+chatshit("hat "..plr.Name.." "..hideid.."18137588505")
+end
+chat("clone "..plr.Name)
+task.wait(0.3)
+end)
+
+
 addcmd({"antikick"},function()
     Loops.antikick = true
         repeat

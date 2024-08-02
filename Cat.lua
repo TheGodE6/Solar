@@ -1343,9 +1343,10 @@ for _,v in ipairs(game.Players:GetPlayers()) do
     end)
 end
 
-chatshit(">antihat")
-chatshit(">antikill")
-chatshit(">nok")
+chatshit("antihat")
+chatshit("antirocket")
+chatshit("antikill")
+chatshit("nok")
 
 game.Players.PlayerAdded:Connect(function(v)
     if table.find(Blacklisted, v.Name) then

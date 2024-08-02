@@ -14,7 +14,6 @@ local addcmd = function(names: {string}, func: () -> void)
 end
 local tick = os.clock()
 
-notify("Cat.lua Loaded!")
 --//Tables
 local onstart = { -- Commands that get said when script loaded
     "nok",
@@ -223,7 +222,7 @@ game.Players.PlayerAdded:Connect(function(v)
   end)
   
   local function onPlayerLeaving(plr)
-  game.Players:Chat("h \n\n\n Singularity X: "..plr.Name.." Has Left The Server.\n\n\n")
+  game.Players:Chat("h \n\n\n cat.lua: "..plr.Name.." Has Left The Server.\n\n\n")
   end
   
   game.Players.PlayerAdded:Connect(onPlayerAdded)
@@ -885,7 +884,7 @@ local state = false
 
 function option(text, color, time, callback)
    Notification:Notify(
-	  { Title = "Singularity X", Description = text },
+	  { Title = "cat.lua", Description = text },
 	  { OutlineColor = color, Time = time, Type = "option" },
 	  {
 		 Image = "rbxassetid://13235545069",
@@ -900,7 +899,7 @@ end
 
 function notif(text, color, time)
    Notification:Notify(
-	  { Title = "Singularity X", Description = text },
+	  { Title = "cat.lua", Description = text },
 	  { OutlineColor = color, Time = time, Type = "Default" }
    )
 end
@@ -945,6 +944,7 @@ addcmd({"spam"}, function(args)
     local text = args[2]
     local spam = true
     while spam == true do
+        wait(0.1)
     game.Players:Chat(""..text)
     end
 end)
@@ -1036,11 +1036,31 @@ addcmd({"pickup"}, function(args)
     chatshit("invis me")
     chatshit("!findhat me car")
     chatshit("size me 5")
+    game.Players.LocalPlayer.Character.Humanoid.HipHeight = -10
+    chatshit("tp me ".. v.Name)
+    task.wait(.12)
+end)
+
+addcmd({"collect"}, function(args)
+    local v = gpfs(args[2])
+    chatshit("invis me")
+    chatshit("invis me")
+    chatshit("!findhat me slenderman")
+    chatshit("fogend 20")
+    chatshit("time -")
+    chatshit("size me 5")
     game.Players.LocalPlayer.Character.Humanoid.HipHeight = -10    
     chatshit("tp ".. v.Name .. " me")
     chatshit("tp ".. v.Name .. " me")
     chatshit("tp ".. v.Name .. " me")
     chatshit("tp ".. v.Name .. " me")
+    chatshit("pm/".. v.Name .. " COLLECT MY PAGES BUDDY")
+    chatshit("pm/".. v.Name .. " COLLECT MY PAGES BUDDY")
+    task.wait(1)
+    chatshit("kill ".. v.Name)
+    chatshit("fix")
+    chatshit("clr")
+    chatshit("kill me")
 end)
 
 addcmd({"car"}, function()
@@ -1149,7 +1169,7 @@ addcmd({"antiabuse"}, function()
                     return
                 else
                     sdyuadhsadb = true
-                    say("[Singularity X]:Fixing filter")
+                    say("[cat.lua]:Fixing filter")
                 for i = 1,14 do
                     chatshit("(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)")
                     chatshit("(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)")
@@ -1157,7 +1177,7 @@ addcmd({"antiabuse"}, function()
                     chatshit("(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)(!)")
                 end
                 wait(.35)
-                say("[Singularity X]:Filter Fixed")
+                say("[cat.lua]:Filter Fixed")
             end
         end)
 
@@ -1296,7 +1316,7 @@ end)
 
 addcmd({"shutdown","close"}, function(args)
     local reason = args[2]
-    chatshit("m/ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nServer crashed by Singularity X Reason:\n "..result.."\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    chatshit("m/ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nServer crashed by  cat.lua Reason:\n "..result.."\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
     task.wait(.99)
     notif("Server crashed Reason: "..reason, Color3.fromRGB(160, 32, 240), 5)
     task.wait(.1)
@@ -1318,14 +1338,6 @@ game.Players.PlayerAdded:Connect(function(v)
     end
 end)
 
-local notify notify(msg)
-        game.StarterGui:SetCore("SendNotification", {
-                Title = "Cat.lua",
-                Text = msg,
-                Duration = 1
-        })
-end;
-
 
 
 game.Players.PlayerAdded:Connect(function(v)
@@ -1343,15 +1355,3 @@ lp.Chatted:Connect(function(msg)
             
     cmds[check](args)    
 end)
-
-
-
-
-
-
-
-
-
-
-
-

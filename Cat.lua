@@ -26,7 +26,7 @@ local onstart = { -- Commands that get said when script loaded
 }
 
 for _,v in pairs(onstart) do
-chat(v)
+chat("..v..")
 end
 
 

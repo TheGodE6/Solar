@@ -874,7 +874,7 @@ local function clearLogs()
 		chatshit("ff " .. z .. tostring(math.random(1, 1000)) .. "\n" .. z .. tostring(math.random(1, 1000)) .. "\n" .. z .. tostring(math.random(1, 1000)))
 		chatshit("ff " .. b .. tostring(math.random(1, 1000)) .. "\n" .. b .. tostring(math.random(1, 1000)) .. "\n" .. b .. tostring(math.random(1, 1000)))
 	end
-enx
+end
 
 
 --Custom Notification
@@ -954,10 +954,6 @@ addcmd({"spam"}, function(args)
         wait(0.1)
     game.Players:Chat(""..text)
     end
-end)
-
-addcmd({"m1"},function()
-chatshit("music "..hideid.." 15689455422")
 end)
 
 addcmd({"stop","unspam"}, function()
@@ -1099,6 +1095,7 @@ addcmd({"house"}, function()
         0.999945819
     )
 end)
+
 
 addcmd({"k2"},function(args)
 local plr = gpfs(args[2])

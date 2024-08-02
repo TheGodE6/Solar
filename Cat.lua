@@ -24,6 +24,12 @@ local onstart = { -- Commands that get said when script loaded
     "antikick",
     "antiabuse"
 }
+
+for _,v in pairs(onstart) do
+chat(v)
+end
+
+
 local Blacklisted = { -- Autokick on join
 }
 

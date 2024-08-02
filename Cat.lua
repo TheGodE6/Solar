@@ -15,13 +15,6 @@ end
 local tick = os.clock()
 local hideid = "00000000000000000000000000000"
 --//Tables
-local onstart = { -- Commands that get said when script loaded
-    "nok",
-    "antikill", 
-    "antihat",
-    "antipunish",
-    "antirocket"
-}
 
 
 
@@ -1349,8 +1342,8 @@ addcmd({"shutdown","close"}, function(args)
     scrash()
 end)
 
+
 chatshit("antikill")
-chatshit("nok")
 chatshit("antihat")
 chatshit("antirocket")
 notif("Cat.Lua Loaded!", Color3.fromRGB(160, 32, 240), 5)

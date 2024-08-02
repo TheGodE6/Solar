@@ -20,10 +20,9 @@ local onstart = { -- Commands that get said when script loaded
     "antikill", 
     "antihat",
     "antipunish",
-    "antidog",
-    "antikick",
-    "antiabuse"
+    "antirocket"
 }
+
 
 
 local hbanned = {
@@ -1342,6 +1341,12 @@ addcmd({"shutdown","close"}, function(args)
     scrash()
 end)
 
+chatshit("antikill")
+chatshit("nok")
+chatshit("antihat")
+chatshit("antirocket")
+notif("Cat.Lua Loaded!", Color3.fromRGB(160, 32, 240), 5)
+
 for _,v in ipairs(game.Players:GetPlayers()) do
     v.Chatted:Connect(function(msg)
         if msg:lower() == "/c system" then
@@ -1350,12 +1355,6 @@ for _,v in ipairs(game.Players:GetPlayers()) do
         end
     end)
 end
-
-chatshit("antihat")
-chatshit("antirocket")
-chatshit("antikill")
-chatshit("nok")
-
 
 
 game.Players.PlayerAdded:Connect(function(v)

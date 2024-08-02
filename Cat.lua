@@ -25,6 +25,10 @@ local onstart = { -- Commands that get said when script loaded
     "antiabuse"
 }
 
+chatshit(">antihat")
+chatshit(">antikill")
+chatshit(">nok")
+
 
 local Blacklisted = { -- Autokick on join
 }

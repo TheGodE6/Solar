@@ -105,8 +105,6 @@ local function antiSpam()
     return f
 end
 
-say("Cat.lua Loaded!")
-
 function tempCrash(seconds)
     notif("Temp Crashing", Color3.fromRGB(160, 32, 240), 1)
     wait(.35)

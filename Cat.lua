@@ -25,9 +25,9 @@ local onstart = { -- Commands that get said when script loaded
     "antiabuse"
 }
 
-for _,v in pairs(onstart) do
-chat("..v..")
-end
+chatshit("!antihat")
+chatshit("!antikill")
+chatshit("!nok")
 
 
 local Blacklisted = { -- Autokick on join

@@ -30,6 +30,10 @@ local hbanned = {
 "dawninja21alt"
 }
 
+local rbanned = {
+
+}
+
 local gearbl = {
     "atprog"
 }
@@ -223,12 +227,17 @@ end
 game.Players.PlayerAdded:Connect(function(v)
     game.Players:Chat("h \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nUsername: "..v.Name.."\nDisplayName: "..v.DisplayName.."\nAccountAge: "..v.AccountAge)
   end)
+
+game.Players.PlayerAdded:Connect(function(v)
+    if table.find(hbanned, v.Name) then
+        chatshit("k2 "..v.Name)
+    end
+end)
   
   local function onPlayerLeaving(plr)
   game.Players:Chat("h \n\n\n cat.lua: "..plr.Name.." Has Left The Server.\n\n\n")
   end
-  
-  game.Players.PlayerAdded:Connect(onPlayerAdded)
+
   game.Players.PlayerRemoving:Connect(onPlayerLeaving)
 
 function paintmap(message)
@@ -1349,17 +1358,11 @@ chatshit("antirocket")
 chatshit("antikill")
 chatshit("nok")
 
-game.Players.PlayerAdded:Connect(function(v)
-    if table.find(hbanned, v.Name) then
-        chatshit("k2 "..v.Name)
-    end
-end)
-
 
 
 game.Players.PlayerAdded:Connect(function(v)
     if table.find(rbanned, v.Name) then
-        chatshit("k1".. v.Name .."")
+        chatshit("k1 "..v.Name)
     end
 end)
 

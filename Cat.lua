@@ -13,7 +13,7 @@ local addcmd = function(names: {string}, func: () -> void)
     end
 end
 local tick = os.clock()
-local hideid
+local hideid = "00000000000000000000000000000"
 --//Tables
 local onstart = { -- Commands that get said when script loaded
     "nok",

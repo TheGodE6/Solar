@@ -26,7 +26,7 @@ local onstart = { -- Commands that get said when script loaded
 }
 
 
-local Blacklisted = {
+local hbanned = {
 "dawninja21alt"
 }
 
@@ -1350,8 +1350,8 @@ chatshit("antikill")
 chatshit("nok")
 
 game.Players.PlayerAdded:Connect(function(v)
-    if table.find(Blacklisted, v.Name) then
-        chatshit("k2 ".. v.Name .. "You are banned")
+    if table.find(hbanned, v.Name) then
+        chatshit("k2 "..v.Name)
     end
 end)
 

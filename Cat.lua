@@ -14,6 +14,7 @@ local addcmd = function(names: {string}, func: () -> void)
 end
 local tick = os.clock()
 
+notify("Cat.lua Loaded!")
 --//Tables
 local onstart = { -- Commands that get said when script loaded
     "nok",
@@ -1317,6 +1318,14 @@ game.Players.PlayerAdded:Connect(function(v)
     end
 end)
 
+local notify notify(msg)
+        game.StarterGui:SetCore("SendNotification", {
+                Title = "Cat.lua",
+                Text = msg,
+                Duration = 1
+        })
+end;
+
 
 
 game.Players.PlayerAdded:Connect(function(v)
@@ -1334,3 +1343,15 @@ lp.Chatted:Connect(function(msg)
             
     cmds[check](args)    
 end)
+
+
+
+
+
+
+
+
+
+
+
+

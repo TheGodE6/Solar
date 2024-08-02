@@ -27,7 +27,7 @@ local onstart = { -- Commands that get said when script loaded
 
 
 local hbanned = {
-"dawninja21alt"
+"Dawninja21alt"
 }
 
 local rbanned = {

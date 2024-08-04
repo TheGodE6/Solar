@@ -1,4 +1,4 @@
---// Variables --//
+ --// Variables --//
 local pf: string = "" -- don't use angle brackets
 local lp: userdata = game:GetService("Players").LocalPlayer
 local connections = {}

@@ -99,7 +99,7 @@ addcommand({
    Name = "untoolban", --- fixing cant rn
 Function = function()
     check(args[2])
-        CONS["_TOOLBAN"..plr.Name]:Disconnect()
+        CONS["_TOOLBAN "..plr.Name]:Disconnect()
 end
 })
 

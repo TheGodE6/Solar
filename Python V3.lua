@@ -30,6 +30,14 @@ _G.Whitelisted = {"dawninja21", "dawninja21alt"}
 
 
 --//Funcs
+local function gpfs(n)
+for i,v in pairs(game.Players:GetChildren()) do
+    if string.sub(v.Name:lower(),1,#n:lower()) == n:lower() then
+        return {v}
+    end
+end
+      end
+
 local function notif(msg)
         game.StarterGui:SetCore("SendNotification", {
                 Title = "Siyuru.Docx V3",

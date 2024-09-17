@@ -188,7 +188,7 @@ end
 addcommand({
             Name = "gwl",
             Function = function(targets)
-           for i, plr in pairs(targets) do
+           for i, plr in ipairs(targets) do
 table.insert(gwl, plr.Name)
 end
 end

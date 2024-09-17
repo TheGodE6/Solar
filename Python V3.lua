@@ -30,7 +30,7 @@ _G.Whitelisted = {"dawninja21", "dawninja21alt"}
 
 
 --//Funcs
-local function gpfs(n)
+local function targets()
 for i,v in pairs(game.Players:GetChildren()) do
     if string.sub(v.Name:lower(),1,#n:lower()) == n:lower() then
         return {v}
@@ -187,9 +187,10 @@ end
 
 addcommand({
             Name = "gwl",
-            Function = function()
-            check(args[2])
+            Function = function(targets)
+           for i, plr in pairs(targets) do
 table.insert(gwl, plr.Name)
+end
 end
 })
 

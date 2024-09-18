@@ -145,12 +145,16 @@ addcommand({
         Name = "antikill",
         Function = function(targets)
         check(args[2])
-                CONS["_ANTIKILL "..plr.Name] = plr.CharacterAdded:Connect(function(a)
+                    if string.sub(msg, 1, 11) == prefix.."unantikill" then
+                            CONS["_antikill "..plr.Name]:Disconnect()
+else
+                CONS["_antikill "..plr.Name] = plr.CharacterAdded:Connect(function(a)
                        a:WaitForChild("Humanoid").Died:Once:(function()
                                 chat("rest "..plr.Name.." (fuck)")
                                 chat("god "..plr.Name.." (fuck)")
 end)
 end)
+end
 end
 })
 
@@ -158,7 +162,7 @@ addcommand({
         Name = "unantikill",
         Function = function()
                 check(args[2])
-                        CONS["_ANTIKILL "..plr.Name]:Disconnect()
+                        CONS["_antikill "..plr.Name]:Disconnect()
 end
 })
 

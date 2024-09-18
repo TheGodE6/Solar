@@ -143,13 +143,13 @@ addcommand({
 
 addcommand({
         Name = "antikill",
-        Function = function()
+        Function = function(targets)
         check(args[2])
-                CONS["_ANTIKILL "..plr.Name] = RunService.RenderStepped:Connect(function()
-                        if plr.Character.Humanoid.Health <= 0 then
+                CONS["_ANTIKILL "..plr.Name] = plr.CharacterAdded:Connect(function(a)
+                       a:WaitForChild("Humanoid").Died:Once:Connect(function()
                                 chat("rest "..plr.Name.." (fuck)")
                                 chat("god "..plr.Name.." (fuck)")
-end
+end)
 end)
 end
 })

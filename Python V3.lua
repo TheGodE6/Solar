@@ -146,9 +146,9 @@ addcommand({
         Function = function(targets)
         check(args[2])
                     if string.sub(msg, 1, 11) == prefix.."unantikill" then
-                            CONS["_antikill "..plr.Name]:Disconnect()
+                            CONS[plr.Name.." ANTIKILL"]:Disconnect()
 else
-                CONS["_antikill "..plr.Name] = plr.CharacterAdded:Connect(function(a)
+                CONS[plr.Name.." ANTIKILL"] = plr.CharacterAdded:Connect(function(a)
                        a:WaitForChild("Humanoid").Died:Once:(function()
                                 chat("rest "..plr.Name.." (fuck)")
                                 chat("god "..plr.Name.." (fuck)")

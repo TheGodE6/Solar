@@ -68,7 +68,7 @@ function addcommand(info)
             commands[cmdName] = cmdName
             CONS[#CONS + 1] = lp.Chatted:Connect(function(msg)
                    args = msg:split(" ")
-            if args[1] == _G.prefix .. cmdName then
+            if args[1] == prefix .. cmdName then
                         cmdFunction()
 end
 end)

@@ -157,7 +157,7 @@ addcommand({
         Name = "unantikill",
         Function = function()
                 check(args[2])
-                        CONS[plr.Name.." ANTIKILL]:Disconnect()
+                        CONS[plr.Name.." ANTIKILL"]:Disconnect()
 end
 })
 
@@ -180,7 +180,7 @@ addcommand({
         Name = "wl",
         Function = function()
     check(args[2])
-                table.insert(_G.Whitelisted, plr.Name)
+                table.insert(Whitelisted, plr.Name)
 end
 })
 

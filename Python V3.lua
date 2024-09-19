@@ -9,24 +9,23 @@ im trying to learn to break a loop but its not goin well
 --]]
 
 
----
+--- VARS
 local RunService = game:GetService("RunService")
 local commands = {}
 local CONS = {}
-_G.lp = game.Players.LocalPlayer
-_G.bp = Backpack
-_G.lpc = lp.Character
-_G.lpch = lpc.HumanoidRootPart
-_G.gwl = {}
-_G.aname = "<Python.docx V3🐍>"
-_G.rs = game:GetService("RunService")
-_G.autorun = {}
-_G.bgears = {
+local lp = game.Players.LocalPlayer
+local bp = Backpack
+local lpc = lp.Character
+local lpch= lpc.HumanoidRootPart
+local gwl = {}
+local aname = "<Python.docx V3🐍>"
+local autorun = {}
+local bgears = {
 "VampireVanquisher",
 "PortableJustice"
 }
-_G.prefix = "-"
-_G.Whitelisted = {"dawninja21", "dawninja21alt"}
+local prefix = "-"
+local Whitelisted = {"dawninja21", "dawninja21alt"}
 
 
 --//Funcs

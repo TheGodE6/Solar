@@ -137,21 +137,23 @@ end
 addcommand({
     Name = "ban2",
     Function = function()
-        check(args[2])
+for i, plr in ipairs(targets(args[2])) do
             table.insert(_G.Blacklisted, plr.Name)
         end
+end
 })
 
 addcommand({
         Name = "antikill",
         Function = function(targets)
-        check(args[2])
+                                for i, plr in ipairs(targets(args[2]) do
                 CONS[plr.Name.." ANTIKILL"] = plr.CharacterAdded:Connect(function(a)
                        a:WaitForChild("Humanoid").Died:Once:(function()
                                 chat("rest "..plr.Name.." (fuck)")
                                 chat("god "..plr.Name.." (fuck)")
 end)
 end)
+end
 end
 })
 
@@ -181,8 +183,9 @@ end
 addcommand({
         Name = "wl",
         Function = function()
-    check(args[2])
+    for i, plr in ipairs(targets(args[2]) do
                 table.insert(Whitelisted, plr.Name)
+end
 end
 })
 

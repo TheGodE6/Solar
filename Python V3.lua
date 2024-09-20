@@ -138,7 +138,7 @@ addcommand({
     Name = "ban2",
     Function = function()
 for i, plr in ipairs(targets(args[2])) do
-            table.insert(_G.Blacklisted, plr.Name)
+            table.insert(Blacklisted, plr.Name)
         end
 end
 })
@@ -222,6 +222,7 @@ end
 addcommand({
         Name = "BanHammer",
         Function = function()
+                        for i,plr in ipairs(targets(args[2])) do
        mode = args[2]
                chat("gear "..plr.Name.." 10468797")
                         chat("h/"..string.rep("\n",30).."BanHammer Given! to "..plr.Name.." Say -bcommands To Learn More!")
@@ -246,6 +247,7 @@ if mode == "kick" then
 chat("-k1 "..p)
 end
 end)
+end
                         end
 })
 

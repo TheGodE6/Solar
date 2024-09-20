@@ -29,11 +29,11 @@ local Whitelisted = {"dawninja21", "dawninja21alt"}
 
 
 --//Funcs
-local function targets()
-for i,v in pairs(game.Players:GetChildren()) do
-    if string.sub(v.Name:lower(),1,#n:lower()) == n:lower() then
-        return {v}
-    end
+local function targets(a)
+local plrTargets = {}
+        for i, plr in pairs(game.Players:GetPlayers()) do
+        if string.sub(plr.Name:lower(),1,#a) == a:lower() then
+            table.insert(args1, plr
 end
       end
 

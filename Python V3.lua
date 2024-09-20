@@ -30,12 +30,14 @@ local Whitelisted = {"dawninja21", "dawninja21alt"}
 
 --//Funcs
 local function targets(a)
-local plrTargets = {}
+local args1 = {}
         for i, plr in pairs(game.Players:GetPlayers()) do
         if string.sub(plr.Name:lower(),1,#a) == a:lower() then
-            table.insert(args1, plr
+            table.insert(args1, plr)
 end
       end
+                return args1
+end
 
 local function notif(msg)
         game.StarterGui:SetCore("SendNotification", {

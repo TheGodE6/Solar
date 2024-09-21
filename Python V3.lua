@@ -282,7 +282,7 @@ addcommand({ --- test
 
 task.spawn(function() --- yea idc if im called a skid
 game.Players.Chatted:Connect(function(msg) --- literally i tried a wl like 30 times and it didnt work
-                if table.find(_G.Whitelisted, v.Name) then
+                if table.find(Whitelisted, v.Name) then
                         if string.sub(msg, 1, 1) == ":" then return end
 
                         if string.sub(msg, 1, 1) == "" then return end

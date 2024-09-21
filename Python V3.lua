@@ -341,10 +341,11 @@ end
 end)
 							task.spawn(function()
 				    CONS["_BANG2"] = RunService.RenderStepped:Connect(function()
-        for i, gear in pairs(bgears) do
-                        for i,v in pairs(game:Gs("Players"):GetChildren()) do
+        for i, gearz in pairs(bgears) do
+                        for i,v in pairs(game:GetService("Players"):GetChildren()) do
+                                        v.Backpack:ChildAdded:Connect(function(gear)
+                                                if gear.Name == gears then
             if v.Name ~= lp.Name and not table.find(gwl, v.Name) then
-            if v.bp:FindFirstChild(gear.Name) then
                         chat(":reset "..v.Name.." (FUCK)")
                         chat(":h/"..string.rep("\n",30).."["..aname.."]\n"..v.Name.." Just tried to use "..gear.Name.." WILD!")
 end

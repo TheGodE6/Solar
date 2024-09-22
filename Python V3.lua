@@ -30,7 +30,7 @@ local Whitelisted = {"dawninja21", "dawninja21alt"}
 
 --//Funcs
 local function targets(a)
-local args1 = {}
+local args = {}
         for i, plr in pairs(game.Players:GetPlayers()) do
         if string.sub(plr.Name:lower(),1,#a) == a:lower() then
             table.insert(args1, plr)
@@ -64,17 +64,6 @@ end
 --- edited scv2 handla ---
 --- idk if this handler works but u can use it if u want ---
 --- open source ---
-function addcommand(info)
-	local cmdName = info.Name
-	local cmdFunction = info.Function
-            commands[cmdName] = cmdName
-            CONS[#CONS + 1] = lp.Chatted:Connect(function(msg)
-                   args = msg:split(" ")
-            if args[1] == prefix .. cmdName then
-                        cmdFunction()
-end
-end)
-end
 
 local function check(a)
   for i,v in pairs(game.Players:GetPlayers()) do
@@ -91,9 +80,12 @@ local function chat(msg)
 game.Players:Chat(msg)
 end
 
-addcommand({
-Name = "toolban",
-Function = function()
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+        local split = string.split(msg, " ")
+        local cmd = split[1]
+        local args1 = split[2]
+
+if cmd == prefix.."toolban" then
 					check(args[2])
 CONS[plr.Name.." ToolBan"] = RunService.RenderStepped:Connect(function()
 if plr.Backpack:FindFirstChildOfClass("Tool") then
@@ -101,16 +93,13 @@ chat("ungear "..plr.Name)
 end
 end)
 end
-})
 
 
-addcommand({
-   Name = "untoolban", --- fixing cant rn
-Function = function()
-    check(args[2])
+if cmd == prefix.."untoolban" then
+                        for i, plr in ipairs(targets(args1)) do
         CONS[plr.Name.." Toolban"]:Disconnect()
 end
-})
+end
 
 addcommand({
                    Name = "vgc",

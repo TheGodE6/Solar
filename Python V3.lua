@@ -130,7 +130,7 @@ end
 addcommand({
         Name = "anticrash",
         Function = function()
-                        CONS["_GEARBL"] = RunService.RenderStepped:Connect(function()
+                        CONS.gearbl = RunService.RenderStepped:Connect(function()
                 task.spawn(function()
                                 for i,v in pairs(game.Players:GetPlayers())
                         v.Backpack.ChildAdded:Connect(function(gear)
@@ -140,7 +140,15 @@ addcommand({
                                                 chat(":h/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuddy Ur Not Gonna Use "..gearbl.." "..v.Name)
 end)
 end)
-end)
+end
+})
+
+addcommand({
+        Name = "unanticrash",
+        Function = function()
+                CONS.gearbl:Disconnect()
+end
+})
 
 addcommand({
         Name = "cool",
@@ -150,7 +158,7 @@ end
 })
 
 addcommand({
-    Name = "ban2",
+            Name = "ban2",
     Function = function()
 for i, plr in ipairs(targets(args[2])) do
             table.insert(Blacklisted, plr.Name)

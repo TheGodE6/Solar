@@ -128,6 +128,21 @@ end
 })
 
 addcommand({
+        Name = "anticrash",
+        Function = function()
+                        CONS["_GEARBL"] = RunService.RenderStepped:Connect(function()
+                task.spawn(function()
+                                for i,v in pairs(game.Players:GetPlayers())
+                        v.Backpack.ChildAdded:Connect(function(gear)
+                                for _, v in pairs(gearbl) do
+                                        if gear.Name == gearbl then
+                                                chat(":ungear/"..v.Name)
+                                                chat(":h/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBuddy Ur Not Gonna Use "..gearbl.." "..v.Name)
+end)
+end)
+end)
+
+addcommand({
         Name = "cool",
          Function = function()
 game.Players:Chat("h a")

@@ -101,9 +101,7 @@ if cmd == prefix.."untoolban" then
 end
 end
 
-addcommand({
-                   Name = "vgc",
-                        Function = function()
+        if cmd == prefix.."vgc" then
     chat("gear me 00000000000000094794847")
     local tool = lp.bp:WaitForChild("VampireVanquisher")
 tool.Parent = game.Players.LocalPlayer.Character
@@ -114,7 +112,6 @@ chat("unsize me me me")
 end
 notif("Server Crashed!")
 end
-})
 
 addcommand({
         Name = "anticrash",

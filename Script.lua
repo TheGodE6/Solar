@@ -14,6 +14,7 @@ local whitelist = {
 }
 
 function addcmd(info)
+        info.Name = cmdName
  commands[cmdName] = cmdName
     info.cmdFunction 
         connections[#connections + 1] = lp.Chatted:Connect(function(msg)

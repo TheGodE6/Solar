@@ -14,11 +14,14 @@ local whitelist = {
 }
 
 function addcmd(info)
-        info.Name = cmdName
+        local cmdName = info.Name
+        local cmdFunction = info.cmdFunction 
  commands[cmdName] = cmdName
-    info.cmdFunction 
         connections[#connections + 1] = lp.Chatted:Connect(function(msg)
             msg = msg:lower
             args = msg:split(" ")
                     if args[1] == prefix .. cmdName then
                         cmdFunction()
+end
+end)
+end

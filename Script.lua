@@ -12,13 +12,14 @@ local connections = {}
 local settings = { 
     prefix = "-",
     antigear = true,
-    antirocket = true
+    antirocket = true,
+    gears = {},
+    gwl = {}
 }
 
 local whitelist = {
     admin = {}, --- people can use ur commands hehehehehe
     kick = {},
-    gears = {}
 }
 
 local lp = game.Players.LocalPlayer
@@ -58,6 +59,22 @@ end
 end)
 end)
 
+task.spawn(function()
+        while settings.antigear do
+            wait()
+                for i,v in pairs(game.Players:GetPlayeds()) do
+                        v.Backpack.ChildAdded:Connect(function(gear)
+                                for _, gears in pairs(settings.gears) do
+                                        if not table.find(settings.gwl, v.Name) then
+                                    if gear.Name == gears then
+                                        chat("h/\"..string.rep("\n",30).." "..v.Name.." Your Are Not Gonna Use "..gears)
+end
+end)
+end
+end
+end
+end)
+
 function addcmd(info)
         local cmdName = info.Name
         local cmdFunction = info.cmdFunction 
@@ -70,3 +87,6 @@ function addcmd(info)
 end
 end)
 end
+
+addcmd({
+        "gwl"

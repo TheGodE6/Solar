@@ -31,10 +31,11 @@ local function targets(plr)
             for i,v in pairs(game.Players:GetPlayers())
                 local plrTargets = {}
         if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
-                table.insert(plrTargets, v.Name)
+                table.insert(plrTargets, v)
                         end
         return plrTargets
 end
+
 local function chat(msg)
             game.Players:Chat(msg)
 end

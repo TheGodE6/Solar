@@ -1,7 +1,7 @@
 --[[
 Hi, If you have this scriot ur special.
 Also GoodLuck Leaking it.
-I Have A Unbypassabke whitelist...
+I Have A Unbypassable whitelist...
 i will leak it method one day!
 --]]
 

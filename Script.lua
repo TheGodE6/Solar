@@ -114,6 +114,17 @@ addcmd({
 end
 })
 
+addcmd({
+        "spam",
+        Function = function()
+                local a = msg:sub(1,6)
+                        getgenv().spam = true
+                            while spam do
+                                chat(a)
+end
+                        
+    end
+})
 
 --// Whitelist
 local Whitelist2 = {}

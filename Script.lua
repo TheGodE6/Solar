@@ -18,7 +18,7 @@ local settings = {
 }
 
 local whitelist = {
-    admin = {}, --- people can use ur commands hehehehehe
+    admin = {}, --- people can use ur commands DONT PUT URSELF!!!!
     kick = {},
 }
 

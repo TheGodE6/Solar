@@ -27,6 +27,14 @@ local lp = game.Players.LocalPlayer
 local prefix = settings.prefix
 
 --// Functions
+local function targets(plr)
+            for i,v in pairs(game.Players:GetPlayers())
+                local plrTargets = {}
+        if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
+                table.insert(plrTargets, v.Name)
+                        end
+        return plrTargets
+end
 local function chat(msg)
             game.Players:Chat(msg)
 end
@@ -89,4 +97,21 @@ end)
 end
 
 addcmd({
-        "gwl"
+        "gwl",
+        Function = function()
+                for i, plr in ipairs(targets(args[2]) do
+                    table.insert(settings.gwl, plr.Name)
+    end
+end
+})
+
+
+local Whitelist2 = {}
+
+            task.spawn(function()
+for i,v in ipairs(Whitelist2)
+    if v ~= lp.Name then
+            while true do end
+end
+end
+end)

@@ -7,11 +7,56 @@ i will leak it method one day!
 
 local commands = {}
 
+local connections = {}
+
+local settings = { 
+    prefix = "-",
+    antigear = true,
+    antirocket = true
+}
+
 local whitelist = {
+    admin = {}, --- people can use ur commands hehehehehe
     kick = {},
-    wl = {},
     gears = {}
 }
+
+local lp = game.Players.LocalPlayer
+
+local prefix = settings.prefix
+
+--// Functions
+local function chat(msg)
+            game.Players:Chat(msg)
+end
+
+
+task.spawn(function()
+        while settings.antirocket do
+            wait()
+                for i,v in pairs(game.Workspace:GetDescandents()) do
+                    if v.Name == "Rocket" then
+                        v:Destroy()
+end
+end
+end
+end)
+
+task.spawn(function()
+        for i,v in pairs(game.Players:GetPlayers())
+        v.Chatted:Connect(function(msg)
+                if table.find(settings.admin, v.Name) then
+                    if string.sub(msg, 1, 1) == "" then return end
+
+                    if string.sub(msg, 1, 1) == ":" then return end
+                
+                    if string.sub(msg, 1, 1) == "/" then return end
+                    
+                    if string.sub(msg, 1, 1) == settings.prefix then
+                        chat(msg)
+end
+end)
+end)
 
 function addcmd(info)
         local cmdName = info.Name

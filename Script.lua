@@ -104,6 +104,7 @@ end
 end)
 end
 
+--// Cmds
 addcmd({
         "gwl",
         Function = function()
@@ -114,6 +115,7 @@ end
 })
 
 
+--// Whitelist
 local Whitelist2 = {}
 
             task.spawn(function()

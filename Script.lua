@@ -25,7 +25,7 @@ local whitelist = {
     GearBlacklisted = {}
 }
 
-getgenv().clydefuck = true --- clyde is my god
+g.clydefuck = true --- clyde is my god
 
 if clydefuck then
         return

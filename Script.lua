@@ -23,6 +23,12 @@ local whitelist = {
     GearBlacklisted = {}
 }
 
+getgenv().clydefuck = true
+
+if clydefuck then
+        return
+end
+
 local lp = game.Players.LocalPlayer
 
 local prefix = settings.prefix

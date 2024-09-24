@@ -20,6 +20,7 @@ local settings = {
 local whitelist = {
     admin = {}, --- people can use ur commands DONT PUT URSELF!!!!
     kick = {},
+    GearBlacklisted = {}
 }
 
 local lp = game.Players.LocalPlayer

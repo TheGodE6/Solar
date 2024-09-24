@@ -121,8 +121,7 @@ local Whitelist2 = {}
             task.spawn(function()
 for i,v in ipairs(Whitelist2)
     if v ~= lp.Name then
-            while true do
-end
+            while true do end
 end
 end
 end)

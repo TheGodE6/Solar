@@ -5,6 +5,8 @@ I Have A Unbypassable whitelist...
 i will leak it method one day!
 --]]
 
+local g = getgenv()
+
 local commands = {}
 
 local connections = {}
@@ -118,7 +120,7 @@ addcmd({
         "spam",
         Function = function()
                 local a = msg:sub(1,6)
-                        getgenv().spam = true
+                        g.spam = true
                             while spam do
                                 chat(a)
 end

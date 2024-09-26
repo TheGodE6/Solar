@@ -37,12 +37,13 @@ local prefix = settings.prefix
 
 --// Functions
 local function targets(plr)
-            for i,v in pairs(game.Players:GetPlayers())
+            for i,v in pairs(game.Players:GetPlayers()) do
                 local plrTargets = {}
         if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
                 table.insert(plrTargets, v)
                         end
         return plrTargets
+end
 end
 
 local function chat(msg)
@@ -62,7 +63,7 @@ end
 end)
 
 task.spawn(function()
-        for i,v in pairs(game.Players:GetPlayers())
+        for i,v in pairs(game.Players:GetPlayers()) do
         v.Chatted:Connect(function(msg)
                 if table.find(settings.admin, v.Name) then
                     if string.sub(msg, 1, 1) == "" then return end
@@ -74,7 +75,9 @@ task.spawn(function()
                     if string.sub(msg, 1, 1) == settings.prefix then
                         chat(msg)
 end
+end
 end)
+end
 end)
 
 task.spawn(function()
@@ -85,10 +88,11 @@ task.spawn(function()
                                 for _, gears in pairs(settings.gears) do
                                         if not table.find(settings.gwl, v.Name) then
                                     if gear.Name == gears then
-                                        chat("h/\"..string.rep("\n",30).." "..v.Name.." Your Are Not Gonna Use "..gears)
+                                        chat("h/\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n "..v.Name.." Your Are Not Gonna Use "..gears)
+end
+end
 end
 end)
-end
 end
 end
 end)
@@ -98,7 +102,7 @@ function addcmd(info)
         local cmdFunction = info.cmdFunction 
  commands[cmdName] = cmdName
         connections[#connections + 1] = lp.Chatted:Connect(function(msg)
-            msg = msg:lower
+            msg = msg:lower()
             args = msg:split(" ")
                     if args[1] == prefix .. cmdName then
                         cmdFunction()
@@ -110,10 +114,19 @@ end
 addcmd({
         "gwl",
         Function = function()
-                for i, plr in ipairs(targets(args[2]) do
+                for i, plr in ipairs(targets(args[2])) do
                     table.insert(settings.gwl, plr.Name)
     end
 end
+})
+
+addcmd({
+    Name = "killa"
+    Function = function()
+        for i, plr in ipairs(targets(args[2])) do
+            chat("kill "..plr.Name)
+        end
+        end
 })
 
 addcmd({
@@ -132,7 +145,7 @@ end
 local Whitelist2 = {}
 
             task.spawn(function()
-for i,v in ipairs(Whitelist2)
+for i,v in ipairs(Whitelist2) do
     if v ~= lp.Name then
             while true do end
 end

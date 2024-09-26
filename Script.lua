@@ -37,8 +37,8 @@ local prefix = settings.prefix
 
 --// Functions
 local function targets(plr)
+                                local plrTargets = {}
             for i,v in pairs(game.Players:GetPlayers()) do
-                local plrTargets = {}
         if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
                 table.insert(plrTargets, v)
                         end

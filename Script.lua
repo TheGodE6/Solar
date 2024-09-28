@@ -7,7 +7,7 @@ i will leak it method one day!
 
 local g = getgenv()
 
-local space = "n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+local space = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
 
 local commands = {}
 

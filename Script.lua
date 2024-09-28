@@ -108,3 +108,4 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             if cmd == settings.prefix.."anim" then
                 chat("part/1/1/1/1")
 end
+end)

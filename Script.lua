@@ -33,8 +33,6 @@ end
 
 local lp = game.Players.LocalPlayer
 
-local prefix = settings.prefix
-
 --// Functions
 local function targets(plr)
                                 local plrTargets = {}
@@ -104,7 +102,7 @@ function addcmd(info)
         connections[#connections + 1] = lp.Chatted:Connect(function(msg)
             msg = msg:lower()
             args = msg:split(" ")
-                    if args[1] == prefix .. cmdName then
+                    if args[1] == settings.prefix .. cmdName then
                         cmdFunction()
 end
 end)
@@ -112,7 +110,7 @@ end
 
 --// Cmds
 addcmd({
-        Name = "gwl",
+        "gwl",
         Function = function()
                 for i, plr in ipairs(targets(args[2])) do
                     table.insert(settings.gwl, plr.Name)
@@ -123,14 +121,14 @@ end
 addcmd({
     Name = "killa"
     Function = function()
-        for i, plr in pairs(targets(args[2])) do
+        for i, plr in ipairs(targets(args[2])) do
             chat("kill "..plr.Name)
         end
         end
 })
 
 addcmd({
-       Name = "spam",
+        "spam",
         Function = function()
                 local a = msg:sub(1,6)
                         g.spam = true

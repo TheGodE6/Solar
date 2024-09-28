@@ -123,7 +123,7 @@ end
 addcmd({
     Name = "killa"
     Function = function()
-        for i, plr in ipairs(targets(args[2])) do
+        for i, plr in pairs(targets(args[2])) do
             chat("kill "..plr.Name)
         end
         end

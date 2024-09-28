@@ -112,7 +112,7 @@ end
 
 --// Cmds
 addcmd({
-        "gwl",
+        Name = "gwl",
         Function = function()
                 for i, plr in ipairs(targets(args[2])) do
                     table.insert(settings.gwl, plr.Name)
@@ -130,7 +130,7 @@ addcmd({
 })
 
 addcmd({
-        "spam",
+       Name = "spam",
         Function = function()
                 local a = msg:sub(1,6)
                         g.spam = true

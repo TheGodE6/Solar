@@ -95,46 +95,14 @@ end
 end
 end)
 
-function addcmd(info)
-        local cmdName = info.Name
-        local cmdFunction = info.cmdFunction 
- commands[cmdName] = cmdName
-        connections[#connections + 1] = lp.Chatted:Connect(function(msg)
-            msg = msg:lower()
-            args = msg:split(" ")
-                    if args[1] == settings.prefix .. cmdName then
-                        cmdFunction()
-end
-end)
-end
-
 --// Cmds
-addcmd({
-        "gwl",
-        Function = function()
-                for i, plr in ipairs(targets(args[2])) do
-                    table.insert(settings.gwl, plr.Name)
-    end
-end
-})
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    local split = msg:split(" ")
+    local args1 = split[2]
+    local args2 = split[3]
+    local args3 = split[4]
+    local cmd = split[1]
 
-addcmd({
-    Name = "killa"
-    Function = function()
-        for i, plr in ipairs(targets(args[2])) do
-            chat("kill "..plr.Name)
-        end
-        end
-})
-
-addcmd({
-        "spam",
-        Function = function()
-                local a = msg:sub(1,6)
-                        g.spam = true
-                            while spam do
-                                chat(a)
+            if cmd == prefix.."anim" then
+                chat("part/1/1/1/1")
 end
-                        
-    end
-})

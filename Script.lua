@@ -66,13 +66,8 @@ task.spawn(function()
         for i,v in pairs(game.Players:GetPlayers()) do
         v.Chatted:Connect(function(msg)
                 if table.find(settings.admin, v.Name) then
-                    if string.sub(msg, 1, 1) == "" then return end
 
-                    if string.sub(msg, 1, 1) == ":" then return end
-                
-                    if string.sub(msg, 1, 1) == "/" then return end
-                    
-                    if string.sub(msg, 1, 1) == settings.prefix then
+                if string.sub(msg, 1, 1) == settings.prefix then
                         chat(msg)
 end
 end
@@ -98,7 +93,8 @@ end
 end)
 
 --// Cmds
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
+game.Players.LocalPlayer.Chatted:Connect(
+            function(msg)
     local split = msg:split(" ")
     local args1 = split[2]
     local args2 = split[3]
@@ -108,4 +104,7 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
             if cmd == settings.prefix.."anim" then
                 chat("part/1/1/1/1")
 end
-end)
+
+  if cmd == settings.prefix.."gb" then
+end
+)

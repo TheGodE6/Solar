@@ -107,4 +107,5 @@ end
 
   if cmd == settings.prefix.."gb" then
 end
+end
 )

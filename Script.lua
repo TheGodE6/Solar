@@ -5,6 +5,10 @@ I Have A Unbypassable whitelist...
 i will leak it method one day!
 --]]
 
+local bot = {}
+
+bot.perm = false --- dont fuck with this
+
 local g = getgenv()
 
 local space = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -27,9 +31,9 @@ local whitelist = {
     GearBlacklisted = {}
 }
 
-g.clydefuck = true --- clyde is my god
+g.skid = true --- clyde is my god
 
-if clydefuck then
+if skid then
         return
 end
 

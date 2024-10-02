@@ -78,7 +78,7 @@ end)
 task.spawn(function()
         while settings.antigear do
             wait()
-                for i,v in pairs(game.Players:GetPlayeds()) do
+                for i,v in pairs(game.Players:GetPlayers()) do
                         v.Backpack.ChildAdded:Connect(function(gear)
                                 for _, gears in pairs(settings.gears) do
                                         if not table.find(settings.gwl, v.Name) then

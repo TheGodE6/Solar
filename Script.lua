@@ -9,6 +9,8 @@ local bot = {}
 
 bot.perm = false --- dont fuck with this
 
+bot.admin = false --- dont fuck with this until I YES I set it to true.
+
 local g = getgenv()
 
 local space = "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
@@ -106,10 +108,14 @@ game.Players.LocalPlayer.Chatted:Connect(
     local cmd = split[1]
 
             if cmd == settings.prefix.."anim" then
+                    if bot.admin then
                 chat("part/1/1/1/1")
+end
 end
 
   if cmd == settings.prefix.."gb" then
+            if bot.admin then
+end
 end
 end
 )

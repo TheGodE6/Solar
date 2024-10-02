@@ -5,9 +5,7 @@ I Have A Unbypassable whitelist...
 i will leak it method one day!
 --]]
 
-    local bot = {
-        admin = {}
-}
+local bot = {}
 
 bot.perm = false --- dont fuck with this
 
@@ -104,7 +102,7 @@ end)
             for i,v in pairs(game.Players:GetPlayers()) do
 v.Chatted:Connect(
             function(msg)
-                if table.find(bot.admin, v.Name) then
+                if table.find(whitelist.admin, v.Name) then
     local split = msg:split(" ")
     local args1 = split[2]
     local args2 = split[3]

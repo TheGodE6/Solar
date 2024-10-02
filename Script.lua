@@ -5,11 +5,6 @@ I Have A Unbypassable whitelist...
 i will leak it method one day!
 --]]
 
-local bot = {}
-
-bot.perm = false --- dont fuck with this
-
-bot.admin = false --- dont fuck with this until I YES I set it to true.
 
 local g = getgenv()
 
@@ -28,7 +23,7 @@ local settings = {
 }
 
 local whitelist = {
-    admin = {}, --- people can use ur commands DONT PUT URSELF!!!!
+    admin = {"dawninja21"}, --- people can use ur commands DONT PUT URSELF!!!!
     kick = {},
     GearBlacklisted = {}
 }
@@ -110,14 +105,10 @@ v.Chatted:Connect(
     local cmd = split[1]
 
             if cmd == settings.prefix.."anim" then
-                    if bot.admin then
                 chat("part/1/1/1/1")
-end
 end
 
   if cmd == settings.prefix.."gb" then
-            if bot.admin then
-end
 end
 end
 end

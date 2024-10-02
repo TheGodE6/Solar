@@ -42,7 +42,7 @@ local function targets(plr)
         if string.sub(v.Name:lower(), 1, #plr) == plr:lower() then
                 table.insert(plrTargets, v)
                         end
-        return plrTargets
+                return plrTargets
 end
 end
 

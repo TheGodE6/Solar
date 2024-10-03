@@ -5,6 +5,7 @@ I Have A Unbypassable whitelist...
 i will leak it method one day!
 --]]
 
+local commands = {}
 
 local g = getgenv()
 

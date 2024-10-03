@@ -95,6 +95,15 @@ end
 end)
 
 --// Cmds
+local function addcmd(command, ...)
+    local cmd = commands[command]
+    local args = {...}
+    if cmd then
+        if #args == cmd.args then
+            cmd.func(unpack(args))
+        end
+    end
+end
             for i,v in pairs(game.Players:GetPlayers()) do
 v.Chatted:Connect(
             function(msg)
@@ -105,7 +114,11 @@ v.Chatted:Connect(
     local args3 = split[4]
     local cmd = split[1]
 
-            if cmd == settings.prefix.."anim" then
+commands["killa"] = {
+        func = function()
+end
+}
+
                 chat("part/1/1/1/1")
 end
 

@@ -29,7 +29,8 @@ function GetPlayer(target)
     end
 end
 
-lp.Chatted:Connect(function(msg)
+function wl(p)
+p.Chatted:Connect(function(msg)
 local args = msg:split(" ")
 
 
@@ -42,3 +43,5 @@ end
             chat("h a")
 end
 end)
+
+wl(lp)

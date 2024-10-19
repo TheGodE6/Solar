@@ -5,10 +5,10 @@ local prefix = ">"
 local function chat(msg)
     game.Players:Chat(msg)
 end
-local function targets(a)
+local function targets(plr)
 local args = {}
         for i, plr in pairs(game.Players:GetPlayers()) do
-        if string.sub(plr.Name:lower(),1,#a) == a:lower() then
+        if string.sub(plr.Name:lower(),1,#plr) == plr:lower() then
             table.insert(args, plr)
 end
       end

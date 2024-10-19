@@ -34,8 +34,8 @@ local args = msg:split(" ")
 
 
     if msg == prefix.."test" then
-                for i, plr in pairs(GetPlayer(args[2]) do
-            chat("h "..plr.Name.." test")
+                for i, v in pairs(GetPlayer(args[2]) do
+            chat("h "..v.Name.." test")
 end
 end
 end)

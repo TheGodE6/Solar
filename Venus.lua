@@ -33,7 +33,7 @@ lp.Chatted:Connect(function(msg)
 local args = msg:split(" ")
 
 
-    if string.sub(msg, 1, #msg) == prefix.."alal" then
+    if string.sub(msg, 1, 4) == prefix.."alal" then
                 for i, v in pairs(GetPlayer(string.sub(msg,5))) do
             chat("kill "..v.Name)
 end

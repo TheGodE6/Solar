@@ -38,7 +38,7 @@ p.Chatted:Connect(function(msg)
             chat("kill "..v.Name)
 end
 end
-    if string.sub(msg, 1, 2) == prefix.."al" then
+    if string.sub(msg, 1, #msg) == prefix.."al" then
             chat("h a")
 end
 end)

@@ -18,6 +18,8 @@ end
 lp.Chatted:Connect(function(msg)
 
     if msg == prefix.."test" then
-            chat("h Test")
+                for i, plr in pairs(targets(args[2]) do
+            chat("h "..plr.Name.." test")
+end
 end
 end)

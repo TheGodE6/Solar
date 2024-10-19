@@ -1,10 +1,10 @@
-local plrTargets = {}
 local lp = game.Players.LocalPlayer
 local prefix = ">"
 
 local function chat(msg)
     game.Players:Chat(msg)
 end
+
 function GetPlayer(target)
     local plrs = game:service("Players"):GetPlayers()
     if target:lower() == "all" then

@@ -16,6 +16,8 @@ end
 end
 
 lp.Chatted:Connect(function(msg)
+local args = msg:split(" ")
+
 
     if msg == prefix.."test" then
                 for i, plr in pairs(targets(args[2]) do

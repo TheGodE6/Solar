@@ -35,7 +35,7 @@ local args = msg:split(" ")
 
 
     if string.sub(msg, 1, 4) == prefix.."alal" then
-                for i, v in pairs(GetPlayer(string.sub(msg,5))) do
+                for i, v in pairs(GetPlayer(string.sub(msg,6)) do
             chat("kill "..v.Name)
 end
 end

@@ -1,5 +1,8 @@
 local lp = game.Players.LocalPlayer
 local prefix = ">"
+local lpc = lp.Character
+local lpch = lpc.HumanoidRootPart
+local g = getgenv()
 
 local function chat(msg)
     game.Players:Chat(msg)
@@ -8,6 +11,7 @@ end
 function visc()
     local vis = Instance.new(part,"workspace")
 end
+
 function GetPlayer(target)
     local plrs = game:service("Players"):GetPlayers()
     if target:lower() == "all" then
@@ -34,6 +38,16 @@ end
 
 function wl(p)
 p.Chatted:Connect(function(msg)
+
+    if string.sub(msg, 1, ) == prefix.."antikikll" then
+        g.Antikill = true
+        while g.Antikill do
+        if lpch.Health <= 0 then
+            chat("reset me")
+        end
+    end
+end
+    end
 
 
     if string.sub(msg, 1, 4) == prefix.."alal" then

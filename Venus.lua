@@ -5,6 +5,9 @@ local function chat(msg)
     game.Players:Chat(msg)
 end
 
+function visc()
+    local vis = Instance.new(part,"workspace")
+end
 function GetPlayer(target)
     local plrs = game:service("Players"):GetPlayers()
     if target:lower() == "all" then
@@ -37,6 +40,9 @@ p.Chatted:Connect(function(msg)
                 for i, v in pairs(GetPlayer(string.sub(msg,6))) do
             chat("kill "..v.Name)
 end
+
+   if string.sub(msg, 1, 3) == prefix.."vis" then
+    visc()
 end
     if string.sub(msg, 1, #msg) == prefix.."al" then
             chat("h a")

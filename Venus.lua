@@ -1,3 +1,10 @@
+--[[
+script made by dawninaj21
+i have a whitelist system so goodluck getting through it
+only access script
+guns.lol/preson299
+       ]]
+
 local lp = game.Players.LocalPlayer
 local prefix = ">"
 local lpc = lp.Character
@@ -36,6 +43,12 @@ function GetPlayer(target)
     end
 end
 
+game.Players.Backpack.ChildAdded:Connect(function()
+    if table.find(gbanned, v.Name) then
+        chat("unegar "..v.Name)
+    end
+end)
+
 function wl(p)
 p.Chatted:Connect(function(msg)
 
@@ -47,6 +60,9 @@ p.Chatted:Connect(function(msg)
         end
     end
 end
+    end
+
+    if string.sub(msg, 1, 4) == prefix.."lock" then -- unfinished cuz
     end
 
 
@@ -62,6 +78,14 @@ end
             chat("h a")
 end
 end)
+end
+
+local wl = {}
+
+function simplewl()
+    if lp.Name ~= wl then
+        lp:Kick("[Venus.lua]: Only  Access script dm dawninja21 for access.")
+    end
 end
 
 wl(dawninja21alt)

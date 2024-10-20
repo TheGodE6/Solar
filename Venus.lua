@@ -72,7 +72,6 @@ p.Chatted:Connect(function(msg)
         end
     end
 end
-    end
 
     if string.sub(msg, 1, 4) == prefix.."lock" then -- unfinished cuz
     end
@@ -88,6 +87,7 @@ end
 end
     if string.sub(msg, 1, #msg) == prefix.."al" then
             chat("h a")
+end
 end
 end)
 end

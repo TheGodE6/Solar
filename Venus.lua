@@ -10,6 +10,7 @@ local prefix = ">"
 local lpc = lp.Character
 local lpch = lpc.HumanoidRootPart
 local g = getgenv()
+local gbanned = {}
 
 local function chat(msg)
     game.Players:Chat(msg)

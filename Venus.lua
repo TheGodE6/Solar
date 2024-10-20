@@ -10,7 +10,6 @@ local prefix = ">"
 local lpc = lp.Character
 local lpch = lpc.HumanoidRootPart
 local g = getgenv()
-local gbanned = {}
 
 local function chat(msg)
     game.Players:Chat(msg)
@@ -53,7 +52,19 @@ end)
 function wl(p)
 p.Chatted:Connect(function(msg)
 
-    if string.sub(msg, 1, ) == prefix.."antikikll" then
+    if string.sub(msg, 1, 4) == prefix.."spam" then
+        local spammer = string.sub(msg, 6)
+          g.Spam = true
+           while g.Spam do
+            chat(spammer)
+           end
+        end
+
+        if string.sub(msg, 1, 6) == prefix.."unspam" then
+            g.Spam = false
+        end
+
+    if string.sub(msg, 1, 8) == prefix.."antikill" then
         g.Antikill = true
         while g.Antikill do
         if lpch.Health <= 0 then
@@ -81,13 +92,15 @@ end
 end)
 end
 
-local wl = {}
+local whitelist = {}
 
 function simplewl()
     if lp.Name ~= wl then
         lp:Kick("[Venus.lua]: Only  Access script dm dawninja21 for access.")
     end
 end
+
+simplewl()
 
 wl(dawninja21alt)
 wl(lp)

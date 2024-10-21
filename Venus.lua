@@ -5,6 +5,7 @@ only access script
 guns.lol/preson299
        ]]
 
+local connections = {}
 local lp = game.Players.LocalPlayer
 local prefix = ">"
 local lpc = lp.Character
@@ -74,6 +75,8 @@ p.Chatted:Connect(function(msg)
 end
 
     if string.sub(msg, 1, 4) == prefix.."lock" then -- unfinished cuz
+            for i,v in pairs(GetPlayer(string.sub(msg,6))) do
+end
     end
 
 

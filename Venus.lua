@@ -5,6 +5,7 @@ only access script
 guns.lol/preson299
        ]]
 
+local gbanned = {}
 local connections = {}
 local lp = game.Players.LocalPlayer
 local prefix = ">"
@@ -14,10 +15,6 @@ local g = getgenv()
 
 local function chat(msg)
     game.Players:Chat(msg)
-end
-
-function visc()
-    local vis = Instance.new(part,"workspace")
 end
 
 function GetPlayer(target)
@@ -74,15 +71,12 @@ p.Chatted:Connect(function(msg)
     end
 end
 
-    if string.sub(msg, 1, 4) == prefix.."lock" then -- unfinished cuz
-            for i,v in pairs(GetPlayer(string.sub(msg,6))) do
-end
-    end
 
 
     if string.sub(msg, 1, 4) == prefix.."alal" then
-                for i, v in pairs(GetPlayer(string.sub(msg,6))) do
-            chat("kill "..v.Name)
+                local plr = string.sub(msg, 6)
+                    GetPlayer(plr)
+            chat("kill "..plr.Name)
 end
 
    if string.sub(msg, 1, 3) == prefix.."vis" then
@@ -91,19 +85,8 @@ end
     if string.sub(msg, 1, #msg) == prefix.."al" then
             chat("h a")
 end
-end
 end)
 end
-
-local whitelist = {}
-
-function simplewl()
-    if lp.Name ~= wl then
-        lp:Kick("[Venus.lua]: Only  Access script dm dawninja21 for access.")
-    end
-end
-
-simplewl()
 
 wl(dawninja21alt)
 wl(lp)

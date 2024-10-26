@@ -5,6 +5,7 @@ only access script
 guns.lol/preson299
        ]]
 
+local gplr = game.Players:GetPlayers()
 local gbanned = {}
 local connections = {}
 local lp = game.Players.LocalPlayer
@@ -41,10 +42,15 @@ function GetPlayer(target)
     end
 end
 
+
+spawn(function()
+for i,v in pairs(gplr) do
 game.Players.Backpack.ChildAdded:Connect(function()
     if table.find(gbanned, v.Name) then
         chat("unegar "..v.Name)
     end
+end)
+end
 end)
 
 function wl(p)

@@ -44,7 +44,7 @@ end
 
 spawn(function()
 for i,v in pairs(gplr) do
-game.Players.Backpack.ChildAdded:Connect(function()
+v.Backpack.ChildAdded:Connect(function()
     if table.find(gbanned, v.Name) then
         chat("unegar "..v.Name)
     end

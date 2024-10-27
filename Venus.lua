@@ -1,8 +1,7 @@
 --[[
 script made by dawninaj21
-i have a whitelist system so goodluck getting through it
 only access script
-guns.lol/preson299
+guns.lol/person299
        ]]
 
 local gplr = game.Players:GetPlayers()

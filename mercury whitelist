@@ -1,4 +1,4 @@
-local wl = {}
+local wl = {"dawninja21", "Red_Otruth"}
 
 local isWhitelisted = false
 

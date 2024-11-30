@@ -1,5 +1,0 @@
-task.spawn(function()
-    if version ~= "Mercury V1.2" then
-        lp:Kick("Old Version Of Mercury.")
-    end
-end)

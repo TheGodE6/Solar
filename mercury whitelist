@@ -1,0 +1,18 @@
+local wl = {}
+
+local isWhitelisted = false
+
+
+for _, v in pairs(wl) do
+    if v == game.Players.LocalPlayer.Name then
+        isWhitelisted = true
+        break
+    end
+end
+
+
+if isWhitelisted then
+    print("Whitelisted!")
+else
+    game.Players.LocalPlayer:Kick("Not Whitelisted")  -- Kick the player if not whitelisted
+end

@@ -1,4 +1,4 @@
-local wl = {"dawninja21", "Red_Otruth"}
+local wl = {"dawninja21", "dawninja21alt"}
 
 local isWhitelisted = false
 
@@ -14,5 +14,5 @@ end
 if isWhitelisted then
     print("Whitelisted!")
 else
-    game.Players.LocalPlayer:Kick("Not Whitelisted")  -- Kick the player if not whitelisted
+    game.Players.LocalPlayer:Kick("Not Whitelisted")
 end

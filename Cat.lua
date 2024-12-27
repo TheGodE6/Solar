@@ -12,7 +12,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
      getgenv().AutoWin = true
 end
    if msg = "unautowin" then
-getgenv().AutoWin == false
+if getgenv().AutoWin == false then
+end
 end
 end
 end)

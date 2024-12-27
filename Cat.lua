@@ -4,7 +4,7 @@ task.spawn(function()
    while getgenv().AutoWin == true and task.wait(2) do
      game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(3735, 108, 290)
 end
-end
+end)
 
 task.spawn(function()
 game.Players.LocalPlayer.Chatted:Connect(function(msg)

@@ -55,6 +55,26 @@ end
    end,
 })
 
+local Toggle = Tab:CreateToggle({
+   Name = "Killstreak Ultanitum",
+   CurrentValue = false,
+   Flag = "Toggle2", 
+   Callback = function(Value)
+       if Value then
+local args = {
+    [1] = "Rage"
+}
+    ksul = true
+		  while ksul do
+				wait(0.7)
+game:GetService("Players").LocalPlayer.Character:FindFirstChild("Killstreak Ultimatium").RageEvent:FireServer(unpack(args))
+end
+  else
+		ksul = false
+end
+  end,
+	})
+
 local Tab = Window:CreateTab("Teleports", "rewind")
 local Button = Tab:CreateButton({
    Name = "Stellar Ray",

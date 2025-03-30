@@ -1,7 +1,7 @@
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
  
 local Window = Rayfield:CreateWindow({
-   Name = "Cyric [Private Edition]",
+   Name = "Syric [Private Edition]",
    Icon = 0, -- Icon in Topbar. Can use Lucide Icons (string) or Roblox Image (number). 0 to use no icon (default).
    LoadingTitle = "Rayfield Interface Suite",
    LoadingSubtitle = "by dawninja21",
@@ -76,9 +76,16 @@ end
 	})
 
 local Tab = Window:CreateTab("Teleports", "rewind")
+
 local Button = Tab:CreateButton({
    Name = "Stellar Ray",
    Callback = function()  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(10397, 4631, -5525)
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Noobs",
+   Callback = function()  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9252, 4629, -4990)
    end,
 })
 	

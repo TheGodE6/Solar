@@ -55,4 +55,11 @@ end
    end,
 })
 
+local Tab = Window:CreateTab("Teleports", "rewind")
+local Button = Tab:CreateButton({
+   Name = "Stellar Ray",
+   Callback = function()  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(10397, 4631, -5525)
+   end,
+})
+	
 Rayfield:LoadConfiguration()

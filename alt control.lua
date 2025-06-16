@@ -9,7 +9,7 @@
 -- VARIABLES --
 
 local murd, sher
-local whitelisted = {"ripcxo", "Trogdor973", "itspavvv", "Dekryptionite", "D_ionte", "Dawninja21alt"}
+local whitelisted = {"ripcxo", "Trogdor973", "itspavvv", "Dekryptionite", "D_ionte", "Dawninja21alt", "map_272"}
 local lp = game.Players.LocalPlayer
 local lpn = lp.Name
 local prefix = "/"
